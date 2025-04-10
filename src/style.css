@@ -1,1 +1,89 @@
 @import "tailwindcss";
+@theme {
+  /* 색상 */
+  --color-itc-white: #fff;
+
+  --color-itc-black100: #393939;
+  --color-itc-black200: #363f4b;
+  --color-itc-black900: #000000;
+
+  --color-itc-gray100: #eeeeee;
+  --color-itc-gray200: #d9d9d9;
+  --color-itc-gray300: #bfbfbf;
+  --color-itc-gray400: #838383;
+
+  --color-itc-blue100: #e6f2ff;
+  --color-itc-blue200: #b8dbff;
+  --color-itc-blue300: #96bffc;
+  --color-itc-blue400: #72b6ff;
+  --color-itc-blue500: #5e9eff;
+  --color-itc-blue600: #5094fa;
+  --color-itc-blue700: #4fa4ff;
+  --color-itc-blue800: #3986fa;
+
+  --color-itc-purple500: #a45bec;
+
+  --color-itc-pink100: #ffb6d6;
+  --color-itc-pink200: #ff90b8;
+
+  /* 폰트사이즈 */
+  --text-4: 0.25rem;
+  --text-5: 0.3125rem;
+  --text-6: 0.375rem;
+  --text-7: 0.4375rem;
+  --text-8: 0.5rem;
+  --text-9: 0.5625rem;
+  --text-10: 0.625rem;
+  --text-11: 0.6875rem;
+  --text-12: 0.75rem;
+  --text-13: 0.8125rem;
+  --text-14: 0.875rem;
+  --text-15: 0.9375rem;
+  --text-16: 1rem;
+  --text-17: 1.0625rem;
+  --text-18: 1.125rem;
+  --text-19: 1.1875rem;
+  --text-20: 1.25rem;
+  --text-21: 1.3125rem;
+  --text-22: 1.375rem;
+  --text-23: 1.4375rem;
+  --text-24: 1.5rem;
+  --text-25: 1.5625rem;
+  --text-26: 1.625rem;
+  --text-27: 1.6875rem;
+  --text-28: 1.75rem;
+  --text-29: 1.8125rem;
+  --text-30: 1.875rem;
+  --text-31: 1.9375rem;
+  --text-32: 2rem;
+  --text-33: 2.0625rem;
+  --text-34: 2.125rem;
+  --text-35: 2.1875rem;
+  --text-36: 2.25rem;
+  --text-37: 2.3125rem;
+  --text-38: 2.375rem;
+  --text-39: 2.4375rem;
+  --text-40: 2.5rem;
+  --text-41: 2.5625rem;
+  --text-42: 2.625rem;
+  --text-43: 2.6875rem;
+  --text-44: 2.75rem;
+  --text-45: 2.8125rem;
+  --text-46: 2.875rem;
+  --text-47: 2.9375rem;
+  --text-48: 3rem;
+  --text-49: 3.0625rem;
+  --text-50: 3.125rem;
+  --text-55: 3.4375rem;
+  --text-60: 3.75rem;
+  --text-65: 4.0625rem;
+  --text-70: 4.375rem;
+  --text-75: 4.6875rem;
+  --text-80: 5rem;
+  --text-85: 5.3125rem;
+  --text-90: 5.625rem;
+  --text-95: 5.9375rem;
+  --text-100: 6.25rem;
+
+  /*이미지설정 */
+}
