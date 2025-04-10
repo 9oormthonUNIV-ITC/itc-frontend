@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Btn - Component</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <h1 class="sr-only">버튼컴포넌트</h1>
+    <fieldset class="p-4 m-4 border">
+      <legend class="font-semibold">Btn - Component</legend>
+      <div class="space-y-4">
+        <div class="space-x-1 space-y-1">
+          <h2>1. 버튼 - md</h2>
+          <button
+            class="font-bold text-20 py-3 px-5 rounded-[0.625rem] bg-itc-blue700 text-white">
+            버튼
+          </button>
+          <button
+            class="font-bold text-20 py-3 px-5 rounded-[0.625rem] border-1 bg-white text-itc-blue700 border-itc-blue700">
+            버튼
+          </button>
+          <button
+            class="font-bold text-20 py-3 px-5 rounded-[0.625rem] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white">
+            버튼
+          </button>
+          <button
+            class="font-bold text-20 py-3 px-5 rounded-[0.625rem] text-white border-[1px] border-transparent"
+            style="
+              background-image: linear-gradient(#fff, #fff),
+                linear-gradient(
+                  to bottom,
+                  var(--color-itc-blue500),
+                  var(--color-itc-purple500)
+                );
+              background-origin: border-box;
+              background-clip: padding-box, border-box;
+            ">
+            <span
+              class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
+              버튼
+            </span>
+          </button>
+        </div>
+        <div class="space-x-1 space-y-1">
+          <h2>2. 버튼 - sm</h2>
+          <button
+            class="font-bold text-16 py-1 px-4 rounded-[0.625rem] bg-itc-blue700 text-white">
+            버튼
+          </button>
+          <button
+            class="font-bold text-16 py-1 px-4 rounded-[0.625rem] border-1 bg-white text-itc-blue700 border-itc-blue700">
+            버튼
+          </button>
+          <button
+            class="font-bold text-16 py-1 px-4 rounded-[0.625rem] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white">
+            버튼
+          </button>
+          <button
+            class="font-bold text-16 py-1 px-4 rounded-[0.625rem] text-white border-[1px] border-transparent"
+            style="
+              background-image: linear-gradient(#fff, #fff),
+                linear-gradient(
+                  to bottom,
+                  var(--color-itc-blue500),
+                  var(--color-itc-purple500)
+                );
+              background-origin: border-box;
+              background-clip: padding-box, border-box;
+            ">
+            <span
+              class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
+              버튼
+            </span>
+          </button>
+        </div>
+        <div class="space-x-1 space-y-1">
+          <h2>3. 버튼 - lg + rounded</h2>
+          <button
+            class="font-bold text-23 py-4 px-8 rounded-[3.125rem] bg-itc-blue700 text-white">
+            버튼
+          </button>
+          <button
+            class="font-bold text-23 py-4 px-8 rounded-[3.125rem] border-1 bg-white text-itc-blue700 border-itc-blue700">
+            버튼
+          </button>
+          <button
+            class="font-bold text-23 py-4 px-8 rounded-[3.125rem] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white">
+            버튼
+          </button>
+          <button
+            class="font-bold text-23 py-4 px-8 rounded-[3.125rem] text-white border-[1px] border-transparent"
+            style="
+              background-image: linear-gradient(#fff, #fff),
+                linear-gradient(
+                  to bottom,
+                  var(--color-itc-blue500),
+                  var(--color-itc-purple500)
+                );
+              background-origin: border-box;
+              background-clip: padding-box, border-box;
+            ">
+            <span
+              class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
+              버튼
+            </span>
+          </button>
+        </div>
+        <div class="space-x-1 space-y-1">
+          <h2>4. 버튼 - icon</h2>
+          <button
+            class="font-bold text-23 py-4 px-8 rounded-[3.125rem] bg-itc-blue700 text-white flex gap-2">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="30"
+                viewBox="0 0 24 30"
+                fill="none">
+                <path
+                  d="M13.5 2C13.5 1.17157 12.8284 0.5 12 0.5C11.1716 0.5 10.5 1.17157 10.5 2L13.5 2ZM10.9393 29.0607C11.5251 29.6464 12.4749 29.6464 13.0607 29.0607L22.6066 19.5147C23.1924 18.9289 23.1924 17.9792 22.6066 17.3934C22.0208 16.8076 21.0711 16.8076 20.4853 17.3934L12 25.8787L3.51472 17.3934C2.92893 16.8076 1.97918 16.8076 1.3934 17.3934C0.807611 17.9792 0.807611 18.9289 1.3934 19.5147L10.9393 29.0607ZM10.5 2L10.5 28L13.5 28L13.5 2L10.5 2Z"
+                  fill="white" />
+              </svg>
+            </span>
+            <span>더 알아보기</span>
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </body>
+</html>
