@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/header.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -23,14 +24,26 @@
             <path d="M14.0233 7.8899C14.0233 4.39217 11.0304 1.55643 7.33864 1.55643C3.64693 1.55643 0.836433 4.21924 0.664361 7.56877C0.659147 7.67252 0.653931 7.78121 0.653931 7.88496C0.653931 7.98871 0.653933 8.09738 0.664361 8.20113C0.836433 11.4617 3.68343 14.0554 7.17178 14.0554C8.76214 14.0554 10.2169 13.5169 11.3484 12.6227V13.5811C11.3224 13.9764 11.1972 14.999 10.3681 15.8191C9.1845 16.9899 7.34907 16.9702 6.14979 16.575C4.89315 16.1649 4.184 15.3004 3.91286 14.9249L1.42564 15.9031C2.24428 17.3753 3.65736 18.5017 5.36243 19.0007C5.52928 19.0501 6.29057 19.2724 7.33864 19.2823C8.07907 19.2921 10.4568 19.3168 12.2609 17.6124C13.893 16.071 14.0077 14.0949 14.0233 13.5811V7.88496V7.8899ZM7.33864 11.689C5.12257 11.689 3.32886 9.98954 3.32886 7.8899C3.32886 5.79027 5.12257 4.09081 7.33864 4.09081C9.55471 4.09081 11.3484 5.79027 11.3484 7.8899C11.3484 9.98954 9.55471 11.689 7.33864 11.689Z" fill="#363F4B" />
           </svg>
         </h1>
-        <nav class="flex-grow-1 flex gap-10 lg:gap-[70px] hidden md:flex">
+        <nav class="flex-grow-1 gap-10 lg:gap-[70px] hidden md:flex">
           <a href="#void" class="text-20 font-bold">프로젝트</a>
           <a href="#void" class="text-20 font-bold">피드</a>
           <a href="#void" class="text-20 font-bold">마이페이지</a>
         </nav>
         <a href="#void" class="font-bold text-20 py-3 px-5 rounded-[0.625rem] bg-itc-blue700 text-white hidden md:flex">로그인</a>
-        <button class="md:hidden">햄</button>
-        <div></div>
+        <div class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"></div>
+        <div class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden">
+          <ul class="pt-15 flex flex-col gap-4">
+            <li class="border-b ml-4"><a href="#void" class="text-30 font-bold">프로젝트</a></li>
+            <li class="border-b ml-4"><a href="#void" class="text-30 font-bold">피드</a></li>
+            <li class="border-b ml-4"><a href="#void" class="text-30 font-bold">마이페이지</a></li>
+            <li class="ml-4"><a href="#void" class="font-bold text-20 py-3 px-5 rounded-[0.625rem] bg-itc-blue700 text-white">로그인</a></li>
+          </ul>
+        </div>
+        <button type="button" class="hamburger flex flex-col gap-1 md:hidden">
+          <span class="block w-8 h-1 rounded-full bg-black"></span>
+          <span class="block w-8 h-1 rounded-full bg-black"></span>
+          <span class="block w-8 h-1 rounded-full bg-black"></span>
+        </button>
       </div>
     </header>
   </body>
