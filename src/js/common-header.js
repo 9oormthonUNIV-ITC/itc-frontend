@@ -5,6 +5,7 @@ let be_mobile_viewport_flag = false;
 sidenav_outside.addEventListener("click", mobileNavClose);
 hamburger.addEventListener("click", mobileNavToggle);
 window.addEventListener("resize", checkResize);
+
 function mobileNavToggle() {
   if (show_mobile_nav_flag) {
     mobileNavClose();
@@ -13,14 +14,15 @@ function mobileNavToggle() {
   }
   switchHamburgerIcon();
 }
+
 function mobileNavClose() {
-  console.log("click!!");
   let tg1 = document.querySelector(".sidenav-outside");
   let tg2 = document.querySelector(".sidenav");
   show_mobile_nav_flag = false;
   tg1.classList.add("hidden");
   tg2.classList.add("hidden");
 }
+
 function mobileNavOpen() {
   let tg1 = document.querySelector(".sidenav-outside");
   let tg2 = document.querySelector(".sidenav");
@@ -28,13 +30,12 @@ function mobileNavOpen() {
   tg1.classList.remove("hidden");
   tg2.classList.remove("hidden");
 }
+
 function checkResize() {
   if (window.innerWidth >= 768) {
     be_mobile_viewport_flag = true;
     show_mobile_nav_flag = false;
     hamburger.style.display = "none";
-    console.log("hamburger is none");
-    console.log(hamburger.style.display);
     mobileNavClose();
   }
   if (window.innerWidth < 768) initializeHamburger();
@@ -43,7 +44,6 @@ function checkResize() {
 function initializeHamburger() {
   if (hamburger.style.display == "none") {
     hamburger.style.display = "flex";
-    console.log("hamburger is none");
     let x = hamburger.children[0];
     let y = hamburger.children[1];
     let z = hamburger.children[2];
