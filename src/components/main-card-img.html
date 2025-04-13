@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Main-Card-Image - Component</title>
     <script type="module" src="/src/main.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="/src/js/main-card-img.js"></script>
   </head>
   <body>
     <h1 class="sr-only">메인페이지 카드 이미지 컴포넌트</h1>
@@ -29,14 +32,14 @@
     </fieldset>
     <!-- 메인 카드 스와이퍼 레이아웃 -->
     <legend class="font-semibold">main-card-text - Layout</legend>
-    <section class="w-screen">
-      <ul class="main-card-swiper w-full flex gap-8 overflow-hidden">
-        <li>
+    <section id="test" class="swiper main-card-swiper">
+      <ul class="ease-linear swiper-wrapper">
+        <li class="swiper-slide">
           <div class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
             <p class="text-30 font-bold">text text text text text text text text</p>
           </div>
         </li>
-        <li>
+        <li class="swiper-slide">
           <figure class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
             <picture>
               <img src="" sizes="" alt="" />
@@ -46,12 +49,12 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="swiper-slide">
           <div class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
             <p class="text-30 font-bold">text text text text text text text text</p>
           </div>
         </li>
-        <li>
+        <li class="swiper-slide">
           <figure class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
             <picture>
               <img src="" sizes="" alt="" />
@@ -61,12 +64,12 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="swiper-slide">
           <div class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
             <p class="text-30 font-bold">text text text text text text text text</p>
           </div>
         </li>
-        <li>
+        <li class="swiper-slide">
           <figure class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
             <picture>
               <img src="" sizes="" alt="" />
@@ -76,12 +79,12 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="swiper-slide">
           <div class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
             <p class="text-30 font-bold">text text text text text text text text</p>
           </div>
         </li>
-        <li>
+        <li class="swiper-slide">
           <figure class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
             <picture>
               <img src="" sizes="" alt="" />
@@ -90,13 +93,9 @@
               <p>카드 이미지</p>
             </figcaption>
           </figure>
-        </li>
-        <li>
-          <div class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
-            <p class="text-30 font-bold">text text text text text text text text</p>
-          </div>
         </li>
       </ul>
     </section>
+    <marquee behavior="alternate" direction="left" loop>dddddd</marquee>
   </body>
 </html>

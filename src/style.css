@@ -87,3 +87,6 @@
 
   /*이미지설정 */
 }
+.main-card-swiper > .swiper-wrapper {
+  transition-timing-function: linear;
+}
