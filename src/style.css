@@ -86,7 +86,97 @@
   --text-100: 6.25rem;
 
   /*이미지설정 */
+
+  /* 애니메이션 */
+  --animate-move-topbar: move-topbar 0.3s linear 0s 1 normal forwards;
+  --animate-move-bottombar: move-bottombar 0.3s linear 0s 1 normal forwards;
+  --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal forwards;
+  --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1 normal forwards;
+
+  @keyframes move-topbar {
+    0% {
+      translate: 0 0;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    50% {
+      translate: 0 8px;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    100% {
+      translate: 0 8px;
+      rotate: 45deg;
+      scale: 1.4 1;
+    }
+  }
+  @keyframes move-bottombar {
+    0% {
+      translate: 0 0;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    50% {
+      translate: 0 -8px;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    100% {
+      translate: 0 -8px;
+      rotate: -45deg;
+      scale: 1.4 1;
+    }
+  }
+  @keyframes move-topbar-reverse {
+    0% {
+      translate: 0 8px;
+      rotate: 45deg;
+      scale: 1.4 1;
+    }
+    50% {
+      translate: 0 8px;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    100% {
+      translate: 0 0;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+  }
+  @keyframes move-bottombar-reverse {
+    0% {
+      translate: 0 -8px;
+      rotate: -45deg;
+      scale: 1.4 1;
+    }
+    50% {
+      translate: 0 -8px;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    100% {
+      translate: 0 0;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+  }
 }
-.main-card-swiper > .swiper-wrapper {
-  transition-timing-function: linear;
+@layer components {
+  .hamburger {
+    .hamburger-top-bar {
+      animation: var(--animate-move-topbar);
+      animation-play-state: paused;
+    }
+    .hamburger-middle-bar {
+      animation-play-state: paused;
+    }
+    .hamburger-bottom-bar {
+      animation: var(--animate-move-bottombar);
+      animation-play-state: paused;
+    }
+  }
+  .main-card-swiper > .swiper-wrapper {
+    transition-timing-function: linear;
+  }
 }
