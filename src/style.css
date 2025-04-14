@@ -28,6 +28,10 @@
   --color-itc-pink100: #ffb6d6;
   --color-itc-pink200: #ff90b8;
 
+  /* 폰트 */
+  --font-sans: "Pretendard Variable", sans-serif;
+  --font-gmarket: "GmarketSans", sans-serif;
+
   /* 폰트사이즈 */
   --text-4: 0.25rem;
   --text-5: 0.3125rem;

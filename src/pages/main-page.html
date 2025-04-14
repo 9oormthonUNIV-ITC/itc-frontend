@@ -1,19 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>메인페이지 - 9oormthonUNIV</title>
+
+    <!-- 폰트설정 -->
+    <link
+      rel="preload"
+      href="/public/fonts/pretendard/woff2/PretendardVariable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link
+      rel="preload"
+      href="/public/fonts/gmarket/GmarketSansBold.otf"
+      as="font"
+      type="font/otf"
+      crossorigin />
+    <link
+      rel="preload"
+      href="/public/fonts/gmarket/GmarketSanmdedium.otf"
+      as="font"
+      type="font/otf"
+      crossorigin />
+    <link
+      rel="preload"
+      href="/public/fonts/gmarket/GmarketSansLight.otf"
+      as="font"
+      type="font/otf"
+      crossorigin />
+    <link
+      rel="stylesheet"
+      href="/public/fonts/pretendard/pretendardvariable.css" />
+    <link rel="stylesheet" href="/public/fonts/gmarket/gmarket.css" />
+
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/js/project-page.js"></script>
-    <script type="module" src="/src/js/header.js"></script>
+    <script type="module" src="/src/js/common-header.js"></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="/src/js/main-card-img.js"></script>
   </head>
-  <body>
+  <body class="font-sans">
     <h1 class="sr-only">9oormthonUNIV - 경인지부 메인페이지</h1>
     <!-- Header -->
     <header
@@ -101,178 +132,66 @@
     </header>
 
     <!-- Main -->
-    <main class="tracking-tighter max-w-[1440px] mx-auto py-10">
-      <!-- 경인지부더알아보기 -->
+    <main class="tracking-tighter mx-auto py-10 min-h-screen">
+      <!-- 경인지부 더알아보기 -->
       <section
         aria-labelledby="goormthon-more"
-        class="h-[300px] sm:h-[600px] px-10 sm:px-20 lg:px-40 flex flex-col justify-center items-start space-y-3 relative bg-itc-blue100 overflow-hidden">
-        <h2
-          class="text-itc-blue700 text-40 sm:text-60 font-medium tracking-normal"
-          id="goormthon-more">
-          <span>9oormthonUNIV</span><br />
-          <span class="relative">
-            경인지부
-            <svg
-              class="absolute top-1/2 left-[90%] -translate-y-1/2 sm:left-[100%]"
-              xmlns="http://www.w3.org/2000/svg"
-              width="100"
-              height="80"
-              viewBox="0 0 100 80"
-              fill="none">
-              <g filter="url(#filter0_d_42_847)">
+        class="h-[300px] md:h-[600px] bg-itc-blue100">
+        <div
+          class="w-full h-full flex flex-col justify-center items-start space-y-3 relative max-w-[1440px] mx-auto overflow-hidden max-[400px]:px-4 px-8 md:px-20 lg:px-40">
+          <div class="relative">
+            <h2
+              class="text-itc-blue700 text-40 md:text-70 font-extrabold tracking-normal font-gmarket max-[400px]:text-34"
+              id="goormthon-more">
+              <span>9oormthonUNIV</span>
+              <br />
+              <span>경인지부</span>
+            </h2>
+            <img
+              src="/public/images/main-cloud.svg"
+              alt=""
+              aria-hidden="true"
+              class="absolute w-24 left-36 -bottom-1 md:left-[16rem] md:-bottom-1.5 md:w-[11rem] max-[400px]:left-30" />
+          </div>
+          <button
+            class="outline-none font-bold text-16 py-2 px-4 rounded-[3.125rem] bg-itc-blue700 text-white flex gap-2 items-center hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 30"
+                fill="none">
                 <path
-                  d="M69.9033 38.1974C69.2256 38.0479 67.8835 38.2004 67.1906 38.1974C65.7977 38.1974 64.418 38.4831 63.1364 39.0331C61.9801 39.5295 60.9226 40.2294 60.0173 41.1023C59.8559 41.258 59.5983 41.2611 59.4401 41.102C59.2868 40.948 59.2844 40.699 59.4407 40.5479C60.426 39.5954 61.5771 38.8307 62.837 38.295C64.2167 37.7063 65.7027 37.4033 67.2007 37.4033C67.8592 37.4124 68.5157 37.4765 69.1621 37.6005C69.1469 36.8644 69.0801 36.1293 68.9638 35.4023C68.9638 35.385 68.9638 35.3677 68.9527 35.3484C68.4682 32.3622 67.1421 29.5772 65.1332 27.3241L65.114 27.3027L64.9825 27.1553C63.54 25.5427 62.0535 24.0732 60.0831 23.1906C58.1136 22.3081 55.9437 21.6123 53.7861 21.6082C46.3888 21.6082 39.6954 26.9657 38.0506 34.0414L37.6688 34.1167C34.4562 34.1818 31.7812 35.7551 29.5397 38.0662C28.9934 38.6244 28.5018 39.2345 28.0689 39.8862C26.7256 41.8984 26.0084 44.2664 26.0084 46.6873C26.0084 48.5379 26.4221 50.364 27.2202 52.0304C27.4792 52.5673 27.7735 53.0838 28.1073 53.578C29.2099 55.1814 30.6695 56.5012 32.375 57.4315C34.1745 58.4594 36.2076 59.0044 38.2782 59.0197H67.752L67.9543 59.0065H68.0423L68.2365 58.9892C73.5501 58.4615 77.7095 54.0314 77.7095 48.6426C77.6923 43.5832 75.4699 39.2518 70.653 38.295L69.9033 38.1974Z"
+                  d="M13.5 2C13.5 1.17157 12.8284 0.5 12 0.5C11.1716 0.5 10.5 1.17157 10.5 2L13.5 2ZM10.9393 29.0607C11.5251 29.6464 12.4749 29.6464 13.0607 29.0607L22.6066 19.5147C23.1924 18.9289 23.1924 17.9792 22.6066 17.3934C22.0208 16.8076 21.0711 16.8076 20.4853 17.3934L12 25.8787L3.51472 17.3934C2.92893 16.8076 1.97918 16.8076 1.3934 17.3934C0.807611 17.9792 0.807611 18.9289 1.3934 19.5147L10.9393 29.0607ZM10.5 2L10.5 28L13.5 28L13.5 2L10.5 2Z"
                   fill="white" />
-                <path
-                  d="M53.5301 21C46.0337 21 39.5508 26.0421 37.5096 33.3547C34.2181 33.5428 31.1147 34.9663 28.8155 37.3424C28.2258 37.9464 27.6937 38.6042 27.2264 39.3078C25.7749 41.4847 25 44.0449 25 46.6651C24.996 48.6672 25.4431 50.6427 26.311 52.4434C26.5891 53.023 26.9098 53.5832 27.2689 54.116C28.4534 55.8536 30.0334 57.2822 31.8764 58.2837C33.8225 59.3981 36.0226 59.9888 38.2641 60H67.7986L68.0141 59.9848H68.0889L68.3236 59.9654C74.2289 59.3788 78.6836 54.5034 78.6836 48.6245C78.6836 43.4522 75.1312 38.9296 70.1403 37.6119V37.5814C70.1403 37.1188 70.1019 36.6531 70.0543 36.1874L69.9319 35.2377V35.192C69.4171 32.0156 68.007 29.0507 65.8697 26.6552L65.8504 26.6339L65.8292 26.6095L65.7108 26.4773C64.1713 24.7681 62.2919 23.4006 60.197 22.4611C58.1022 21.5216 55.8353 21.0325 53.5402 21.0244L53.5291 21.001L53.5301 21ZM53.5361 22.0198C55.6937 22.0219 57.827 22.4804 59.7975 23.366C61.7669 24.2516 63.533 25.5388 64.9755 27.1504L65.107 27.2978L65.1262 27.3192C67.1351 29.5723 68.4612 32.3573 68.9457 35.3435C68.9457 35.3628 68.9457 35.3801 68.9568 35.3974C69.0731 36.1244 69.1399 36.8605 69.1551 37.5956C68.5087 37.4726 67.8522 37.4075 67.1937 37.3984C65.6957 37.4004 64.2138 37.7054 62.8361 38.2941C61.5783 38.8316 60.4275 39.5963 59.4439 40.547C59.2876 40.6981 59.2901 40.9471 59.4435 41.101C59.6016 41.2596 59.8588 41.2566 60.02 41.1011C60.9261 40.2276 61.9838 39.5259 63.1396 39.0313C64.4222 38.4812 65.8009 38.1986 67.1937 38.1955C67.8866 38.1975 68.5785 38.2758 69.2562 38.4253C74.0721 39.3821 77.6984 43.5823 77.6984 48.6173C77.6984 54.0062 73.5471 58.4352 68.2255 58.9629L68.0313 58.9802H67.9433L67.741 58.9934H38.2672C36.1966 58.9782 34.1634 58.4332 32.3639 57.4052C30.6585 56.4749 29.1968 55.1551 28.0963 53.5517C27.7625 53.0586 27.4671 52.541 27.2092 52.0042C26.4101 50.3377 25.9944 48.5116 25.9974 46.6611C25.9974 44.2392 26.7146 41.8721 28.0579 39.8599C28.4888 39.2082 28.9814 38.5981 29.5286 38.0399C31.7702 35.7288 34.827 34.3979 38.0396 34.3328H38.2894C39.9342 27.2582 46.1348 21.9985 53.5321 21.9985L53.5382 22.0178L53.5361 22.0198Z"
-                  fill="white" />
-                <path
-                  d="M51.4332 32.2271C51.4332 33.5255 50.8779 34.584 50.1911 34.584C49.5042 34.584 48.9489 33.5306 48.9489 32.2271C48.9489 30.9236 49.5063 29.8682 50.1911 29.8682C50.8759 29.8682 51.4332 30.9246 51.4332 32.2271Z"
-                  fill="#3E404C" />
-                <path
-                  d="M53.7677 34.586C54.4546 34.586 55.0099 33.5296 55.0099 32.2271C55.0099 30.9246 54.4546 29.8682 53.7677 29.8682C53.0809 29.8682 52.5256 30.9246 52.5256 32.2271C52.5256 33.5296 53.0809 34.586 53.7677 34.586Z"
-                  fill="#3E404C" />
-                <path
-                  d="M51.9511 37.6627C52.0502 37.6688 52.1493 37.6688 52.2485 37.6627C52.7289 37.6454 53.2003 37.5224 53.6282 37.2987C54.0571 37.076 54.4293 36.7618 54.7216 36.3785C54.8471 36.226 54.8257 35.9991 54.674 35.8728C54.5214 35.7458 54.2936 35.767 54.1683 35.921C53.9397 36.2239 53.6474 36.4731 53.3136 36.6479C52.9778 36.8259 52.6096 36.9225 52.2303 36.9377C51.8165 36.9357 51.4079 36.8421 51.0336 36.6673C50.6594 36.4914 50.3256 36.2361 50.0585 35.9189C49.927 35.771 49.6992 35.7596 49.5524 35.8923C49.4056 36.0251 49.395 36.2548 49.5275 36.4019C50.1415 37.1228 51.0104 37.5722 51.9521 37.6617"
-                  fill="#3E404C" />
-              </g>
-              <defs>
-                <filter
-                  id="filter0_d_42_847"
-                  x="0"
-                  y="0"
-                  width="103.684"
-                  height="89"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB">
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha" />
-                  <feOffset dy="4" />
-                  <feGaussianBlur stdDeviation="12.5" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.805161 0 0 0 0 0.809032 0 0 0 0 0.84 0 0 0 1 0" />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_42_847" />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_42_847"
-                    result="shape" />
-                </filter>
-              </defs>
-            </svg>
-          </span>
-        </h2>
-        <button
-          class="font-bold text-16 py-2 px-4 rounded-[3.125rem] bg-itc-blue700 text-white mt-4">
-          더 알아보기
-        </button>
-        <svg
-          class="absolute -right-2 top-0 opacity-50 sm:right-[1vw] lg:right-[6vw] sm:top-[100px]"
-          xmlns="http://www.w3.org/2000/svg"
-          width="120"
-          height="120"
-          viewBox="0 0 120 120"
-          fill="none">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M27.8228 77.2593C30.9117 80.5579 34.9749 82.3975 39.1493 82.7497C38.9148 87.3418 40.4744 92.0194 43.8655 95.6406C50.4895 102.714 61.5936 103.079 68.6671 96.4546C70.9511 94.3157 72.5356 91.7098 73.4112 88.9232C79.0213 92.2675 86.2828 92.3321 92.0934 88.4861C100.174 83.1373 102.389 72.2503 97.0406 64.1692C95.4278 61.7327 93.3116 59.8295 90.9207 58.506C94.3499 54.2568 95.752 48.4736 94.1893 42.808C91.6125 33.4661 81.9505 27.9818 72.6085 30.5585C71.0226 30.996 69.548 31.6376 68.205 32.4471C67.2031 30.9765 65.9586 29.6346 64.4791 28.4825C56.8332 22.5282 45.8082 23.8996 39.854 31.5455C36.0645 36.4116 35.2422 42.6464 37.1162 48.0716C34.041 48.6971 31.0954 50.1552 28.6367 52.4577C21.5631 59.0817 21.1987 70.1857 27.8228 77.2593Z"
-            fill="#DCEAFE" />
-          <path
-            d="M69.2871 59.1484C69.1826 59.0078 69.0909 58.8577 69.0162 58.6949C68.4133 57.4031 68.9732 55.869 70.265 55.2661L75.4797 52.839C76.7715 52.2361 78.3088 52.8002 78.9085 54.0877C79.5113 55.3795 78.9514 56.9136 77.6597 57.5165L72.4449 59.9436C71.316 60.4718 69.9997 60.1072 69.284 59.1441L69.2871 59.1484Z"
-            fill="#3986FA" />
-          <path
-            d="M50.0567 68.1074C49.9522 67.9668 49.8605 67.8167 49.7858 67.6539C49.1829 66.3621 49.7428 64.828 51.0345 64.2251L56.2493 61.798C57.5411 61.1951 59.0784 61.7594 59.6781 63.0468C60.281 64.3386 59.721 65.8726 58.4293 66.4755L53.2145 68.9026C52.0855 69.4308 50.7693 69.0662 50.0535 68.1031L50.0567 68.1074Z"
-            fill="#3986FA" />
-          <path
-            d="M60.9529 75.8242C60.5823 75.3256 60.3908 74.6941 60.4542 74.0318L61.0163 68.3085C61.1573 66.8873 62.4212 65.8553 63.8393 65.992C65.2605 66.133 66.2967 67.3937 66.1557 68.8149L65.5936 74.5382C65.4526 75.9594 64.1919 76.9957 62.7706 76.8547C62.0149 76.7813 61.3709 76.3867 60.9529 75.8242Z"
-            fill="#3986FA" />
-          <path
-            d="M63.0299 54.7108C62.6594 54.2122 62.4678 53.5806 62.5312 52.9182L63.0933 47.195C63.2343 45.7737 64.495 44.7375 65.9163 44.8785C67.3344 45.0153 68.3738 46.2803 68.2327 47.7015L67.6706 53.4248C67.5296 54.846 66.2689 55.8822 64.8476 55.7412C64.0919 55.6678 63.448 55.2732 63.0299 54.7108Z"
-            fill="#3986FA" />
-          <path
-            d="M68.3228 67.2098C67.6419 66.2936 67.6316 64.9981 68.3726 64.0637C69.262 62.9462 70.8864 62.7642 72.0007 63.6493L76.5014 67.2305C77.62 68.1124 77.8052 69.7411 76.9158 70.8586C76.0264 71.9761 74.4051 72.1623 73.2876 71.2729L68.7827 67.6949C68.6028 67.5508 68.4484 67.3877 68.3186 67.213L68.3228 67.2098Z"
-            fill="#3986FA" />
-          <path
-            d="M51.7161 54.01C51.0351 53.0939 51.0248 51.7983 51.7658 50.8639C52.6552 49.7464 54.2765 49.5602 55.394 50.4496L59.8946 54.0306C61.0164 54.9168 61.1983 56.5412 60.3089 57.6587C59.4195 58.7762 57.7983 58.9625 56.6808 58.0731L52.1802 54.492C52.0003 54.3479 51.8459 54.1848 51.7161 54.01Z"
-            fill="#3986FA" />
-        </svg>
-        <svg
-          class="absolute -right-6 top-25 opacity-50 sm:right-[3vw] sm:top-[240px]"
-          xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
-          viewBox="0 0 105 105"
-          fill="none">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M33.0188 83.8761C37.4158 84.912 41.8161 84.1949 45.4862 82.1786C47.8342 86.1285 51.721 89.1567 56.5469 90.2936C65.9795 92.5157 75.4276 86.6705 77.6498 77.2378C78.3668 74.194 78.2438 71.1486 77.4313 68.3448C83.9562 68.0245 90.0405 64.0571 92.7499 57.6356C96.5171 48.707 92.3329 38.415 83.4043 34.6477C80.7132 33.5123 77.8982 33.0992 75.1754 33.3206C75.6834 27.8784 73.6489 22.2793 69.2061 18.4233C61.8875 12.0711 50.8051 12.8546 44.4529 20.1733C43.3736 21.4168 42.5003 22.7689 41.8301 24.1881C40.1814 23.5183 38.4019 23.0899 36.5319 22.9498C26.8681 22.2255 18.447 29.4724 17.7228 39.1362C17.2616 45.2899 20.0326 50.9397 24.6017 54.4191C22.3841 56.6438 20.7362 59.4914 19.963 62.7733C17.7409 72.2059 23.5862 81.654 33.0188 83.8761Z"
-            fill="#96BFFC" />
-          <path
-            d="M60.2985 52.8756C60.2512 52.7069 60.2191 52.534 60.2075 52.3552C60.1061 50.9333 61.1772 49.7006 62.5991 49.5991L68.3369 49.1957C69.7588 49.0943 70.993 50.1705 71.093 51.5873C71.1944 53.0092 70.1233 54.2419 68.7014 54.3434L62.9636 54.7468C61.7205 54.8367 60.6215 54.0257 60.2971 52.8705L60.2985 52.8756Z"
-            fill="#3986FA" />
-          <path
-            d="M39.1304 54.3631C39.083 54.1944 39.051 54.0214 39.0394 53.8427C38.938 52.4208 40.0091 51.188 41.431 51.0866L47.1688 50.6832C48.5907 50.5817 49.8249 51.6581 49.9249 53.0749C50.0264 54.4968 48.9552 55.7294 47.5333 55.8308L41.7955 56.2342C40.5524 56.3241 39.4533 55.5132 39.129 54.358L39.1304 54.3631Z"
-            fill="#3986FA" />
-          <path
-            d="M46.5512 65.469C46.3832 64.8709 46.43 64.2127 46.7259 63.6167L49.2961 58.4723C49.9357 57.1952 51.4849 56.683 52.7605 57.3175C54.0375 57.9571 54.5548 59.5048 53.9152 60.7818L51.345 65.9263C50.7054 67.2033 49.1577 67.7206 47.8807 67.081C47.201 66.7424 46.7406 66.1437 46.5512 65.469Z"
-            fill="#3986FA" />
-          <path
-            d="M56.0323 46.5011C55.8644 45.903 55.9111 45.2447 56.207 44.6487L58.7772 39.5042C59.4168 38.2272 60.9646 37.71 62.2416 38.3495C63.5172 38.984 64.0359 40.5369 63.3963 41.8139L60.8261 46.9584C60.1865 48.2354 58.6388 48.7526 57.3617 48.113C56.6821 47.7744 56.2218 47.1758 56.0323 46.5011Z"
-            fill="#3986FA" />
-          <path
-            d="M56.5123 60.0698C56.2037 58.9708 56.657 57.7571 57.683 57.1492C58.913 56.4233 60.4952 56.8338 61.2196 58.0587L64.1435 63.0117C64.873 64.2352 64.4639 65.8225 63.2339 66.5483C62.0039 67.2742 60.4232 66.8688 59.6973 65.6388L56.7684 60.6872C56.6519 60.4883 56.566 60.2808 56.5072 60.0712L56.5123 60.0698Z"
-            fill="#3986FA" />
-          <path
-            d="M45.7124 41.7968C45.4038 40.6978 45.8571 39.4841 46.8831 38.8761C48.1131 38.1502 49.6938 38.5557 50.4197 39.7857L53.3435 44.7386C54.0745 45.9672 53.664 47.5493 52.434 48.2752C51.204 49.0011 49.6232 48.5957 48.8973 47.3657L45.9736 42.4128C45.857 42.2139 45.7712 42.0064 45.7124 41.7968Z"
-            fill="#3986FA" />
-        </svg>
-        <svg
-          class="absolute -right-4 top-51 opacity-50 sm:right-[6vw] lg:right-[10vw] sm:top-[380px]"
-          xmlns="http://www.w3.org/2000/svg"
-          width="80"
-          height="80"
-          viewBox="0 0 76 76"
-          fill="none">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M38.0016 75.0024C42.3044 73.6291 45.7085 70.7512 47.8187 67.135C51.8657 69.3181 56.7602 69.9174 61.4867 68.4088C70.7187 65.4621 75.814 55.5894 72.8673 46.3574C71.9159 43.3766 70.2424 40.827 68.1016 38.8402C73.5304 35.2086 76.7059 28.6776 75.7262 21.7784C74.3638 12.1838 65.4813 5.51034 55.8867 6.87277C52.9938 7.28357 50.3665 8.37801 48.1449 9.96948C45.7804 5.04344 41.1565 1.29045 35.3648 0.269422C25.8211 -1.41305 16.7205 4.9597 15.038 14.5034C14.7524 16.1232 14.6989 17.7303 14.8536 19.2904C13.0955 19.5642 11.3495 20.1123 9.67416 20.9539C1.01451 25.3039 -2.47908 35.8503 1.87096 44.51C4.64061 50.0235 9.92214 53.4429 15.6293 54.0769C14.8733 57.1239 14.9256 60.4116 15.9502 63.6218C18.8969 72.8538 28.7696 77.9491 38.0016 75.0024Z"
-            fill="#B9D4FD" />
-          <path
-            d="M45.4478 34.3993C45.3204 34.279 45.2039 34.1472 45.102 33.9998C44.2836 32.8327 44.568 31.2246 45.7352 30.4061L50.4481 27.1086C51.6152 26.2902 53.2272 26.5782 54.0418 27.7417C54.8602 28.9089 54.5758 30.517 53.4087 31.3354L48.6957 34.633C47.6759 35.3495 46.3163 35.2195 45.4439 34.3957L45.4478 34.3993Z"
-            fill="#3986FA" />
-          <path
-            d="M28.0695 46.5678C27.9421 46.4475 27.8257 46.3156 27.7238 46.1683C26.9054 45.0012 27.1898 43.393 28.3569 42.5746L33.0698 39.277C34.237 38.4586 35.8491 38.7468 36.6636 39.9103C37.4821 41.0774 37.1976 42.6855 36.0304 43.5039L31.3175 46.8014C30.2977 47.518 28.9381 47.3879 28.0656 46.5641L28.0695 46.5678Z"
-            fill="#3986FA" />
-          <path
-            d="M40.1422 52.2709C39.6905 51.8444 39.392 51.2559 39.3392 50.5926L38.8969 44.8589C38.7885 43.4348 39.8535 42.1986 41.2737 42.0865C42.6979 41.9781 43.9376 43.0392 44.046 44.4633L44.4883 50.197C44.5968 51.6212 43.5356 52.861 42.1115 52.9694C41.3545 53.0287 40.6517 52.7521 40.1422 52.2709Z"
-            fill="#3986FA" />
-          <path
-            d="M38.5141 31.1181C38.0624 30.6916 37.7639 30.103 37.711 29.4397L37.2687 23.706C37.1603 22.2819 38.2215 21.0421 39.6456 20.9336C41.0658 20.8216 42.3095 21.8864 42.4179 23.3105L42.8602 29.0442C42.9687 30.4684 41.9074 31.7081 40.4833 31.8165C39.7263 31.8758 39.0236 31.5993 38.5141 31.1181Z"
-            fill="#3986FA" />
-          <path
-            d="M45.901 42.5055C45.071 41.7218 44.8355 40.4478 45.4026 39.3987C46.084 38.1435 47.6519 37.6816 48.9032 38.3594L53.9584 41.1028C55.2134 41.7766 55.6791 43.3482 54.9977 44.6034C54.3163 45.8586 52.7523 46.3242 51.4971 45.6428L46.4382 42.9032C46.236 42.7926 46.0556 42.6588 45.8974 42.5093L45.901 42.5055Z"
-            fill="#3986FA" />
-          <path
-            d="M27.2508 32.3967C26.4208 31.613 26.1852 30.3389 26.7523 29.2898C27.4337 28.0346 28.9978 27.5692 30.253 28.2506L35.3081 30.9939C36.567 31.6714 37.0288 33.2393 36.3474 34.4945C35.666 35.7497 34.102 36.2153 32.8468 35.5339L27.7916 32.7906C27.5894 32.6799 27.4091 32.5461 27.2508 32.3967Z"
-            fill="#3986FA" />
-        </svg>
+              </svg>
+            </span>
+            <span>더 알아보기</span>
+          </button>
+          <div
+            class="absolute top-0 -right-4 w-20 opacity-70 flex flex-col gap-2 justify-evenly h-full py-6 md:w-38 md:-right-12 xl:right-2">
+            <img
+              src="/public/images/main-flower1.svg"
+              alt=""
+              class="opacity-0 sm:opacity-100 relative -left-8 xl:-left-40"
+              aria-hidden="true" />
+            <img
+              src="/public/images/main-flower2.svg"
+              alt=""
+              aria-hidden="true" />
+            <img
+              src="/public/images/main-flower3.svg"
+              alt=""
+              class="relative -left-10 xl:-left-40"
+              aria-hidden="true" />
+          </div>
+        </div>
       </section>
 
       <!-- 경인지부소개 -->
       <section
-        class="px-5 py-20 bg-itc-white"
+        class="px-5 py-20 bg-itc-white max-w-[1440px] mx-auto"
         aria-labelledby="goormthon-introduce">
         <div class="flex flex-col items-center gap-3 relative">
           <svg
@@ -591,12 +510,12 @@
             </svg>
           </div>
           <img
-            class="absolute left-0 w-30 hidden sm:block lg:w-[15vw] lg:max-w-[220px]"
+            class="absolute left-0 w-30 hidden md:block lg:w-[15vw] lg:max-w-[220px]"
             src="/public/images/flower-pink.png"
             alt=""
             aria-hidden="true" />
           <img
-            class="absolute right-0 w-30 hidden sm:block lg:w-[15vw] lg:max-w-[220px]"
+            class="absolute right-0 w-30 hidden md:block lg:w-[15vw] lg:max-w-[220px]"
             src="/public/images/flower-pink2.png"
             alt=""
             aria-hidden="true" />
@@ -617,8 +536,8 @@
           <!-- 카드 1 -->
           <div class="flex flex-col items-start">
             <div
-              class="w-[18.75rem] h-[12.5rem] sm:w-[25rem] sm:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem]"></div>
-            <p class="mt-2 font-extrabold text-[1.125rem] sm:text-[1.5625rem]">
+              class="w-[18.75rem] h-[12.5rem] md:w-[25rem] md:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem]"></div>
+            <p class="mt-2 font-extrabold text-[1.125rem] md:text-[1.5625rem]">
               연합 스터디
             </p>
           </div>
@@ -626,8 +545,8 @@
           <!-- 카드 2 -->
           <div class="flex flex-col items-start">
             <div
-              class="w-[18.75rem] h-[12.5rem] sm:w-[25rem] sm:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem]"></div>
-            <p class="mt-2 font-extrabold text-[1.125rem] sm:text-[1.5625rem]">
+              class="w-[18.75rem] h-[12.5rem] md:w-[25rem] md:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem]"></div>
+            <p class="mt-2 font-extrabold text-[1.125rem] md:text-[1.5625rem]">
               연합 해커톤
             </p>
           </div>
@@ -635,7 +554,9 @@
       </section>
 
       <!-- 경인지부대학교 -->
-      <section aria-labelledby="goormthon-univ" class="px-5 py-14">
+      <section
+        aria-labelledby="goormthon-univ"
+        class="px-5 py-14 max-w-[1440px] mx-auto">
         <h2
           id="goormthon-univ"
           class="text-center text-28 font-extrabold text-itc-black100 break-keep mb-12">
@@ -658,16 +579,18 @@
       </section>
 
       <!-- 경인지부일정 -->
-      <section aria-labelledby="goormthon-plan" class="px-5 py-14">
+      <section
+        aria-labelledby="goormthon-plan"
+        class="px-5 py-14 max-w-[1440px] mx-auto">
         <h2
           id="goormthon-plan"
           class="text-center text-28 font-extrabold text-itc-black100 break-keep mb-12">
           경인지부 일정
         </h2>
         <figure
-          class="rounded-[30px] bg-itc-gray100 px-6 pt-5 pb-10 sm:py-6 flex flex-col gap-8 sm:grid sm:grid-cols-[200px_1fr] w-[320px] sm:w-full sm:max-w-[700px] mx-auto">
+          class="rounded-[30px] bg-itc-gray100 px-6 pt-5 pb-10 md:py-6 flex flex-col gap-8 md:grid md:grid-cols-[200px_1fr] w-[300px] md:w-full md:max-w-[700px] mx-auto">
           <picture
-            class="w-[250px] h-[250px] sm:w-[200px] sm:h-[200px] rounded-[25px] bg-itc-gray200 self-center overflow-hidden">
+            class="w-[250px] h-[250px] md:w-[200px] md:h-[200px] rounded-[25px] bg-itc-gray200 self-center overflow-hidden">
             <img src="" srcset="" sizes="" alt="" />
           </picture>
           <figcaption class="break-keep md:w-[calc(100% - 300px)]">
@@ -683,7 +606,7 @@
       <!-- 구유4기트랙소개 -->
       <section
         aria-labelledby="goormthon-track"
-        class="px-5 sm:px-20 lg:px-40 py-14 overflow-hidden">
+        class="px-5 md:px-20 lg:px-40 py-14 overflow-hidden max-w-[1440px] mx-auto">
         <div class="flex flex-col gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1001,7 +924,7 @@
             </svg>
 
             <img
-              class="w-30 absolute -top-4 left-[320px]"
+              class="w-30 absolute -top-4 left-[320px] hidden sm:block"
               src="/public/images/flower-group.png"
               alt=""
               aria-hidden="true" />
@@ -1016,74 +939,30 @@
           구름톤 유니브 4기 경인지부의 다양한 파트별 <br />
           스터디에 대해서 소개해 드릴게요.
         </p>
-        <div class="flex gap-2 my-15">
+        <div class="flex gap-2 my-15 overflow-x-auto">
           <button
-            class="font-bold text-16 py-2 px-5 rounded-[3.125rem] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white">
+            class="font-bold text-16 py-2 px-5 rounded-[3.125rem] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white hover:duration-300 hover:from-(--color-itc-blue700) hover:to-(--color-itc-purple600) focus:transition-colors focus:duration-300 focus:from-(--color-itc-blue700) focus:to-(--color-itc-purple600)">
             Total
           </button>
-          <button
-            class="font-bold text-16 py-2 px-5 rounded-[3.125rem] text-white border-2 border-transparent"
-            style="
-              background-image: linear-gradient(#fff, #fff),
-                linear-gradient(
-                  to bottom,
-                  var(--color-itc-blue500),
-                  var(--color-itc-purple500)
-                );
-              background-origin: border-box;
-              background-clip: padding-box, border-box;
-            ">
+          <button class="btn-gradient rounded-[3.125rem]">
             <span
               class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
               PM
             </span>
           </button>
-          <button
-            class="font-bold text-16 py-2 px-5 rounded-[3.125rem] text-white border-2 border-transparent"
-            style="
-              background-image: linear-gradient(#fff, #fff),
-                linear-gradient(
-                  to bottom,
-                  var(--color-itc-blue500),
-                  var(--color-itc-purple500)
-                );
-              background-origin: border-box;
-              background-clip: padding-box, border-box;
-            ">
+          <button class="btn-gradient rounded-[3.125rem]">
             <span
               class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
               DE
             </span>
           </button>
-          <button
-            class="font-bold text-16 py-2 px-5 rounded-[3.125rem] text-white border-2 border-transparent"
-            style="
-              background-image: linear-gradient(#fff, #fff),
-                linear-gradient(
-                  to bottom,
-                  var(--color-itc-blue500),
-                  var(--color-itc-purple500)
-                );
-              background-origin: border-box;
-              background-clip: padding-box, border-box;
-            ">
+          <button class="btn-gradient rounded-[3.125rem]">
             <span
               class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
               FE
             </span>
           </button>
-          <button
-            class="font-bold text-16 py-2 px-5 rounded-[3.125rem] text-white border-2 border-transparent"
-            style="
-              background-image: linear-gradient(#fff, #fff),
-                linear-gradient(
-                  to bottom,
-                  var(--color-itc-blue500),
-                  var(--color-itc-purple500)
-                );
-              background-origin: border-box;
-              background-clip: padding-box, border-box;
-            ">
+          <button class="btn-gradient rounded-[3.125rem]">
             <span
               class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
               BE
