@@ -21,7 +21,9 @@
   --color-itc-blue700: #4fa4ff;
   --color-itc-blue800: #3986fa;
 
+  --color-itc-purple100: #f3e8ff;
   --color-itc-purple500: #a45bec;
+  --color-itc-purple600: #822cd8;
 
   --color-itc-pink100: #ffb6d6;
   --color-itc-pink200: #ff90b8;
@@ -90,8 +92,10 @@
   /* 애니메이션 */
   --animate-move-topbar: move-topbar 0.3s linear 0s 1 normal forwards;
   --animate-move-bottombar: move-bottombar 0.3s linear 0s 1 normal forwards;
-  --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal forwards;
-  --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1 normal forwards;
+  --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal
+    forwards;
+  --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1
+    normal forwards;
 
   @keyframes move-topbar {
     0% {
@@ -178,5 +182,43 @@
   }
   .main-card-swiper > .swiper-wrapper {
     transition-timing-function: linear;
+  }
+
+  .btn-gradient {
+    @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent;
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(
+        to bottom,
+        var(--color-itc-blue500),
+        var(--color-itc-purple500)
+      );
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .btn-gradient:hover {
+    @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent transition-all duration-300;
+    background-image: linear-gradient(
+        var(--color-itc-blue100),
+        var(--color-itc-purple100)
+      ),
+      linear-gradient(
+        to bottom,
+        var(--color-itc-blue500),
+        var(--color-itc-purple500)
+      );
+  }
+
+  .btn-gradient:focus {
+    @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent transition-all duration-300 outline-none;
+    background-image: linear-gradient(
+        var(--color-itc-blue100),
+        var(--color-itc-purple100)
+      ),
+      linear-gradient(
+        to bottom,
+        var(--color-itc-blue500),
+        var(--color-itc-purple500)
+      );
   }
 }
