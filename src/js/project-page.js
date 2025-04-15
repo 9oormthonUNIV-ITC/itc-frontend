@@ -5,6 +5,64 @@ document.addEventListener("DOMContentLoaded", () => {
   const cancelBtn = document.getElementById("cancelBtn");
   const submitBtn = document.getElementById("submitBtn");
 
+  const cardContainer = document.querySelector(".grid");
+
+  // 👉 상세 모달 요소 추가
+  const detailModal = document.getElementById("detail-modal");
+  const detailCloseBtn = document.getElementById("detailCloseBtn");
+
+  // 👉 카드 클릭 시 모달 띄우기
+  const openDetailModal = (project) => {
+    console.log("프로젝트 상세 보기", project);
+
+    // ✨ 상세 모달에 값 넣기
+    document.getElementById("detail-title").textContent = project.title;
+    document.getElementById("detail-desc").textContent = project.desc;
+    document.getElementById("detail-members").textContent = project.members;
+
+    // ✨ 상세 모달 띄우기
+    detailModal.classList.remove("hidden");
+  };
+
+  // 👉 상세 모달 닫기
+  detailCloseBtn.addEventListener("click", () => {
+    detailModal.classList.add("hidden");
+  });
+
+  // 👉 서버에서 프로젝트 불러와서 카드 렌더링
+  const renderProjects = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/projects");
+      const projects = await res.json();
+
+      projects.forEach((project) => {
+        const card = document.createElement("div");
+        card.className =
+          "flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer";
+        card.dataset.id = project.id;
+
+        card.innerHTML = `
+            <div class="w-[18.75rem] h-[12.5rem] bg-itc-gray300 rounded-[1rem]"></div>
+            <p class="mt-1 font-extrabold text-18 sm:text-25">${project.title}</p>
+            <p class="truncate overflow-hidden whitespace-nowrap w-full text-itc-gray400 text-12 mt-1 font-medium">
+              ${project.desc}
+            </p>
+          `;
+
+        card.addEventListener("click", () => openDetailModal(project));
+        cardContainer.appendChild(card);
+      });
+    } catch (err) {
+      console.error("프로젝트 로드 실패", err);
+    }
+  };
+
+  // 페이지 로딩 시 실행
+  renderProjects();
+
+  // ============================================================== //
+  // 🦁 모달창
+  // ============================================================== //
   // 🚀 모달 열기
   editButton.addEventListener("click", () => {
     modal.classList.remove("hidden");
