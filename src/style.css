@@ -99,7 +99,8 @@
   --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal forwards;
   --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1 normal forwards;
   --animate-sidenav-open: sidenav-open 0.3s linear 0s 1 normal forwards;
-
+  --animate-card-mobile-left: card-left 10s linear infinite;
+  --animate-card-left: card-left 20s linear infinite;
   @keyframes move-topbar {
     0% {
       translate: 0 0;
@@ -176,8 +177,35 @@
       right: 0;
     }
   }
+  @keyframes move-bottombar-reverse {
+    0% {
+      translate: 0 -8px;
+      rotate: -45deg;
+      scale: 1.4 1;
+    }
+    50% {
+      translate: 0 -8px;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    100% {
+      translate: 0 0;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+  }
+
+  @keyframes card-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 @layer components {
+  /* 햄버거메뉴 */
   .hamburger {
     .hamburger-top-bar {
       animation: var(--animate-move-topbar);
@@ -199,6 +227,7 @@
     animation-play-state: paused;
   }
 
+  /* [Component:btn-gradient]*/
   .btn-gradient {
     @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent;
     background-image: linear-gradient(#fff, #fff), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
@@ -215,4 +244,9 @@
     @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent transition-all duration-300 outline-none;
     background-image: linear-gradient(var(--color-itc-blue100), var(--color-itc-purple100)), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
   }
+}
+
+/* [Component:main-card-img] */
+.card-linear:hover {
+  animation-play-state: paused;
 }
