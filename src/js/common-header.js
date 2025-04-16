@@ -12,7 +12,6 @@ function mobileNavToggle() {
   } else {
     mobileNavOpen();
   }
-  switchHamburgerIcon();
 }
 
 function mobileNavClose() {
@@ -21,6 +20,7 @@ function mobileNavClose() {
   show_mobile_nav_flag = false;
   tg1.classList.add("hidden");
   tg2.classList.add("hidden");
+  switchHamburgerIcon();
 }
 
 function mobileNavOpen() {
@@ -29,6 +29,7 @@ function mobileNavOpen() {
   show_mobile_nav_flag = true;
   tg1.classList.remove("hidden");
   tg2.classList.remove("hidden");
+  switchHamburgerIcon();
 }
 
 function checkResize() {
