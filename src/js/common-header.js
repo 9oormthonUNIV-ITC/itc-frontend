@@ -29,7 +29,15 @@ function mobileNavOpen() {
   show_mobile_nav_flag = true;
   tg1.classList.remove("hidden");
   tg2.classList.remove("hidden");
+  sidenavOpenAnimate();
   switchHamburgerIcon();
+}
+
+function sidenavOpenAnimate() {
+  let sidenav = document.querySelector(".sidenav");
+  sidenav.style.animation = "none";
+  sidenav.style.animation = "var(--animate-sidenav-open)";
+  sidenav.style.animationPlayState = "running";
 }
 
 function checkResize() {
