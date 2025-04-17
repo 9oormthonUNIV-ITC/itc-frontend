@@ -62,7 +62,26 @@
           <h2 class="text-[1.5rem] font-extrabold text-itc-black900">계정 설정</h2>
         </div>
       </section>
-      <div class="flex"></div>
+      <section class="flex flex-col gap-4 mx-8 my-6 px-6 py-6 bg-itc-gray200 rounded-[0.625rem]">
+        <h3 class="text-20 font-bold">프로필 정보</h3>
+        <form action="/" class="contents">
+          <div class="flex flex-col gap-2 font-normal">
+            <label for="user-name" class="text-15 text-itc-gray400"> 사용자 이름 </label>
+            <input id="user-name" name="user-name" type="text" class="bg-white border text-14 border-[#AFAFAF] rounded-[10px] py-3 px-3 outline-none placeholder-[#AFAFAF] focus:border-itc-blue700 focus:bg-itc-blue100" placeholder="사용자 이름" required />
+          </div>
+          <div class="flex flex-col gap-2 font-normal">
+            <label for="user-email" class="text-15 text-itc-gray400"> 사용자 이메일 </label>
+            <input id="user-email" name="user-email" type="email" class="bg-white border text-14 border-[#AFAFAF] rounded-[10px] py-3 px-3 outline-none placeholder-[#AFAFAF] focus:border-itc-blue700 focus:bg-itc-blue100" placeholder="사용자 이메일" required />
+          </div>
+          <div class="flex justify-between">
+            <button type="button" class="inline-block py-2 px-0">탈퇴</button>
+            <div class="flex gap-4">
+              <button type="reset" class="outline-none font-bold text-16 py-2 px-4 rounded-[3.125rem] bg-[#a6a6a6] text-white hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">취소</button>
+              <button type="submit" class="outline-none font-bold text-16 py-2 px-4 rounded-[3.125rem] bg-itc-blue700 text-white hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">저장</button>
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
     <footer class="w-full h-[15.625rem] border-t-2 border-itc-gray300 bg-white flex flex-col justify-center space-y-4 px-8">
       <!-- 상단 텍스트 -->
