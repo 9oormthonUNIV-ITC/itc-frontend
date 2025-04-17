@@ -96,11 +96,18 @@
   /* 애니메이션 */
   --animate-move-topbar: move-topbar 0.3s linear 0s 1 normal forwards;
   --animate-move-bottombar: move-bottombar 0.3s linear 0s 1 normal forwards;
-  --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal forwards;
-  --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1 normal forwards;
+  --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal
+    forwards;
+  --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1
+    normal forwards;
   --animate-sidenav-open: sidenav-open 0.3s linear 0s 1 normal forwards;
-  --animate-card-mobile-left: card-left 10s linear infinite;
+  --animate-card-mobile-left: card-left 15s linear infinite;
   --animate-card-left: card-left 20s linear infinite;
+
+  --animate-item-rotate1: item-rotate 10s linear infinite;
+  --animate-item-rotate2: item-rotate 18s linear infinite;
+  --animate-item-rotate3: item-rotate 12s linear infinite;
+
   @keyframes move-topbar {
     0% {
       translate: 0 0;
@@ -194,13 +201,22 @@
       scale: 1 1;
     }
   }
-
+  /* 메인페이지 섹션5 카드슬라이드 */
   @keyframes card-left {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+  /* 메인페이지 섹션1 회전 */
+  @keyframes item-rotate {
+    0% {
+      rotate: 0;
+    }
+    100% {
+      rotate: 1turn;
     }
   }
 }
@@ -230,19 +246,40 @@
   /* [Component:btn-gradient]*/
   .btn-gradient {
     @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(
+        to bottom,
+        var(--color-itc-blue500),
+        var(--color-itc-purple500)
+      );
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
 
   .btn-gradient:hover {
     @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent transition-all duration-300;
-    background-image: linear-gradient(var(--color-itc-blue100), var(--color-itc-purple100)), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+    background-image: linear-gradient(
+        var(--color-itc-blue100),
+        var(--color-itc-purple100)
+      ),
+      linear-gradient(
+        to bottom,
+        var(--color-itc-blue500),
+        var(--color-itc-purple500)
+      );
   }
 
   .btn-gradient:focus {
     @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent transition-all duration-300 outline-none;
-    background-image: linear-gradient(var(--color-itc-blue100), var(--color-itc-purple100)), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+    background-image: linear-gradient(
+        var(--color-itc-blue100),
+        var(--color-itc-purple100)
+      ),
+      linear-gradient(
+        to bottom,
+        var(--color-itc-blue500),
+        var(--color-itc-purple500)
+      );
   }
 }
 
