@@ -100,6 +100,13 @@
     forwards;
   --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1
     normal forwards;
+  --animate-sidenav-open: sidenav-open 0.3s linear 0s 1 normal forwards;
+  --animate-card-mobile-left: card-left 15s linear infinite;
+  --animate-card-left: card-left 20s linear infinite;
+
+  --animate-item-rotate1: item-rotate 10s linear infinite;
+  --animate-item-rotate2: item-rotate 18s linear infinite;
+  --animate-item-rotate3: item-rotate 12s linear infinite;
 
   @keyframes move-topbar {
     0% {
@@ -169,8 +176,52 @@
       scale: 1 1;
     }
   }
+  @keyframes sidenav-open {
+    0% {
+      right: -100%;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  @keyframes move-bottombar-reverse {
+    0% {
+      translate: 0 -8px;
+      rotate: -45deg;
+      scale: 1.4 1;
+    }
+    50% {
+      translate: 0 -8px;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    100% {
+      translate: 0 0;
+      rotate: 0deg;
+      scale: 1 1;
+    }
+  }
+  /* 메인페이지 섹션5 카드슬라이드 */
+  @keyframes card-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  /* 메인페이지 섹션1 회전 */
+  @keyframes item-rotate {
+    0% {
+      rotate: 0;
+    }
+    100% {
+      rotate: 1turn;
+    }
+  }
 }
 @layer components {
+  /* 햄버거메뉴 */
   .hamburger {
     .hamburger-top-bar {
       animation: var(--animate-move-topbar);
@@ -187,7 +238,12 @@
   .main-card-swiper > .swiper-wrapper {
     transition-timing-function: linear;
   }
+  .sidenav {
+    animation: var(--animate-sidenav-open);
+    animation-play-state: paused;
+  }
 
+  /* [Component:btn-gradient]*/
   .btn-gradient {
     @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent;
     background-image: linear-gradient(#fff, #fff),
@@ -225,4 +281,9 @@
         var(--color-itc-purple500)
       );
   }
+}
+
+/* [Component:main-card-img] */
+.card-linear:hover {
+  animation-play-state: paused;
 }
