@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("detail-desc").textContent = project.desc;
     document.getElementById("detail-members").textContent = project.members;
 
+    // ✅ 이미지 설정
+    const imageElement = document.getElementById("detail-image");
+    if (project.image) {
+      imageElement.src = project.image;
+      imageElement.classList.remove("hidden");
+    } else {
+      imageElement.src = "";
+      imageElement.classList.add("hidden");
+    }
+
     // ✨ 상세 모달 띄우기
     detailModal.classList.remove("hidden");
   };
@@ -42,7 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
         card.dataset.id = project.id;
 
         card.innerHTML = `
-            <div class="w-[18.75rem] h-[12.5rem] bg-itc-gray300 rounded-[1rem]"></div>
+            <div class="w-[18.75rem] h-[12.5rem] bg-itc-gray300 rounded-[1rem] overflow-hidden">
+              ${
+                project.image
+                  ? `<img src="${project.image}" class="w-full h-full object-cover"/>`
+                  : ""
+              }
+            </div>
             <p class="mt-1 font-extrabold text-18 sm:text-25">${project.title}</p>
             <p class="truncate overflow-hidden whitespace-nowrap w-full text-itc-gray400 text-12 mt-1 font-medium">
               ${project.desc}
@@ -80,37 +96,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🚀 저장 버튼 클릭 -> json-server로 POST 요청
   submitBtn.addEventListener("click", async () => {
-    // ✏️ 각 input과 textarea에서 사용자가 입력한 값을 가져오기
-    // 💬 .value는 input 태그의 실제 입력값
     const title = document.getElementById("project-title").value;
     const desc = document.getElementById("project-desc").value;
     const members = document.getElementById("project-members").value;
 
-    // ⛓️ title, desc, members 값을 data 객체로 묶음
+    // 🔥 이미지 파일 가져오기
+    const imageInput = document.getElementById("project-image");
+    const imageFile = imageInput.files[0];
+
+    // 🔥 이미지 base64 인코딩 함수
+    const toBase64 = (file) =>
+      new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+      });
+
+    let imageBase64 = "";
+    if (imageFile) {
+      try {
+        imageBase64 = await toBase64(imageFile);
+      } catch (e) {
+        console.error("이미지 인코딩 실패", e);
+        alert("이미지 업로드 중 오류 발생");
+        return;
+      }
+    }
+
+    // 🔥 image 필드 포함
     const data = {
       title,
       desc,
       members,
+      image: imageBase64,
     };
 
     try {
-      // 🚀 awiat fetch() 서버에 데이터 전송(비동기)
       const res = await fetch("http://localhost:3000/projects", {
         method: "POST",
-        // 🚀 보낼 데이터가 JSON이라는 의미
         headers: {
           "Content-Type": "application/json",
         },
-        // 🚀 객체를 JSON 문자열로 바꿔서 보냄
         body: JSON.stringify(data),
       });
 
-      // ✅ 응답코드가 true(200~299)가 아니면 에러 alert 표시
       if (!res.ok) throw new Error("Post 요청 Error");
       alert("프로젝트 등록 완료");
-
-      // 💬 성공 시 hidden 클래스 추가로 모달창 자동 닫힘
       modal.classList.add("hidden");
+
+      // 🔥 새로고침 없이 새 카드 렌더링
+      const newProject = await res.json();
+      cardContainer.innerHTML = ""; // 기존 카드 초기화
+      renderProjects(); // 다시 렌더링
     } catch (err) {
       console.log(err);
       alert("프로젝트 등록 중 err 발생");
