@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.querySelector("svg");
   const cancelBtn = document.getElementById("cancelBtn");
   const submitBtn = document.getElementById("submitBtn");
+  const deleteBtn = document.getElementById("delete-btn");
 
   const cardContainer = document.querySelector(".grid");
 
@@ -20,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("detail-desc").textContent = project.desc;
     document.getElementById("detail-members").textContent = project.members;
 
+    // 🚀 project id값 저장
+    detailModal.dataset.id = project.id;
+
     // ✅ 이미지 설정
     const imageElement = document.getElementById("detail-image");
     if (project.image) {
@@ -33,6 +37,34 @@ document.addEventListener("DOMContentLoaded", () => {
     // ✨ 상세 모달 띄우기
     detailModal.classList.remove("hidden");
   };
+
+  // 👉 카드 삭제 클릭 이벤트
+  deleteBtn.addEventListener("click", async () => {
+    const projectId = detailModal.dataset.id;
+
+    if (!projectId) {
+      alert("삭제할 프로젝트를 찾을 수 없습니다.");
+      return;
+    }
+    const confirmDelete = confirm("정말로 삭제하시겠습니까?");
+    if (!confirmDelete) {
+      return;
+    }
+
+    try {
+      const res = await fetch(`http://localhost:3000/projects/${projectId}`, {
+        method: "DELETE",
+      });
+      if (!res.ok) throw new Error("삭제 요청 실패");
+      alert("프로젝트 삭제 완료");
+      detailModal.classList.add("hidden");
+      cardContainer.innerHTML = ""; // 기존 카드 초기화
+      renderProjects(); // 다시 렌더링
+    } catch (err) {
+      console.error("프로젝트 삭제 실패", err);
+      alert("프로젝트 삭제 중 오류 발생");
+    }
+  });
 
   // 👉 상세 모달 닫기
   detailCloseBtn.addEventListener("click", () => {
