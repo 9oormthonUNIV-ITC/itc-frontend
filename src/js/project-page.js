@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cancelBtn = document.getElementById("cancelBtn");
   const submitBtn = document.getElementById("submitBtn");
   const deleteBtn = document.getElementById("delete-btn");
+  const updateBtn = document.getElementById("update-btn");
 
   const cardContainer = document.querySelector(".grid");
 
@@ -66,6 +67,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  //================================================== //
+  // 👉 카드 수정
+  updateBtn.addEventListener("click", async () => {
+    // 🚀 수정할 프로젝트 id 가져오기
+    const id = detailModal.dataset.id;
+    if (!id) {
+      alert("수정할 프로젝트를 찾을 수 없습니다.");
+      return;
+    }
+
+    // 🚀 수정할 데이터 가져오기
+    const updateData = {
+      title: prompt("수정할 제목 입력"),
+      desc: prompt("수정할 설명 입력"),
+      members: prompt("수정할 멤버 입력"),
+    };
+
+    try {
+      const res = await fetch(`http://localhost:3000/projects/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateData),
+      });
+      if (!res.ok) throw new Error("수정 요청 실패");
+      alert("프로젝트 수정 완료");
+      detailModal.classList.add("hidden");
+      cardContainer.innerHTML = ""; // 기존 카드 초기화
+      renderProjects(); // 다시 렌더링
+    } catch (err) {
+      console.error(err);
+      alert("프로젝트 수정 중 오류 발생");
+    }
+  });
+  //================================================== //
   // 👉 상세 모달 닫기
   detailCloseBtn.addEventListener("click", () => {
     detailModal.classList.add("hidden");
