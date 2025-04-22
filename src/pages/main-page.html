@@ -57,7 +57,7 @@
       class="shadow-[0_1px_1px_0_rgba(0,_0,_0,_0.10)] bg-white z-30 fixed top-0 left-0 w-full px-5 flex justify-between md:justify-center md:mx-auto items-center">
       <div
         class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-18">
-        <h1 class="h-20 content-center">
+        <h1 class="content-center h-20">
           <a href="/">
             <svg
               width="186"
@@ -98,10 +98,10 @@
             </svg>
           </a>
         </h1>
-        <nav class="flex-grow-1 gap-10 lg:gap-18 hidden md:flex">
-          <a href="#void" class="text-20 font-bold">프로젝트</a>
-          <a href="#void" class="text-20 font-bold">피드</a>
-          <a href="#void" class="text-20 font-bold">마이페이지</a>
+        <nav class="hidden gap-10 flex-grow-1 lg:gap-18 md:flex">
+          <a href="#void" class="font-bold text-20">프로젝트</a>
+          <a href="#void" class="font-bold text-20">피드</a>
+          <a href="#void" class="font-bold text-20">마이페이지</a>
         </nav>
         <a
           href="#void"
@@ -109,18 +109,18 @@
           >로그인</a
         >
         <div
-          class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"></div>
+          class="fixed top-0 left-0 z-40 hidden w-screen h-screen bg-black sidenav-outside opacity-40 md:hidden"></div>
         <div
-          class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden md:hidden">
-          <ul class="pt-20 flex flex-col gap-4 md:hidden">
-            <li class="border-b ml-4">
-              <a href="#void" class="text-30 font-bold">프로젝트</a>
+          class="fixed top-0 right-0 z-50 hidden w-3/5 h-screen bg-white sidenav md:hidden">
+          <ul class="flex flex-col gap-4 pt-20 md:hidden">
+            <li class="ml-4 border-b">
+              <a href="#void" class="font-bold text-30">프로젝트</a>
             </li>
-            <li class="border-b ml-4">
-              <a href="#void" class="text-30 font-bold">피드</a>
+            <li class="ml-4 border-b">
+              <a href="#void" class="font-bold text-30">피드</a>
             </li>
-            <li class="border-b ml-4">
-              <a href="#void" class="text-30 font-bold">마이페이지</a>
+            <li class="ml-4 border-b">
+              <a href="#void" class="font-bold text-30">마이페이지</a>
             </li>
             <li class="ml-4">
               <a
@@ -133,13 +133,13 @@
         </div>
         <button
           type="button"
-          class="hamburger flex flex-col justify-center gap-1 md:hidden z-60 w-8 h-8">
+          class="flex flex-col justify-center w-8 h-8 gap-1 hamburger md:hidden z-60">
           <span
-            class="hamburger-top-bar block w-8 h-1 rounded-full bg-black"></span>
+            class="block w-8 h-1 bg-black rounded-full hamburger-top-bar"></span>
           <span
-            class="hamburger-middle-bar block w-8 h-1 rounded-full bg-black"></span>
+            class="block w-8 h-1 bg-black rounded-full hamburger-middle-bar"></span>
           <span
-            class="hamburger-bottom-bar block w-8 h-1 rounded-full bg-black"></span>
+            class="block w-8 h-1 bg-black rounded-full hamburger-bottom-bar"></span>
         </button>
       </div>
     </header>
@@ -148,6 +148,7 @@
     <main class="pt-20 mx-auto tracking-tighter lg:pt-0 no-closet">
       <!-- 경인지부 더알아보기 -->
       <section
+        id="mainSection01"
         aria-labelledby="goormthon-more"
         class="h-[300px] md:h-[600px] lg:h-screen bg-itc-blue100">
         <div
@@ -164,10 +165,10 @@
               src="/public/images/main-cloud.svg"
               alt=""
               aria-hidden="true"
-              class="absolute w-24 left-36 -bottom-1 md:left-[16rem] lg:left-[23rem] lg:bottom-2.5 md:-bottom-1.5 md:w-[11rem] lg:w-[12rem] max-[400px]:left-30 xl:left-[27.5rem] xl:bottom-7" />
+              class="absolute w-24 left-36 -bottom-1 md:left-[16rem] lg:left-[23rem] lg:bottom-2.5 md:-bottom-1.5 md:w-[11rem] lg:w-[12rem] xl:w-[15rem] max-[400px]:left-30 xl:left-[27.5rem] xl:bottom-2" />
           </div>
           <button
-            class="outline-none font-bold text-16 py-2 px-4 rounded-[3.125rem] bg-itc-blue700 text-white flex gap-2 items-center hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">
+            class="outline-none font-bold text-16 lg:text-24 py-2 px-4 lg:px-6 ml-2 sm:ml-4 rounded-[3.125rem] bg-itc-blue700 text-white flex gap-2 items-center hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -187,12 +188,12 @@
             <img
               src="/public/images/main-flower1.svg"
               alt=""
-              class="relative opacity-0 sm:opacity-100 -left-8 xl:-left-30 animate-item-rotate1 xl:top-5"
+              class="relative opacity-0 sm:opacity-100 -left-8 xl:left-10 2xl:-left-30 animate-item-rotate1 xl:top-5"
               aria-hidden="true" />
             <img
               src="/public/images/main-flower2.svg"
               alt=""
-              class="animate-item-rotate2 relative xl:left-4"
+              class="relative animate-item-rotate2 xl:left-4"
               aria-hidden="true" />
             <img
               src="/public/images/main-flower3.svg"
@@ -204,7 +205,8 @@
       </section>
 
       <!-- 경인지부소개 -->
-      <section
+      <section        
+        id="mainSection02"
         class="px-5 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen bg-itc-white max-w-[1440px] mx-auto"
         aria-labelledby="goormthon-introduce">
         <div class="flex flex-col items-center justify-center w-full h-full">
@@ -268,6 +270,7 @@
 
       <!-- 경인지부대학교 -->
       <section
+        id="mainSection03"
         aria-labelledby="goormthon-univ"
         class="px-5 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen max-w-[1440px] mx-auto">
         <div class="flex flex-col items-center justify-center w-full h-full">
@@ -307,7 +310,8 @@
       </section>
 
       <!-- 경인지부일정 -->
-      <section
+      <section  
+        id="mainSection04"
         aria-labelledby="goormthon-plan"
         class="pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen max-w-[1440px] mx-auto px-10">
         <div class="flex flex-col items-center justify-center w-full h-full">
@@ -415,10 +419,11 @@
 
       <!-- 구유4기트랙소개 -->
       <section
+        id="mainSection05"
         aria-labelledby="goormthon-track"
         class="px-5 md:px-20 lg:px-40 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen overflow-hidden max-w-[1440px] mx-auto">
         <div
-          class="flex flex-col justify-center items-center md:items-start w-full h-full">
+          class="flex flex-col items-center justify-center w-full h-full md:items-start">
           <div class="flex flex-col items-center gap-3 w-fit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -867,7 +872,7 @@
 
     <!-- Footer -->
     <footer
-      class="w-full h-[15.625rem] border-t-2 border-itc-gray300 bg-white flex flex-col justify-center space-y-4 px-8">
+      class="w-full h-[15.625rem] border-t-2 border-itc-gray300 bg-white flex flex-col justify-center space-y-4 px-8 mt-8">
       <!-- 상단 텍스트 -->
       <p class="font-bold text-25 text-itc-black900 max-[48rem]:text-16">
         Being All Seasons with 9oormthonUNIV
@@ -923,5 +928,24 @@
         <div class="w-6 h-6 rounded-full bg-itc-gray300"></div>
       </div>
     </footer>
+
+    <!-- Aside-->
+     <aside class="fixed lg:right-12 xl:right-0 xl:[left:calc(50%+600px)] bottom-40 hidden lg:flex flex-col items-center w-8 z-2">
+      <a href="#mainSection01" class="w-8 h-10 flex items-center justify-center">
+        <span class="aside-btn"></span>
+      </a>
+      <a href="#mainSection02"  class="w-8 h-10 flex items-center justify-center">
+        <span class="aside-btn"></span>
+      </a>
+      <a href="#mainSection03"  class="w-8 h-10 flex items-center justify-center ">
+        <span class="aside-btn"></span>
+      </a>
+      <a href="#mainSection04"  class="w-8 h-10 flex items-center justify-center">
+        <span class="aside-btn"></span>
+      </a>
+      <a href="#mainSection05"  class="w-8 h-10 flex items-center justify-center">
+        <span class="aside-btn"></span>
+      </a>
+     </aside>
   </body>
 </html>
