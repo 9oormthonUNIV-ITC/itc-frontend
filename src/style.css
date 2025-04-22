@@ -281,9 +281,20 @@
         var(--color-itc-purple500)
       );
   }
+
+  .aside-btn{
+    @apply inline-flex w-3 h-3 rounded-full bg-itc-gray200 transition-all duration-200
+  }
 }
 
 /* [Component:main-card-img] */
 .card-linear:hover {
   animation-play-state: paused;
+}
+
+.active{
+  .aside-btn{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
