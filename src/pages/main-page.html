@@ -759,45 +759,56 @@
           </p>
           <div class="flex gap-2 my-10 overflow-x-auto">
             <button
-              class="font-bold text-16 py-2 px-5 rounded-[3.125rem] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white hover:duration-300 hover:from-(--color-itc-blue700) hover:to-(--color-itc-purple600) focus:transition-colors focus:duration-300 focus:from-(--color-itc-blue700) focus:to-(--color-itc-purple600)">
-              Total
+              class="btn-gradient active"
+              data-type="ALL">
+              <span class=inner-text>
+                All
+              </span>
             </button>
-            <button class="btn-gradient rounded-[3.125rem]">
+            <button 
+              class="btn-gradient"
+               data-type="PM">
               <span
-                class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
+                class="inner-text">
                 PM
               </span>
             </button>
-            <button class="btn-gradient rounded-[3.125rem]">
+            <button 
+              class="btn-gradient"
+               data-type="DE">
               <span
-                class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
+                class="inner-text">
                 DE
               </span>
             </button>
-            <button class="btn-gradient rounded-[3.125rem]">
+            <button 
+              class="btn-gradient"
+               data-type="FE">
               <span
-                class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
+                class="inner-text">
                 FE
               </span>
             </button>
-            <button class="btn-gradient rounded-[3.125rem]">
+            <button 
+              class="btn-gradient"
+               data-type="BE">
               <span
-                class="text-transparent bg-clip-text bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500)">
+                class="inner-text">
                 BE
               </span>
             </button>
           </div>
           <ul
             class="relative flex gap-4 card-linear -left-20 lg:-left-40 animate-card-mobile-left lg:animate-card-left">
-            <li>
+            <li data-type="DE">
               <div
                 class="block w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray100 p-10">
                 <p class="font-bold text-30">
-                  text text text text text text text text
+                  DE DE DE DE
                 </p>
               </div>
             </li>
-            <li>
+            <li data-type="DE">
               <figure
                 class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
                 <picture>
@@ -808,15 +819,15 @@
                 </figcaption>
               </figure>
             </li>
-            <li>
+            <li data-type="DE">
               <div
                 class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
                 <p class="font-bold text-30">
-                  text text text text text text text text
+                  DE DE DE DE
                 </p>
               </div>
             </li>
-            <li>
+            <li data-type="FE">
               <figure
                 class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
                 <picture>
@@ -827,15 +838,15 @@
                 </figcaption>
               </figure>
             </li>
-            <li>
+            <li data-type="FE">
               <div
                 class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
                 <p class="font-bold text-30">
-                  text text text text text text text text
+                  FE FE FE FE
                 </p>
               </div>
             </li>
-            <li>
+            <li data-type="FE">
               <figure
                 class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
                 <picture>
@@ -846,15 +857,53 @@
                 </figcaption>
               </figure>
             </li>
-            <li>
+            <li data-type="PM">
               <div
                 class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
                 <p class="font-bold text-30">
-                  text text text text text text text text
+                  PM PM PM PM PM
                 </p>
               </div>
             </li>
-            <li>
+            <li data-type="PM">
+              <figure
+                class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
+                <picture>
+                  <img src="" sizes="" alt="" />
+                </picture>
+                <figcaption class="sr-only">
+                  <p>카드 이미지</p>
+                </figcaption>
+              </figure>
+            </li> 
+            <li data-type="PM">
+              <div
+                class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
+                <p class="font-bold text-30">
+                  PM PM PM PM PM
+                </p>
+              </div>
+            </li>
+            <li data-type="BE">
+              <figure
+                class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
+                <picture>
+                  <img src="" sizes="" alt="" />
+                </picture>
+                <figcaption class="sr-only">
+                  <p>카드 이미지</p>
+                </figcaption>
+              </figure>
+            </li> 
+            <li data-type="BE">
+              <div
+                class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100 p-10">
+                <p class="font-bold text-30">
+                  BE BE BE BE BE
+                </p>
+              </div>
+            </li>
+            <li data-type="BE">
               <figure
                 class="block w-[300px] h-[300px] rounded-[20px] bg-itc-gray100">
                 <picture>

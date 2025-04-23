@@ -243,45 +243,6 @@
     animation-play-state: paused;
   }
 
-  /* [Component:btn-gradient]*/
-  .btn-gradient {
-    @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent;
-    background-image: linear-gradient(#fff, #fff),
-      linear-gradient(
-        to bottom,
-        var(--color-itc-blue500),
-        var(--color-itc-purple500)
-      );
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-  }
-
-  .btn-gradient:hover {
-    @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent transition-all duration-300;
-    background-image: linear-gradient(
-        var(--color-itc-blue100),
-        var(--color-itc-purple100)
-      ),
-      linear-gradient(
-        to bottom,
-        var(--color-itc-blue500),
-        var(--color-itc-purple500)
-      );
-  }
-
-  .btn-gradient:focus {
-    @apply font-bold text-16 py-2 px-4 rounded-[0.625rem] text-white border-2 border-transparent transition-all duration-300 outline-none;
-    background-image: linear-gradient(
-        var(--color-itc-blue100),
-        var(--color-itc-purple100)
-      ),
-      linear-gradient(
-        to bottom,
-        var(--color-itc-blue500),
-        var(--color-itc-purple500)
-      );
-  }
-
   .aside-btn{
     @apply inline-flex w-3 h-3 rounded-full bg-itc-gray200 transition-all duration-200
   }
@@ -292,9 +253,76 @@
   animation-play-state: paused;
 }
 
+/* [Component:aside] */
 .active{
   .aside-btn{
     width: 1.5rem;
     height: 1.5rem;
+  }
+}
+
+/* [Component:btn-gradient] */
+/* 기본 버튼 */
+.btn-gradient {
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  border-radius: 3.125rem;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: var(--color-itc-blue500); /* 원하는 글자색 */
+  transition: all 0.3s ease;
+
+  .inner-text{
+    background: linear-gradient(65deg, var(--color-itc-blue500), var(--color-itc-purple500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* 최신 브라우저용 */
+    color: transparent;
+  }
+
+  &:hover, &:focus{
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    background-image: linear-gradient(
+        var(--color-itc-blue100),
+        var(--color-itc-purple100)
+      ),
+      linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+  }
+}
+
+/* 액티브 상태 */
+.btn-gradient.active {
+  background-image: linear-gradient(
+      to bottom,
+      var(--color-itc-blue500),
+      var(--color-itc-purple500)
+    ),
+    linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  .inner-text{
+    background: linear-gradient(65deg, var(--color-itc-white), var(--color-itc-white));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* 최신 브라우저용 */
+    color: transparent;
+  }
+
+  &:hover, &:focus{
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-itc-blue600),
+        var(--color-itc-purple600)
+      ),
+      linear-gradient(to bottom, var(--color-itc-blue600), var(--color-itc-purple600));
   }
 }
