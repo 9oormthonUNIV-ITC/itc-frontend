@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>feed-card-item - Component</title>
     <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/js/feed-card-item.js"></script>
   </head>
   <body>
     <h1 class="sr-only">피드 카드 아이템 컴포넌트</h1>
     <fieldset class="p-4 m-4 border">
       <legend class="font-semibold">feed-card-item - Component</legend>
-      <a class="flex w-full rounded-[20px] px-9 py-6 border gap-7" href="#void"
-        ><img class="bg-itc-gray200 rounded-[20px] w-[150px] h-[150px] object-cover" src="" alt="link thumbnail" />
-        <div class="grow-1 flex flex-col">
-          <h3 class="font-extrabold text-itc-black100 text-25">Title</h3>
+      <a class="grid grid-cols-1 grid-rows-[150px_1fr] md:grid-cols-[150px_1fr] md:grid-rows-1 w-full rounded-[20px] px-9 py-6 border gap-7" href="#void"
+        ><img class="bg-itc-gray200 rounded-[20px] md:w-[150px] w-full h-[150px] object-cover" src="" alt="link thumbnail" />
+        <div class="grid grid-rows-[1fr_2fr_1fr]">
+          <h3 class="font-extrabold text-itc-black100 text-25 truncate">Title</h3>
           <p class="font-medium text-16 text-itc-gray400 grow-1 truncate">text text</p>
-          <p class="font-medium text-16 text-itc-gray400">text text</p>
+          <p class="block font-medium text-16 text-itc-gray400 truncate">text text</p>
         </div>
       </a>
     </fieldset>

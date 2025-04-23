@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <script type="module" src="/src/js/common-header.js"></script>
-    <script type="module" src="/src/js/feed-card-item.js"></script>
-    <script type="module" src="/src/js/feed-page.js"></script>
     <script type="module" src="/src/main.js"></script>
+    <title>로그인페이지 - 9oormthonUNIV</title>
   </head>
   <body>
-    <!-- header -->
     <header class="w-full px-5 flex justify-between md:justify-center md:mx-auto items-center">
       <div class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-18">
         <h1 class="h-20 content-center">
@@ -59,75 +56,32 @@
         </button>
       </div>
     </header>
-    <!-- main -->
-    <main class="tracking-tighter max-w-[1440px] mx-auto py-10 min-h-[calc(100dvh_-_20.625rem)]">
-      <!-- page-intro -->
+    <main class="tracking-tighter max-w-[1440px] mx-auto pt-10 min-h-[calc(100dvh_-_20.625rem)] font-sans">
       <section class="px-8 py-6 bg-itc-white">
-        <div class="border-b-1 border-itc-black900 pb-1 flex gap-4">
-          <h2 class="text-[1.5rem] font-extrabold text-itc-black900">미르미 피드 둘러보기</h2>
-          <button id="feed-page-edit-btn" class="outline-none font-bold text-16 py-2 px-4 rounded-[3.125rem] bg-itc-blue700 text-white hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">Edit</button>
+        <div class="border-b-1 border-itc-black900 pb-1">
+          <h2 class="text-[1.5rem] font-extrabold text-itc-black900">로그인</h2>
         </div>
       </section>
-
-      <!-- modal -->
-      <div id="feed-page-edit-modal" class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center">
-        <div id="feed-page-edit-inner-modal" class="bg-white py-8 px-10 w-[600px] rounded-[10px]">
-          <div class="flex flex-col gap-25 relative">
-            <div id="feed-page-close-btn" class="absolute top-2 right-0 text-[#828282]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23" fill="none">
-                <path d="M21 2.85706L1.80008 20.7744" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-                <line x1="1.5" y1="-1.5" x2="27.7944" y2="-1.5" transform="matrix(0.724138 0.689655 0.724138 -0.689655 1.7998 0.571411)" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="flex flex-col gap-6">
-              <p class="font-semibold text-25 text-000">게시글 등록</p>
-              <div class="flex flex-col gap-2 font-normal">
-                <label for="user-title" class="font-semibold text-20 text-000">게시글 링크</label>
-                <input id="user-title" name="user-title" type="text" class="bg-white border text-14 border-[#AFAFAF] rounded-[10px] py-3 px-3 outline-none placeholder-[#AFAFAF] focus:border-itc-blue700 focus:bg-itc-blue100" placeholder="게시글 링크를 입력하세요" />
-              </div>
-            </div>
-            <div class="flex justify-end gap-4 mt-8">
-              <button id="feed-page-cancel-btn" class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-[#a6a6a6] text-white">취소</button>
-              <button id="feed-page-submit-btn" class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-itc-blue700 text-white">저장</button>
-            </div>
-          </div>
+      <section class="flex flex-col gap-4 md:mx-8 my-6 px-10 py-20 md:grid md:grid-cols-2 md:items-center md:justify-center md:gap-10 lg:py-30">
+        <div class="w-[10rem] mx-auto sm:max-w-[20rem] md:m-0 md:ms-auto md:w-full">
+          <img src="/public/images/login-9oorm.png" alt="" aria-hidden="true" class="max-w-full">
         </div>
-      </div>
-
-      <!-- list -->
-      <ul class="grid grid-cols-2 md:flex md:flex-col gap-10 max-w-[90rem] px-20">
-        <li>
-          <a class="grid grid-cols-1 grid-rows-[150px_1fr] md:grid-cols-[150px_1fr] md:grid-rows-1 w-full rounded-[20px] px-9 py-6 border gap-7" href="#void"
-            ><img class="bg-itc-gray200 rounded-[20px] md:w-[150px] w-full h-[150px] object-cover" src="" alt="link thumbnail" />
-            <div class="grid grid-rows-[1fr_2fr_1fr]">
-              <h3 class="font-extrabold text-itc-black100 text-25 truncate">Title</h3>
-              <p class="font-medium text-16 text-itc-gray400 grow-1 truncate">text text</p>
-              <p class="block font-medium text-16 text-itc-gray400 truncate">text text</p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a class="grid grid-cols-1 grid-rows-[150px_1fr] md:grid-cols-[150px_1fr] md:grid-rows-1 w-full rounded-[20px] px-9 py-6 border gap-7" href="#void"
-            ><img class="bg-itc-gray200 rounded-[20px] md:w-[150px] w-full h-[150px] object-cover" src="" alt="link thumbnail" />
-            <div class="grid grid-rows-[1fr_2fr_1fr]">
-              <h3 class="font-extrabold text-itc-black100 text-25 truncate">Title</h3>
-              <p class="font-medium text-16 text-itc-gray400 grow-1 truncate">text text</p>
-              <p class="block font-medium text-16 text-itc-gray400 truncate">text text</p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a class="grid grid-cols-1 grid-rows-[150px_1fr] md:grid-cols-[150px_1fr] md:grid-rows-1 w-full rounded-[20px] px-9 py-6 border gap-7" href="#void"
-            ><img class="bg-itc-gray200 rounded-[20px] md:w-[150px] w-full h-[150px] object-cover" src="" alt="link thumbnail" />
-            <div class="grid grid-rows-[1fr_2fr_1fr]">
-              <h3 class="font-extrabold text-itc-black100 text-25 truncate">Title</h3>
-              <p class="font-medium text-16 text-itc-gray400 grow-1 truncate">text text</p>
-              <p class="block font-medium text-16 text-itc-gray400 truncate">text text</p>
-            </div>
-          </a>
-        </li>
-      </ul>
+        <div class="space-y-6">
+          <h2 class="text-center md:text-start text-20 md:text-32 font-extrabold break-keep">
+            9oormthonUniv에 <br/>
+            오신걸 환영합니다.
+          </h2>
+          <button class="mx-auto md:m-0 flex items-center gap-4 outline-none font-bold text-14 py-2 px-4 rounded-[0.625rem] border-1 bg-white text-itc-gray400 border-itc-gray200 hover:transition-colors hover:duration-300 hover:bg-itc-gray100 focus:transition-colors focus:duration-300 focus:bg-itc-gray100">
+            <span class="w-6">
+              <img src="/public/images/google-icon.png" alt="" aria-hidden="true">
+            </span>
+            <span class="break-keep">Google 계정으로 로그인</span>
+          </button>
+        </div>
+      </section>
     </main>
+
+    <!-- footer -->
     <footer class="w-full h-[15.625rem] border-t-2 border-itc-gray300 bg-white flex flex-col justify-center space-y-4 px-8">
       <!-- 상단 텍스트 -->
       <p class="font-bold text-25 text-itc-black900 max-[48rem]:text-16">Being All Seasons with 9oormthonUNIV</p>
