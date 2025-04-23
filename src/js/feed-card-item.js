@@ -66,3 +66,5 @@ async function generateBlogPreviews() {
 
 // 실행
 generateBlogPreviews();
+
+export { getLinkData };
