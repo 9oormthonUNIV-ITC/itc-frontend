@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="module" src="/src/js/common-header.js"></script>
+    <script type="module" src="/src/js/feed-card-item.js"></script>
+    <script type="module" src="/src/js/feed-page.js"></script>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
+    <!-- header -->
     <header class="w-full px-5 flex justify-between md:justify-center md:mx-auto items-center">
       <div class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-18">
         <h1 class="h-20 content-center">
@@ -56,12 +59,42 @@
         </button>
       </div>
     </header>
+    <!-- main -->
     <main class="tracking-tighter max-w-[1440px] mx-auto py-10 min-h-[calc(100dvh_-_20.625rem)]">
+      <!-- page-intro -->
       <section class="px-8 py-6 bg-itc-white">
-        <div class="border-b-1 border-itc-black900 pb-1">
+        <div class="border-b-1 border-itc-black900 pb-1 flex gap-4">
           <h2 class="text-[1.5rem] font-extrabold text-itc-black900">미르미 피드 둘러보기</h2>
+          <button id="feed-page-edit-btn" class="outline-none font-bold text-16 py-2 px-4 rounded-[3.125rem] bg-itc-blue700 text-white hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">Edit</button>
         </div>
       </section>
+
+      <!-- modal -->
+      <div id="feed-page-edit-modal" class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center">
+        <div id="feed-page-edit-inner-modal" class="bg-white py-8 px-10 w-[600px] rounded-[10px]">
+          <div class="flex flex-col gap-25 relative">
+            <div id="feed-page-close-btn" class="absolute top-2 right-0 text-[#828282]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23" fill="none">
+                <path d="M21 2.85706L1.80008 20.7744" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                <line x1="1.5" y1="-1.5" x2="27.7944" y2="-1.5" transform="matrix(0.724138 0.689655 0.724138 -0.689655 1.7998 0.571411)" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="flex flex-col gap-6">
+              <p class="font-semibold text-25 text-000">게시글 등록</p>
+              <div class="flex flex-col gap-2 font-normal">
+                <label for="user-title" class="font-semibold text-20 text-000">게시글 링크</label>
+                <input id="user-title" name="user-title" type="text" class="bg-white border text-14 border-[#AFAFAF] rounded-[10px] py-3 px-3 outline-none placeholder-[#AFAFAF] focus:border-itc-blue700 focus:bg-itc-blue100" placeholder="게시글 링크를 입력하세요" />
+              </div>
+            </div>
+            <div class="flex justify-end gap-4 mt-8">
+              <button id="feed-page-cancel-btn" class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-[#a6a6a6] text-white">취소</button>
+              <button id="feed-page-submit-btn" class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-itc-blue700 text-white">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- list -->
       <ul class="grid grid-cols-2 md:flex md:flex-col gap-10 max-w-[90rem] px-20">
         <li>
           <a class="grid grid-cols-1 grid-rows-[150px_1fr] md:grid-cols-[150px_1fr] md:grid-rows-1 w-full rounded-[20px] px-9 py-6 border gap-7" href="#void"
