@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="module" src="/src/js/common-header.js"></script>
-    <script type="module" src="/src/js/feed-card-item.js"></script>
+    <!-- <script type="module" src="/src/js/feed-card-item.js"></script> -->
     <script type="module" src="/src/js/feed-page.js"></script>
     <script type="module" src="/src/main.js"></script>
   </head>
@@ -70,7 +70,7 @@
       </section>
 
       <!-- modal -->
-      <div id="feed-page-edit-modal" class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center">
+      <div id="feed-page-edit-modal" class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center hidden">
         <div id="feed-page-edit-inner-modal" class="bg-white py-8 px-10 w-[600px] rounded-[10px]">
           <div class="flex flex-col gap-25 relative">
             <div id="feed-page-close-btn" class="absolute top-2 right-0 text-[#828282]">
@@ -82,8 +82,8 @@
             <div class="flex flex-col gap-6">
               <p class="font-semibold text-25 text-000">게시글 등록</p>
               <div class="flex flex-col gap-2 font-normal">
-                <label for="user-title" class="font-semibold text-20 text-000">게시글 링크</label>
-                <input id="user-title" name="user-title" type="text" class="bg-white border text-14 border-[#AFAFAF] rounded-[10px] py-3 px-3 outline-none placeholder-[#AFAFAF] focus:border-itc-blue700 focus:bg-itc-blue100" placeholder="게시글 링크를 입력하세요" />
+                <label for="feed-link" class="font-semibold text-20 text-000">게시글 링크</label>
+                <input id="feed-link" name="feed-link" type="text" class="bg-white border text-14 border-[#AFAFAF] rounded-[10px] py-3 px-3 outline-none placeholder-[#AFAFAF] focus:border-itc-blue700 focus:bg-itc-blue100" placeholder="게시글 링크를 입력하세요" />
               </div>
             </div>
             <div class="flex justify-end gap-4 mt-8">
@@ -95,7 +95,7 @@
       </div>
 
       <!-- list -->
-      <ul class="grid grid-cols-2 md:flex md:flex-col gap-10 max-w-[90rem] px-20">
+      <ul id="feed-list" class="grid grid-cols-2 md:flex md:flex-col gap-10 max-w-[90rem] px-20">
         <li>
           <a class="grid grid-cols-1 grid-rows-[150px_1fr] md:grid-cols-[150px_1fr] md:grid-rows-1 w-full rounded-[20px] px-9 py-6 border gap-7" href="#void"
             ><img class="bg-itc-gray200 rounded-[20px] md:w-[150px] w-full h-[150px] object-cover" src="" alt="link thumbnail" />
