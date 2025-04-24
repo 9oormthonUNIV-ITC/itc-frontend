@@ -99,8 +99,8 @@
   --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal forwards;
   --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1 normal forwards;
   --animate-sidenav-open: sidenav-open 0.3s linear 0s 1 normal forwards;
-  --animate-card-mobile-left: card-left 15s linear infinite;
-  --animate-card-left: card-left 20s linear infinite;
+  --animate-card-mobile-left: card-left 50s linear infinite;
+  --animate-card-left: card-left 40s linear infinite;
 
   --animate-item-rotate1: item-rotate 10s linear infinite;
   --animate-item-rotate2: item-rotate 18s linear infinite;
@@ -286,54 +286,90 @@
 }
 
 /* [Component:btn-gradient] */
-/* 기본 버튼 */
+/* 버튼 Default */
 .btn-gradient {
-  font-weight: bold;
-  font-size: 16px;
+  position: relative;
+  display: inline-block;
   padding: 0.5rem 1rem;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
   border-radius: 3.125rem;
-  border: 2px solid transparent;
-  background-image: linear-gradient(white, white), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
   background-origin: border-box;
-  background-clip: padding-box, border-box;
-  color: var(--color-itc-blue500); /* 원하는 글자색 */
-  transition: all 0.3s ease;
-
-  .inner-text {
-    background: linear-gradient(65deg, var(--color-itc-blue500), var(--color-itc-purple500));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text; /* 최신 브라우저용 */
-    color: transparent;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s linear;
+  
+  /* 그라데이션 테두리와 배경을 위한 가상 요소 */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    padding: 3px;
+    border-radius: 3.125rem;
+    background: linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -2;
+  }
+  
+  /* 채워지는 배경 효과를 위한 가상 요소 */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+    border-radius: 3rem;
+    z-index: -1;
+    transition: width 0.3s ease;
   }
 
-  &:hover,
-  &:focus {
-    font-weight: bold;
-    font-size: 16px;
-    padding: 0.5rem 1rem;
-    border: 2px solid transparent;
-    transition: all 0.3s;
-    background-image: linear-gradient(var(--color-itc-blue100), var(--color-itc-purple100)), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+  .inner-text {
+    position: relative;
+    background: linear-gradient(65deg, var(--color-itc-blue500), var(--color-itc-purple500));
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover / Focus */
+  &:hover::before,
+  &:focus::before {
+    width: 100%;
+  }
+
+  &:hover, &:focus {
+    outline:none;
+
+    .inner-text {
+      background: linear-gradient(65deg, var(--color-itc-white), var(--color-itc-white));
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
 
-/* 액티브 상태 */
+/* 버튼 Active */
 .btn-gradient.active {
-  background-image: linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500)), linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  &::before {
+    width: 100%;
+  }
 
   .inner-text {
     background: linear-gradient(65deg, var(--color-itc-white), var(--color-itc-white));
+    background-clip: text;
+    color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text; /* 최신 브라우저용 */
-    color: transparent;
-  }
-
-  &:hover,
-  &:focus {
-    background-image: linear-gradient(to bottom, var(--color-itc-blue600), var(--color-itc-purple600)), linear-gradient(to bottom, var(--color-itc-blue600), var(--color-itc-purple600));
   }
 }
