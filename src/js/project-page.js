@@ -1,13 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const editButton = document.getElementById("editBtn");
   const modal = document.getElementById("modal");
+  const modalContent = document.getElementById("modal-content");
   const closeBtn = document.querySelector("svg"); // 닫기 버튼
   const cancelBtn = document.getElementById("cancelBtn");
   const submitBtn = document.getElementById("submitBtn");
   const deleteBtn = document.getElementById("delete-btn");
   const updateBtn = document.getElementById("update-btn");
-
   const cardContainer = document.querySelector(".grid");
+
+  // ============================================================== //
+  function closeModal() {
+    modal.classList.add("hidden");
+  }
+  // 👉 모달창 배경 클릭 감지
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
 
   // ============================================================== //
   // 🦁 에딧 모달창 로직
