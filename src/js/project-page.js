@@ -10,13 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardContainer = document.querySelector(".grid");
 
   // ============================================================== //
-  function closeModal() {
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
     modal.classList.add("hidden");
   }
-  // 👉 모달창 배경 클릭 감지
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal();
+  // 👉 에딧 모달창 배경 클릭 감지
+  const editModal = document.getElementById("modal");
+  editModal.addEventListener("click", (e) => {
+    if (e.target === editModal) {
+      closeModal("modal");
+    }
+  });
+  // 👉 상세 모달창 배경 클릭 감지
+  const detailModal = document.getElementById("detail-modal");
+  detailModal.addEventListener("click", (e) => {
+    if (e.target === detailModal) {
+      detailModal.classList.add("hidden");
     }
   });
 
@@ -126,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 👉 상세 모달 구현
   // ============================================================== //
   // 👉 상세 모달 요소 추가
-  const detailModal = document.getElementById("detail-modal");
+  // const detailModal = document.getElementById("detail-modal");
   const detailCloseBtn = document.getElementById("detailCloseBtn");
 
   // 👉 카드 클릭 시 모달 띄우기
