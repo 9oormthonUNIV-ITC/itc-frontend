@@ -15,9 +15,10 @@
       id="modal"
       class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center hidden"
     >
+      <!-- 🚀 모달창 모바일 수정 -->
       <div
         id="modal-content"
-        class="bg-white py-8 px-12 w-[600px] border rounded-[10px]"
+        class="bg-white py-8 px-6 w-full sm:max-w-[600px] sm:mx-auto mx-0 sm:rounded-[10px] rounded-none border relative max-h-screen overflow-y-auto"
       >
         <div class="space-y-6 relative">
           <h2 class="text-25 font-semibold text-black">프로젝트 등록</h2>
@@ -166,14 +167,13 @@
       id="detail-modal"
       class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center hidden"
     >
+      <!-- 🚀 모달창 모바일 수정 -->
       <div
-        class="bg-white pt-22 pb-8 px-10 w-[600px] border rounded-[10px] relative"
+        class="bg-white pt-22 pb-8 px-6 w-full sm:max-w-[600px] sm:mx-auto mx-0 border rounded-none sm:rounded-[10px] relative max-h-screen sm:max-h-none overflow-y-auto"
       >
-        <button id="update-btn">수정</button>
-        <button id="delete-btn">삭제</button>
         <!-- 닫기 버튼 -->
         <div
-          class="absolute top-4 right-4 text-[#828282] cursor-pointer"
+          class="absolute top-7 right-7 text-[#828282] cursor-pointer"
           id="detailCloseBtn"
         >
           <svg
@@ -214,7 +214,7 @@
             <!-- ✅ 이미지 태그 추가 -->
             <img
               id="detail-image"
-              class="w-full h-[25rem] object-cover rounded-[5px] mt-2"
+              class="w-full h-[20rem] object-cover rounded-[5px] mt-2"
               src=""
               alt="프로젝트 이미지"
             />
@@ -227,6 +227,21 @@
               class="text-16 text-itc-gray800 whitespace-pre-wrap mt-2"
             ></div>
           </div>
+        </div>
+        <!-- 하단 버튼 영역 -->
+        <div class="flex justify-end gap-2 mt-6">
+          <button
+            id="update-btn"
+            class="bg-itc-blue700 text-white px-4 py-2 rounded-lg"
+          >
+            수정
+          </button>
+          <button
+            id="delete-btn"
+            class="bg-itc-gray400 text-white px-4 py-2 rounded-lg"
+          >
+            삭제
+          </button>
         </div>
       </div>
     </div>
