@@ -99,8 +99,8 @@
   --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal forwards;
   --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1 normal forwards;
   --animate-sidenav-open: sidenav-open 0.3s linear 0s 1 normal forwards;
-  --animate-card-mobile-left: card-left 15s linear infinite;
-  --animate-card-left: card-left 20s linear infinite;
+  --animate-card-mobile-left: card-left 50s linear infinite;
+  --animate-card-left: card-left 40s linear infinite;
 
   --animate-item-rotate1: item-rotate 10s linear infinite;
   --animate-item-rotate2: item-rotate 18s linear infinite;
@@ -298,7 +298,7 @@
   background-origin: border-box;
   overflow: hidden;
   z-index: 1;
-  transition: all 0.3s ease;
+  transition: all 0.4s linear;
   
   /* 그라데이션 테두리와 배경을 위한 가상 요소 */
   &::after {
@@ -348,7 +348,7 @@
 
   &:hover, &:focus {
     outline:none;
-    
+
     .inner-text {
       background: linear-gradient(65deg, var(--color-itc-white), var(--color-itc-white));
       background-clip: text;
