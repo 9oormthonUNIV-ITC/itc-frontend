@@ -10,6 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardContainer = document.querySelector(".grid");
 
   // ============================================================== //
+  // 🚀 캐릭터 애니메이션 작업
+  const frames = document.querySelectorAll(".svg-frame");
+  let current = 0;
+
+  function showNextFrame() {
+    frames.forEach((frame, index) => {
+      frame.classList.add("hidden"); // 다 숨겨
+      if (index === current) {
+        frame.classList.remove("hidden"); // 지금 보여줄 것만 보여
+      }
+    });
+    current = (current + 1) % frames.length; // 다음 프레임으로 이동
+  }
+
+  // 200ms마다 showNextFrame 실행
+  setInterval(showNextFrame, 150);
+
+  // ============================================================== //
   function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.classList.add("hidden");
