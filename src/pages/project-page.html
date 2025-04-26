@@ -245,15 +245,14 @@
         </div>
       </div>
     </div>
-
     <header
-      class="w-screen px-5 flex justify-between md:justify-center md:mx-auto items-center"
+      class="shadow-[0_1px_1px_0_rgba(0,_0,_0,_0.10)] bg-white z-30 fixed top-0 left-0 w-full px-5 flex justify-between md:justify-center md:mx-auto items-center"
     >
       <div
-        class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-[70px]"
+        class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-18"
       >
-        <h1 class="py-5">
-          <a href="./main-page.html">
+        <h1 class="h-20 content-center">
+          <a href="/">
             <svg
               width="186"
               height="20"
@@ -304,13 +303,13 @@
             </svg>
           </a>
         </h1>
-        <nav class="flex-grow-1 gap-10 lg:gap-[70px] hidden md:flex">
-          <a href="./project-page.html" class="text-20 font-bold">프로젝트</a>
-          <a href="./feed-page.html" class="text-20 font-bold">피드</a>
-          <a href="./mypage-page.html" class="text-20 font-bold">마이페이지</a>
+        <nav class="flex-grow-1 gap-10 lg:gap-18 hidden md:flex">
+          <a href="#void" class="text-20 font-bold">프로젝트</a>
+          <a href="#void" class="text-20 font-bold">피드</a>
+          <a href="#void" class="text-20 font-bold">마이페이지</a>
         </nav>
         <a
-          href="./login-page.html"
+          href="#void"
           class="font-bold text-20 py-3 px-5 rounded-[0.625rem] bg-itc-blue700 text-white hidden md:flex"
           >로그인</a
         >
@@ -318,9 +317,9 @@
           class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"
         ></div>
         <div
-          class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden"
+          class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden md:hidden"
         >
-          <ul class="pt-15 flex flex-col gap-4">
+          <ul class="pt-20 flex flex-col gap-4 md:hidden">
             <li class="border-b ml-4">
               <a href="#void" class="text-30 font-bold">프로젝트</a>
             </li>
@@ -339,15 +338,23 @@
             </li>
           </ul>
         </div>
-        <button type="button" class="hamburger flex flex-col gap-1 md:hidden">
-          <span class="block w-8 h-1 rounded-full bg-black"></span>
-          <span class="block w-8 h-1 rounded-full bg-black"></span>
-          <span class="block w-8 h-1 rounded-full bg-black"></span>
+        <button
+          type="button"
+          class="hamburger flex flex-col justify-center gap-1 md:hidden z-60 w-8 h-8"
+        >
+          <span
+            class="hamburger-top-bar block w-8 h-1 rounded-full bg-black"
+          ></span>
+          <span
+            class="hamburger-middle-bar block w-8 h-1 rounded-full bg-black"
+          ></span>
+          <span
+            class="hamburger-bottom-bar block w-8 h-1 rounded-full bg-black"
+          ></span>
         </button>
       </div>
     </header>
-
-    <main class="max-w-[67.5rem] mx-auto px-6 flex-grow">
+    <main class="max-w-[67.5rem] mx-auto px-6 flex-grow mt-20">
       <div class="w-full mt-10 flex justify-center">
         <svg
           width="600"
