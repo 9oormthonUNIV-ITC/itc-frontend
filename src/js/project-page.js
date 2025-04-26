@@ -8,11 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const deleteBtn = document.getElementById("delete-btn");
   const updateBtn = document.getElementById("update-btn");
   const cardContainer = document.querySelector(".grid");
+  const cards = cardContainer.querySelectorAll(".project-card");
+  const emptyText = document.getElementById("empty-text");
 
   // ============================================================== //
   // 🚀 캐릭터 애니메이션 작업
   const frames = document.querySelectorAll(".svg-frame");
   let current = 0;
+
+  // 카드가 있는지 없는지 검사
+  if (cards.length === 0) {
+    emptyText.classList.remove("hidden");
+    setInterval(showNextFrame, 200); // 카드 없을 때만 애니메이션 시작
+  } else {
+    emptyText.classList.add("hidden");
+  }
 
   function showNextFrame() {
     frames.forEach((frame, index) => {
@@ -25,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 200ms마다 showNextFrame 실행
-  setInterval(showNextFrame, 150);
+  // setInterval(showNextFrame, 4000);
 
   // ============================================================== //
   function closeModal(modalId) {
