@@ -32,6 +32,11 @@
           <a href="/src/pages/mypage-page.html" class="text-20 font-bold text-black hover:text-itc-blue600 focus-visible:text-itc-blue600 active:text-itc-blue800">마이페이지</a>
         </nav>
         <a href="/src/pages/login-page.html" class="hidden md:flex outline-none font-bold text-16 py-2 px-4 rounded-[0.625rem] bg-itc-blue700 text-white hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">로그인</a>
+        <button type="button" class="hamburger flex flex-col justify-center gap-1 md:hidden z-60 w-8 h-8">
+          <span class="hamburger-top-bar block w-8 h-1 rounded-full bg-black"></span>
+          <span class="hamburger-middle-bar block w-8 h-1 rounded-full bg-black"></span>
+          <span class="hamburger-bottom-bar block w-8 h-1 rounded-full bg-black"></span>
+        </button>
         <div class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"></div>
         <div class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden md:hidden">
           <ul class="pt-20 flex flex-col gap-4 md:hidden">
@@ -49,11 +54,6 @@
             </li>
           </ul>
         </div>
-        <button type="button" class="hamburger flex flex-col justify-center gap-1 md:hidden z-60 w-8 h-8">
-          <span class="hamburger-top-bar block w-8 h-1 rounded-full bg-black"></span>
-          <span class="hamburger-middle-bar block w-8 h-1 rounded-full bg-black"></span>
-          <span class="hamburger-bottom-bar block w-8 h-1 rounded-full bg-black"></span>
-        </button>
       </div>
     </header>
   </body>
