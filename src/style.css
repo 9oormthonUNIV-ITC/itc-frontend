@@ -12,7 +12,7 @@
   --color-itc-gray300: #bfbfbf;
   --color-itc-gray400: #838383;
 
-  --color-itc-blue50: #F2F8FF;
+  --color-itc-blue50: #f2f8ff;
   --color-itc-blue100: #e6f2ff;
   --color-itc-blue200: #b8dbff;
   --color-itc-blue300: #96bffc;
@@ -97,8 +97,10 @@
   /* 애니메이션 */
   --animate-move-topbar: move-topbar 0.3s linear 0s 1 normal forwards;
   --animate-move-bottombar: move-bottombar 0.3s linear 0s 1 normal forwards;
-  --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal forwards;
-  --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1 normal forwards;
+  --animate-move-topbar-reverse: move-topbar-reverse 0.3s linear 0s 1 normal
+    forwards;
+  --animate-move-bottombar-reverse: move-bottombar-reverse 0.3s linear 0s 1
+    normal forwards;
   --animate-sidenav-open: sidenav-open 0.3s linear 0s 1 normal forwards;
   --animate-card-mobile-left: card-left 50s linear infinite;
   --animate-card-left: card-left 40s linear infinite;
@@ -107,8 +109,10 @@
   --animate-item-rotate2: item-rotate 18s linear infinite;
   --animate-item-rotate3: item-rotate 12s linear infinite;
 
-  --animate-appear-notice-modal: appear-notice-modal 0.3s ease 0s 1 normal forwards;
-  --animate-disappear-notice-modal: disappear-notice-modal 1s linear 0s 1 normal forwards;
+  --animate-appear-notice-modal: appear-notice-modal 0.3s ease 0s 1 normal
+    forwards;
+  --animate-disappear-notice-modal: disappear-notice-modal 1s linear 0s 1 normal
+    forwards;
 
   @keyframes move-topbar {
     0% {
@@ -300,23 +304,26 @@
   overflow: hidden;
   z-index: 1;
   transition: all 0.4s linear;
-  
+
   /* 그라데이션 테두리와 배경을 위한 가상 요소 */
   &::after {
     content: "";
     position: absolute;
-    inset: 0; 
+    inset: 0;
     padding: 3px;
     border-radius: 3.125rem;
-    background: linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box,
+    background: linear-gradient(
+      to bottom,
+      var(--color-itc-blue500),
+      var(--color-itc-purple500)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: -2;
   }
-  
+
   /* 채워지는 배경 효과를 위한 가상 요소 */
   &::before {
     content: "";
@@ -325,7 +332,11 @@
     left: 0;
     width: 0;
     height: 100%;
-    background-image: linear-gradient(to bottom, var(--color-itc-blue500), var(--color-itc-purple500));
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-itc-blue500),
+      var(--color-itc-purple500)
+    );
     border-radius: 3rem;
     z-index: -1;
     transition: width 0.3s ease;
@@ -333,10 +344,14 @@
 
   .inner-text {
     position: relative;
-    background: linear-gradient(65deg, var(--color-itc-blue500), var(--color-itc-purple500));
+    background: linear-gradient(
+      65deg,
+      var(--color-itc-blue500),
+      var(--color-itc-purple500)
+    );
     background-clip: text;
     color: transparent;
-    -webkit-background-clip: text; 
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
   }
@@ -347,11 +362,16 @@
     width: 100%;
   }
 
-  &:hover, &:focus {
-    outline:none;
+  &:hover,
+  &:focus {
+    outline: none;
 
     .inner-text {
-      background: linear-gradient(65deg, var(--color-itc-white), var(--color-itc-white));
+      background: linear-gradient(
+        65deg,
+        var(--color-itc-white),
+        var(--color-itc-white)
+      );
       background-clip: text;
       color: transparent;
       -webkit-background-clip: text;
@@ -367,10 +387,123 @@
   }
 
   .inner-text {
-    background: linear-gradient(65deg, var(--color-itc-white), var(--color-itc-white));
+    background: linear-gradient(
+      65deg,
+      var(--color-itc-white),
+      var(--color-itc-white)
+    );
     background-clip: text;
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+}
+
+/* [Component:google-btn] */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: WHITE;
+  background-image: none;
+  border: 1px solid #747775;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: "Roboto", arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color 0.218s, border-color 0.218s,
+    box-shadow 0.218s;
+  transition: background-color 0.218s, border-color 0.218s, box-shadow 0.218s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  max-width: 20rem;
+  width: 100%;
+  min-width: min-content;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  margin-right: 12px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.gsi-material-button .gsi-material-button-state {
+  -webkit-transition: opacity 0.218s;
+  transition: opacity 0.218s;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gsi-material-button:disabled {
+  cursor: default;
+  background-color: #ffffff61;
+  border-color: #1f1f1f1f;
+}
+
+.gsi-material-button:disabled .gsi-material-button-contents {
+  opacity: 38%;
+}
+
+.gsi-material-button:disabled .gsi-material-button-icon {
+  opacity: 38%;
+}
+
+.gsi-material-button:not(:disabled):active .gsi-material-button-state,
+.gsi-material-button:not(:disabled):focus .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 12%;
+}
+
+.gsi-material-button:not(:disabled):hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 8%;
 }
