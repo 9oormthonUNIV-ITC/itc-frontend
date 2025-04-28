@@ -251,8 +251,8 @@
       <div
         class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-18"
       >
-        <h1 class="h-20 content-center">
-          <a href="/">
+        <h1 class="h-[65px] content-center">
+          <a href="/src/pages/main-page.html">
             <svg
               width="186"
               height="20"
@@ -304,40 +304,27 @@
           </a>
         </h1>
         <nav class="flex-grow-1 gap-10 lg:gap-18 hidden md:flex">
-          <a href="#void" class="text-20 font-bold">프로젝트</a>
-          <a href="#void" class="text-20 font-bold">피드</a>
-          <a href="#void" class="text-20 font-bold">마이페이지</a>
+          <a
+            href="/src/pages/project-page.html"
+            class="text-20 font-bold text-black hover:text-itc-blue600 focus-visible:text-itc-blue600 active:text-itc-blue800 hover:transition-colors hover:duration-250 outline-0"
+            >프로젝트</a
+          >
+          <a
+            href="/src/pages/feed-page.html"
+            class="text-20 font-bold text-black hover:text-itc-blue600 focus-visible:text-itc-blue600 active:text-itc-blue800 hover:transition-colors hover:duration-250 outline-0"
+            >피드</a
+          >
+          <a
+            href="/src/pages/mypage-page.html"
+            class="text-20 font-bold text-black hover:text-itc-blue600 focus-visible:text-itc-blue600 active:text-itc-blue800 hover:transition-colors hover:duration-250 outline-0"
+            >마이페이지</a
+          >
         </nav>
         <a
-          href="#void"
-          class="font-bold text-20 py-3 px-5 rounded-[0.625rem] bg-itc-blue700 text-white hidden md:flex"
+          href="/src/pages/login-page.html"
+          class="hidden md:flex outline-none font-bold text-16 py-2 px-4 rounded-[0.625rem] bg-itc-blue700 text-white hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800"
           >로그인</a
         >
-        <div
-          class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"
-        ></div>
-        <div
-          class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden md:hidden"
-        >
-          <ul class="pt-20 flex flex-col gap-4 md:hidden">
-            <li class="border-b ml-4">
-              <a href="#void" class="text-30 font-bold">프로젝트</a>
-            </li>
-            <li class="border-b ml-4">
-              <a href="#void" class="text-30 font-bold">피드</a>
-            </li>
-            <li class="border-b ml-4">
-              <a href="#void" class="text-30 font-bold">마이페이지</a>
-            </li>
-            <li class="ml-4">
-              <a
-                href="#void"
-                class="font-bold text-20 py-3 px-5 rounded-[0.625rem] bg-itc-blue700 text-white"
-                >로그인</a
-              >
-            </li>
-          </ul>
-        </div>
         <button
           type="button"
           class="hamburger flex flex-col justify-center gap-1 md:hidden z-60 w-8 h-8"
@@ -352,6 +339,43 @@
             class="hamburger-bottom-bar block w-8 h-1 rounded-full bg-black"
           ></span>
         </button>
+        <div
+          class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"
+        ></div>
+        <div
+          class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden md:hidden"
+        >
+          <ul class="pt-20 flex flex-col gap-4 md:hidden">
+            <li class="border-b ml-4">
+              <a
+                href="/src/pages/project-page.html"
+                class="text-30 font-bold hover:text-itc-blue600 focus-visible:text-itc-blue600 active:text-itc-blue800"
+                >프로젝트</a
+              >
+            </li>
+            <li class="border-b ml-4">
+              <a
+                href="/src/pages/feed-page.html"
+                class="text-30 font-bold hover:text-itc-blue600 focus-visible:text-itc-blue600 active:text-itc-blue800"
+                >피드</a
+              >
+            </li>
+            <li class="border-b ml-4">
+              <a
+                href="/src/pages/mypage-page.html"
+                class="text-30 font-bold hover:text-itc-blue600 focus-visible:text-itc-blue600 active:text-itc-blue800"
+                >마이페이지</a
+              >
+            </li>
+            <li class="ml-4">
+              <a
+                href="/src/pages/login-page.html"
+                class="outline-none font-bold text-16 py-2 px-4 rounded-[0.625rem] bg-itc-blue700 text-white hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800"
+                >로그인</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main class="w-full mx-auto px-6 flex-grow mt-20">
@@ -450,7 +474,7 @@
             </h2>
             <button
               id="editBtn"
-              class="ml-2 font-bold text-18 md:text-22 py-0.5 md:py-1 px-3 md:px-4 rounded-[3.125rem] bg-itc-blue500 transition-all duration-300 ease-in-out hover:bg-itc-blue800 text-white"
+              class="ml-2 font-bold text-18 md:text-22 py-0.5 md:py-1 px-3 md:px-4 rounded-[3.125rem] mb-1 bg-itc-blue500 transition-all duration-300 ease-in-out hover:bg-itc-blue800 text-white"
             >
               edit
             </button>
@@ -464,12 +488,15 @@
         >
           <div
             id="empty-project"
-            class="min-h-[400px] items-center justify-center gap-6 py-10 col-start-2"
+            class="flex flex-col items-center justify-center min-h-[400px] gap-6 py-10 col-start-1 sm:col-start-2"
           >
-            <div id="animation-box" class="w-[250px] h-auto mt-5">
+            <div
+              id="animation-box"
+              class="flex justify-center items-center w-[150px] sm:w-[250px] h-auto mt-5"
+            >
               <div class="svg-frame hidden">
                 <svg
-                  width="250"
+                  width="w-full"
                   height="auto"
                   viewBox="0 0 365 308"
                   fill="none"
@@ -578,7 +605,7 @@
               </div>
               <div class="svg-frame hidden">
                 <svg
-                  width="250"
+                  width="w-full"
                   height="auto"
                   viewBox="0 0 365 308"
                   fill="none"
@@ -687,7 +714,7 @@
               </div>
               <div class="svg-frame hidden">
                 <svg
-                  width="250"
+                  width="w-full"
                   height="auto"
                   viewBox="0 0 365 308"
                   fill="none"
@@ -796,7 +823,7 @@
               </div>
               <div class="svg-frame hidden">
                 <svg
-                  width="250"
+                  width="w-full"
                   height="auto"
                   viewBox="0 0 365 308"
                   fill="none"
@@ -905,7 +932,7 @@
               </div>
               <div class="svg-frame hidden">
                 <svg
-                  width="250"
+                  width="w-full"
                   height="auto"
                   viewBox="0 0 365 308"
                   fill="none"
@@ -1337,7 +1364,7 @@
             </div>
             <div id="empty-text" class="hidden">
               <p
-                class="text-itc-gray400 mt-8 text-center font-bold text-50 whitespace-nowrap font-gmarket"
+                class="text-itc-gray400 mt-8 text-center font-bold text-2xl sm:text-5xl whitespace-nowrap font-gmarket"
               >
                 텅 비었어요...
               </p>
