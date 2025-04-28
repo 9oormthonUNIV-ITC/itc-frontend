@@ -1,6 +1,3 @@
-// import axios from "axios";
-// import { load } from "cheerio";
-import { getLinkPreview, getPreviewFromContent } from "link-preview-js";
 const editBtn = document.getElementById("feed-page-edit-btn");
 const submitBtn = document.getElementById("feed-page-submit-btn");
 const cancelBtn = document.getElementById("feed-page-cancel-btn");
@@ -10,13 +7,12 @@ const innerModal = document.getElementById("feed-page-edit-inner-modal");
 const feedInput = document.getElementById("feed-link");
 const feedList = document.getElementById("feed-list");
 
-// modal.addEventListener("click", closeModal);
 cancelBtn.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 editBtn.addEventListener("click", openModal);
 submitBtn.addEventListener("click", submitLink);
 innerModal.addEventListener("click", preventBubbling());
-
+showFeeds();
 function closeModal() {
   modal.classList.add("hidden");
   feedInput.value = "";
@@ -34,51 +30,65 @@ function preventBubbling() {
 }
 
 async function submitLink() {
-  const newLink = { url: feedInput.value };
-  const newLinkPreview = getLinkPreview(feedInput.value).then((data) => console.log(data));
-  const res = await fetch("http://localhost:3001/links", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newLink),
-  });
-  // const savedLink = await res.json();
-  // console.log(savedLink);
-  // feedList;
-  // const ogData = await getLinkData(feedInput.value);
-  // console.log(ogData);
-  // console.log(getLinkData(feedInput.value));
-  closeModal();
-  createFeedItem();
-}
-// async function getLinkData(url) {
-//   try {
-//     const { data } = await axios.get(url);
-//     const $ = load(data);
+  const newLink = { url: feedInput.value.trim() };
+  try {
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const urlToPreview = encodeURIComponent(newLink.url);
+    const checkRes = await fetch(`http://localhost:3001/links?url=${newLink.url}`);
+    const existingLinks = await checkRes.json();
 
-//     const title = $('meta[property="og:title"]').attr("content") || $("title").text();
-//     const description = $('meta[property="og:description"]').attr("content") || "";
-//     const image = $('meta[property="og:image"]').attr("content") || "";
+    if (existingLinks.length > 0) {
+      closeModal();
+      return;
+    }
+    const res = await fetch(`https://api.linkpreview.net/?key=${apiKey}&q=${urlToPreview}`);
+    if (!res.ok) {
+      console.log(res.status);
+      throw new Error("LinkPreview API 요청 실패");
+    }
 
-//     return {
-//       url,
-//       title,
-//       description,
-//       image,
-//     };
-//   } catch (err) {
-//     console.error(`Failed ${url}: ${err.message}`);
-//     return null;
-//   }
-// }
-async function createFeedItem() {
-  const res = await fetch("http://localhost:3001/links", {
-    method: "GET",
-  });
-  const savedLink = await res.json();
-  for (let i of savedLink) {
-    console.log(i.url);
+    const previewData = await res.json();
+    await fetch(`http://localhost:3001/links`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(previewData),
+    });
+    showFeeds();
+  } catch (error) {
+    console.log("에러 발생:", error);
   }
-  getLinkPreview(savedLink[1].url).then((data) => console.log(data));
+  closeModal();
+}
+
+async function showFeeds() {
+  feedList.innerHTML = "";
+  if (feedList.innerHTML == "") {
+    let feeds = undefined;
+    try {
+      const res = await fetch(`http://localhost:3001/links`);
+      if (!res.ok) throw new Error("링크 불러오기 실패");
+
+      feeds = await res.json();
+      feedList.innerHTML = "";
+      for (let feed of feeds) {
+        feedList.innerHTML += `<li>
+          <a class="border border-[#AFAFAF] hover:border-itc-blue700 focus-visible:border-itc-blue700 active:border-itc-blue800 outline-0 grid grid-cols-1 grid-rows-[150px_1fr] md:grid-cols-[150px_1fr] md:grid-rows-1 w-full rounded-[20px] px-9 py-6 gap-7" href="${feed.url}" target="_blank" rel="noopener noreferrer"
+            ><img class="bg-itc-gray200 rounded-[20px] md:w-[150px] w-full h-[150px] object-cover" src="${feed.image}" alt="link thumbnail" />
+            <div class="grid grid-rows-[1fr_2fr_1fr]">
+              <h3 class="font-extrabold text-itc-black100 text-25 truncate">${feed.title}</h3>
+              <p class="font-medium text-16 text-itc-gray400 grow-1 line-clamp-2">${feed.description}</p>
+              <p class="block font-medium text-16 text-itc-gray400 truncate">${feed.url}</p>
+            </div>
+          </a>
+        </li>`;
+      }
+      console.log(feeds);
+    } catch (err) {
+      console.error(error);
+    }
+  } else {
+    // feedList.innerHTML = `<p>텅 비었어요</p>`;
+  }
 }
