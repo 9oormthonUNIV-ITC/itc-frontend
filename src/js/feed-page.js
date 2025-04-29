@@ -64,7 +64,7 @@ async function submitLink() {
 
 async function showFeeds() {
   feedList.innerHTML = "";
-  if (feedList.innerHTML == "") {
+  if (feedList.innerHTML === "") {
     let feeds = undefined;
     try {
       const res = await fetch(`http://localhost:3001/links`);
@@ -83,6 +83,25 @@ async function showFeeds() {
             </div>
           </a>
         </li>`;
+      }
+      if (feedList.innerHTML === "") {
+        feedList.innerHTML = `<div id="empty-project" class="min-h-[400px] flex flex-col items-center justify-center gap-6 py-10 col-start-2">
+      <div id="animation-box" class="w-[250px] h-[230px]">
+        <img src="/public/images/character-1.svg" alt="" />
+      </div>
+      <div id="empty-text">
+        <p class="text-itc-gray400 text-center font-bold text-50 whitespace-nowrap font-gmarket">텅 비었어요...</p>
+      </div>
+    </div>`;
+        let emptyImg = document.querySelector("#animation-box > img");
+        let imgNo = 1;
+        setInterval(showNextFrame, 200);
+
+        function showNextFrame() {
+          imgNo++;
+          if (imgNo == 8) imgNo = 1;
+          emptyImg.setAttribute("src", `/public/images/character-${imgNo}.svg`);
+        }
       }
       console.log(feeds);
     } catch (err) {
