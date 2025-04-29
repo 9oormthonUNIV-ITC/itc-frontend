@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardContainer = document.querySelector(".grid");
   const cards = cardContainer.querySelectorAll(".project-card");
   const emptyText = document.getElementById("empty-text");
+  let emptyImg = document.querySelector("#animation-box > img");
+  let imgNo = 1;
 
   // ============================================================== //
   // 🚀 캐릭터 애니메이션 작업
@@ -29,13 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function showNextFrame() {
-    frames.forEach((frame, index) => {
-      frame.classList.add("hidden"); // 다 숨겨
-      if (index === current) {
-        frame.classList.remove("hidden"); // 지금 보여줄 것만 보여
-      }
-    });
-    current = (current + 1) % frames.length; // 다음 프레임으로 이동
+    imgNo++;
+    if (imgNo == 8) imgNo = 1;
+    emptyImg.setAttribute("src", `/public/images/character-${imgNo}.svg`);
+    // frames.forEach((frame, index) => {
+    //   frame.classList.add("hidden"); // 다 숨겨
+    //   if (index === current) {
+    //     frame.classList.remove("hidden"); // 지금 보여줄 것만 보여
+    //   }
+    // });
+    // current = (current + 1) % frames.length; // 다음 프레임으로 이동
   }
 
   // 200ms마다 showNextFrame 실행
@@ -252,12 +257,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 기존 데이터 채워넣기
     // 상세 보기 모달 안에 있는 데이터를 수정창 입력란에 미리 복사하기
-    document.getElementById("project-title").value =
-      document.getElementById("detail-title").textContent;
-    document.getElementById("project-desc").value =
-      document.getElementById("detail-desc").textContent;
-    document.getElementById("project-members").value =
-      document.getElementById("detail-members").textContent;
+    document.getElementById("project-title").value = document.getElementById("detail-title").textContent;
+    document.getElementById("project-desc").value = document.getElementById("detail-desc").textContent;
+    document.getElementById("project-members").value = document.getElementById("detail-members").textContent;
 
     // 이미지 파일은 새로 선택하게 한다 (초기화)
     document.getElementById("project-image").value = "";
@@ -285,17 +287,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("div");
         // 카드 요소 생성
 
-        card.className = // card 요소에 클래스 추가
-          "flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer";
+        card.className = "flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer"; // card 요소에 클래스 추가
         card.dataset.id = project.id; // 카드에 프로젝트 ID 추가
 
         card.innerHTML = `
             <div class="w-[18.75rem] h-[12.5rem] bg-itc-gray300 rounded-[1rem] overflow-hidden">
-              ${
-                project.image
-                  ? `<img src="${project.image}" class="w-full h-full object-cover"/>`
-                  : ""
-              }
+              ${project.image ? `<img src="${project.image}" class="w-full h-full object-cover"/>` : ""}
             </div>
             <p class="mt-1 font-extrabold text-18 sm:text-25">${project.title}</p>
             <p class="truncate overflow-hidden whitespace-nowrap w-full text-itc-gray400 text-12 mt-1 font-medium">
