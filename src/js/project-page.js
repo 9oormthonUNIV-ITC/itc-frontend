@@ -19,28 +19,38 @@ document.addEventListener("DOMContentLoaded", () => {
   let current = 0;
   let animationIntervalId = null;
 
-  window.addEventListener("load", () => {
-    const cards = document.querySelectorAll(".project-card");
-    // 카드가 있는지 없는지 검사
+  // window.addEventListener("load", () => {
+  //   // const cards = document.querySelectorAll(".project-card");
+  //   // 카드가 있는지 없는지 검사
+  //   if (cards.length === 0) {
+  //     emptyText.classList.remove("hidden");
+  //     setInterval(showNextFrame, 200); // 카드 없을 때만 애니메이션 시작
+  //   } else {
+  //     emptyText.classList.add("hidden");
+  //   }
+  // });
+
+  const checkAndHandleEmptyState = () => {
     if (cards.length === 0) {
       emptyText.classList.remove("hidden");
-      setInterval(showNextFrame, 200); // 카드 없을 때만 애니메이션 시작
+
+      if (!animationIntervalId) {
+        animationIntervalId = setInterval(showNextFrame, 200);
+      }
     } else {
       emptyText.classList.add("hidden");
+
+      if (animationIntervalId) {
+        clearInterval(animationIntervalId);
+        animationIntervalId = null;
+      }
     }
-  });
+  };
 
   function showNextFrame() {
     imgNo++;
     if (imgNo == 8) imgNo = 1;
     emptyImg.setAttribute("src", `/public/images/character-${imgNo}.svg`);
-    // frames.forEach((frame, index) => {
-    //   frame.classList.add("hidden"); // 다 숨겨
-    //   if (index === current) {
-    //     frame.classList.remove("hidden"); // 지금 보여줄 것만 보여
-    //   }
-    // });
-    // current = (current + 1) % frames.length; // 다음 프레임으로 이동
   }
 
   // 200ms마다 showNextFrame 실행
@@ -315,6 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 페이지 로딩 시 실행
   renderProjects();
+  checkAndHandleEmptyState();
   cardContainer.innerHTML = ""; // 기존 카드 초기화
 
   // ============================================================== //
