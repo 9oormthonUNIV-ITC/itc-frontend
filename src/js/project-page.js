@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let animationIntervalId = null;
 
   window.addEventListener("load", () => {
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".project-card");
     // 카드가 있는지 없는지 검사
     if (cards.length === 0) {
       emptyText.classList.remove("hidden");
@@ -257,9 +257,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 기존 데이터 채워넣기
     // 상세 보기 모달 안에 있는 데이터를 수정창 입력란에 미리 복사하기
-    document.getElementById("project-title").value = document.getElementById("detail-title").textContent;
-    document.getElementById("project-desc").value = document.getElementById("detail-desc").textContent;
-    document.getElementById("project-members").value = document.getElementById("detail-members").textContent;
+    document.getElementById("project-title").value =
+      document.getElementById("detail-title").textContent;
+    document.getElementById("project-desc").value =
+      document.getElementById("detail-desc").textContent;
+    document.getElementById("project-members").value =
+      document.getElementById("detail-members").textContent;
 
     // 이미지 파일은 새로 선택하게 한다 (초기화)
     document.getElementById("project-image").value = "";
@@ -286,8 +289,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // 받아온 project 배열을 순회하며 카드 생성
         const card = document.createElement("div");
         // 카드 요소 생성
-
-        card.className = "flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer"; // card 요소에 클래스 추가
+        card.className =
+          "project-card flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer"; // card 요소에 클래스 추가
         card.dataset.id = project.id; // 카드에 프로젝트 ID 추가
 
         card.innerHTML = `
@@ -312,6 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 페이지 로딩 시 실행
   renderProjects();
+  cardContainer.innerHTML = ""; // 기존 카드 초기화
 
   // ============================================================== //
   // ============================================================== //
