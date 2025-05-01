@@ -484,23 +484,29 @@
 
       <div class="w-full flex justify-center">
         <div
+          id="empty-state"
+          class="flex items-center justify-center min-h-[400px] py-10 hidden"
+        >
+          <div
+            id="animation-box"
+            class="w-[130px] h-[110px] sm:w-[250px] sm:h-[230px]"
+          >
+            <img src="/public/images/character-1.svg" alt="캐릭터 애니메이션" />
+          </div>
+          <p
+            id="empty-text"
+            class="text-itc-gray400 font-bold text-30 sm:text-50 font-gmarket ml-6"
+          >
+            텅 비었어요...
+          </p>
+        </div>
+        <div
+          id="project-grid"
           class="grid grid-cols-1 flex-col sm:grid-cols-2 lg:grid-cols-3 gap-[3.75rem] max-w-[1140px] min-h-[300px]"
         >
           <div
-            id="empty-project"
             class="min-h-[400px] flex flex-col items-center justify-center gap-6 py-10 col-start-2 hidden"
-          >
-            <div id="animation-box" class="w-[250px] h-[230px] hidden">
-              <img src="/public/images/character-1.svg" alt="" />
-            </div>
-            <div id="empty-text" class="hidden">
-              <p
-                class="text-itc-gray400 text-center font-bold text-50 whitespace-nowrap font-gmarket"
-              >
-                텅 비었어요...
-              </p>
-            </div>
-          </div>
+          ></div>
         </div>
       </div>
     </main>
