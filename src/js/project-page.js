@@ -7,10 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("submitBtn");
   const deleteBtn = document.getElementById("delete-btn");
   const updateBtn = document.getElementById("update-btn");
-  const cardContainer = document.querySelector(".grid");
-  const cards = cardContainer.querySelectorAll(".project-card");
-  const emptyText = document.getElementById("empty-text");
+  // const cardContainer = document.querySelector(".grid");
+  // const cards         = cardContainer.querySelectorAll(".project-card");
+  // const emptyText     = document.getElementById("empty-text");
   let emptyImg = document.querySelector("#animation-box > img");
+  const emptyState = document.getElementById("empty-state");
+  const projectGrid = document.getElementById("project-grid");
+  let animationIntervalId = null;
   let imgNo = 1;
 
   // ============================================================== //
@@ -18,25 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const frames = document.querySelectorAll(".svg-frame");
   let current = 0;
 
-  // 카드가 있는지 없는지 검사
-  if (cards.length === 0) {
-    emptyText.classList.remove("hidden");
-    setInterval(showNextFrame, 200); // 카드 없을 때만 애니메이션 시작
-  } else {
-    emptyText.classList.add("hidden");
+  function showNextFrame() {
+    imgNo = imgNo === 7 ? 1 : imgNo + 1;
+    document
+      .querySelector("#animation-box > img")
+      .setAttribute("src", `/public/images/character-${imgNo}.svg`);
   }
+
+  // const checkAndHandleEmptyState = () => {
+  //   if (cards.length === 0) {
+  //     emptyText.classList.remove("hidden");
+
+  //     if (!animationIntervalId) {
+  //       animationIntervalId = setInterval(showNextFrame, 200);
+  //     }
+  //   } else {
+  //     emptyText.classList.add("hidden");
+
+  //     if (animationIntervalId) {
+  //       clearInterval(animationIntervalId);
+  //       animationIntervalId = null;
+  //     }
+  //   }
+  // };
 
   function showNextFrame() {
     imgNo++;
     if (imgNo == 8) imgNo = 1;
     emptyImg.setAttribute("src", `/public/images/character-${imgNo}.svg`);
-    // frames.forEach((frame, index) => {
-    //   frame.classList.add("hidden"); // 다 숨겨
-    //   if (index === current) {
-    //     frame.classList.remove("hidden"); // 지금 보여줄 것만 보여
-    //   }
-    // });
-    // current = (current + 1) % frames.length; // 다음 프레임으로 이동
   }
 
   // 200ms마다 showNextFrame 실행
@@ -156,7 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 공통 작업
       modal.classList.add("hidden"); // 모달 닫기
-      cardContainer.innerHTML = ""; // 기존 카드 지우기 -> 근데 왜 초기화 안됨??
+      // cardContainer.innerHTML = ""; // 기존 카드 지우기 -> 근데 왜 초기화 안됨??
+      projectGrid.innerHTML = "";
       renderProjects(); // 다시 렌더링
     } catch (err) {
       console.error(err);
@@ -229,7 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!res.ok) throw new Error("삭제 요청 실패");
       alert("프로젝트 삭제 완료");
       detailModal.classList.add("hidden");
-      cardContainer.innerHTML = ""; // 화면에 있던 기존 데이터 지우기
+      // cardContainer.innerHTML = ""; // 화면에 있던 기존 데이터 지우기
+      projectGrid.innerHTML = "";
+
       renderProjects(); // 서버에서 다시 카드들 렌더링
     } catch (err) {
       console.error("프로젝트 삭제 실패", err);
@@ -253,9 +268,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 기존 데이터 채워넣기
     // 상세 보기 모달 안에 있는 데이터를 수정창 입력란에 미리 복사하기
-    document.getElementById("project-title").value = document.getElementById("detail-title").textContent;
-    document.getElementById("project-desc").value = document.getElementById("detail-desc").textContent;
-    document.getElementById("project-members").value = document.getElementById("detail-members").textContent;
+    document.getElementById("project-title").value =
+      document.getElementById("detail-title").textContent;
+    document.getElementById("project-desc").value =
+      document.getElementById("detail-desc").textContent;
+    document.getElementById("project-members").value =
+      document.getElementById("detail-members").textContent;
 
     // 이미지 파일은 새로 선택하게 한다 (초기화)
     document.getElementById("project-image").value = "";
@@ -270,23 +288,74 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 👉 서버에서 프로젝트 불러와서 게시글 렌더링
-  const renderProjects = async () => {
+  // const renderProjects = async () => {
+  //   try {
+  //     cardContainer.innerHTML = ""; // 기존 카드 초기화
+  //     const res = await fetch("http://localhost:3000/projects");
+  //     // fetch로 json-server에 GET 요청
+  //     // json-server는 기본적으로 http://localhost:3000/로 실행됨
+  //     const projects = await res.json();
+  //     // 서버가 보낸 data를 json(객체 및 배열)으로 바꿔서 저장
+
+  //     projects.forEach((project) => {
+  //       // 받아온 project 배열을 순회하며 카드 생성
+  //       const card = document.createElement("div");
+  //       // 카드 요소 생성
+  //       card.className =
+  //         "project-card flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer"; // card 요소에 클래스 추가
+  //       card.dataset.id = project.id; // 카드에 프로젝트 ID 추가
+
+  //       card.innerHTML = `
+  //           <div class="w-[18.75rem] h-[12.5rem] bg-itc-gray300 rounded-[1rem] overflow-hidden">
+  //             ${project.image ? `<img src="${project.image}" class="w-full h-full object-cover"/>` : ""}
+  //           </div>
+  //           <p class="mt-1 font-extrabold text-18 sm:text-25">${project.title}</p>
+  //           <p class="truncate overflow-hidden whitespace-nowrap w-full text-itc-gray400 text-12 mt-1 font-medium">
+  //             ${project.desc}
+  //           </p>
+  //         `;
+
+  //       // 카드에 클릭 이벤트 추가하여 클릭 시 상세 모달 열기
+  //       card.addEventListener("click", () => openDetailModal(project));
+  //       cardContainer.appendChild(card); // 만든 카드를 .grid 박스에 넣어버린다.
+  //     });
+  //     // try / catch문으로 감싸서 에러 처리
+  //   } catch (err) {
+  //     console.error("프로젝트 로드 실패", err);
+  //   }
+  // };
+  async function renderProjects() {
     try {
+      // 그리드 초기화
+      projectGrid.innerHTML = "";
+
+      // 서버에서 데이터 가져오기
       const res = await fetch("http://localhost:3000/projects");
-      // fetch로 json-server에 GET 요청
-      // json-server는 기본적으로 http://localhost:3000/로 실행됨
       const projects = await res.json();
-      // 서버가 보낸 data를 json(객체 및 배열)으로 바꿔서 저장
 
-      projects.forEach((project) => {
-        // 받아온 project 배열을 순회하며 카드 생성
-        const card = document.createElement("div");
-        // 카드 요소 생성
+      if (projects.length === 0) {
+        // 글 없을 때
+        emptyState.classList.remove("hidden");
+        projectGrid.classList.add("hidden");
+        if (!animationIntervalId) {
+          animationIntervalId = setInterval(showNextFrame, 200);
+        }
+      } else {
+        // 글 있을 때
+        emptyState.classList.add("hidden");
+        projectGrid.classList.remove("hidden");
+        if (animationIntervalId) {
+          clearInterval(animationIntervalId);
+          animationIntervalId = null;
+        }
 
-        card.className = "flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer"; // card 요소에 클래스 추가
-        card.dataset.id = project.id; // 카드에 프로젝트 ID 추가
-
-        card.innerHTML = `
+        // 카드 생성
+        projects.forEach((project) => {
+          const card = document.createElement("div");
+          card.className =
+            "project-card flex flex-col items-start w-[18.75rem] bg-itc-white cursor-pointer";
+          card.dataset.id = project.id;
+          card.innerHTML = `
             <div class="w-[18.75rem] h-[12.5rem] bg-itc-gray300 rounded-[1rem] overflow-hidden">
               ${project.image ? `<img src="${project.image}" class="w-full h-full object-cover"/>` : ""}
             </div>
@@ -295,20 +364,16 @@ document.addEventListener("DOMContentLoaded", () => {
               ${project.desc}
             </p>
           `;
-
-        // 카드에 클릭 이벤트 추가하여 클릭 시 상세 모달 열기
-        card.addEventListener("click", () => openDetailModal(project));
-        cardContainer.appendChild(card); // 만든 카드를 .grid 박스에 넣어버린다.
-      });
-      // try / catch문으로 감싸서 에러 처리
+          card.addEventListener("click", () => openDetailModal(project));
+          projectGrid.appendChild(card);
+        });
+      }
     } catch (err) {
       console.error("프로젝트 로드 실패", err);
     }
-  };
-
+  }
   // 페이지 로딩 시 실행
   renderProjects();
-
   // ============================================================== //
   // ============================================================== //
 });
