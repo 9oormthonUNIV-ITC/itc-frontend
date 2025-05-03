@@ -221,8 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
       imageElement.src = project.image;
       imageElement.classList.remove("hidden");
     } else {
-      imageElement.src = ""; // 이미지가 없으면 src를 빈 문자열로 설정
-      imageElement.classList.add("hidden"); // 이미지 요소 숨기기
+      // imageElement.src = ""; // 이미지가 없으면 src를 빈 문자열로 설정
+      // imageElement.classList.add("hidden"); // 이미지 요소 숨기기
+      imageElement.remove();
     }
   };
 
