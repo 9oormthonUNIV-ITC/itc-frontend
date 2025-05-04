@@ -1,6 +1,6 @@
 /**
-* 메인페이지 섹션4 : 경인지부일정/ Slide
-*/
+ * 메인페이지 섹션4 : 경인지부일정/ Slide
+ */
 
 const slideList = document.querySelectorAll('ul.card-slider-list > li');
 const prevBtn = document.querySelector('.slider-btn.left');
