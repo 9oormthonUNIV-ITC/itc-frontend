@@ -12,6 +12,15 @@ export function isLoggedIn() {
 }
 // 🚀 로그인한 사용자 정보 가져오기
 
-// 🚀 로그아웃 처리
+/**
+ * 🚀 로그아웃 처리
+ * – 세션 스토리지에서 토큰·유저 정보 제거
+ */
+export function logout() {
+  // fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
+  sessionStorage.removeItem(TOKEN_KEY);
+  sessionStorage.removeItem(USER_KEY);
+  window.location.href = "/";
+}
 
 // 🚀 UI 초기화
