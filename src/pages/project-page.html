@@ -9,11 +9,11 @@
     <script type="module" src="/src/js/common-header.js"></script>
     <script type="module" src="/src/js/project-page.js"></script>
   </head>
-  <body class="flex flex-col min-h-screen w-full min-w-[100vw]">
+  <body class="flex flex-col min-h-screen w-full">
     <h1 class="sr-only">9oormthonUNIV - 경인지부 프로젝트 페이지</h1>
     <div
       id="modal"
-      class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center hidden"
+      class="fixed inset-0 z-50 bg-black/70 justify-center items-center hidden"
     >
       <!-- 🚀 모달창 모바일 수정 -->
       <div
@@ -128,7 +128,7 @@
                   name="project-image"
                   type="file"
                   accept="image/*"
-                  class="hidden mt-3 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-itc-blue700 file:text-white hover:file:bg-itc-blue800"
+                  class="hidden mt-3 w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-itc-blue700 file:text-white hover:file:bg-itc-blue800"
                 />
               </div>
             </div>
@@ -154,13 +154,13 @@
           <div class="flex justify-end gap-4 mt-8">
             <button
               id="cancelBtn"
-              class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-itc-gray300 transition-all duration-300 ease-in-out hover:bg-itc-gray400 text-white"
+              class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-itc-gray300 transition-all duration-300 ease-in-out hover:bg-itc-gray400 text-white cursor-pointer"
             >
               취소
             </button>
             <button
               id="submitBtn"
-              class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-itc-blue500 transition-all duration-300 ease-in-out hover:bg-itc-blue800 text-white"
+              class="font-bold text-20 py-3 px-8 rounded-[0.625rem] bg-itc-blue500 transition-all duration-300 ease-in-out hover:bg-itc-blue800 text-white cursor-pointer"
             >
               저장
             </button>
@@ -172,7 +172,7 @@
     <!-- ✅ 상세 모달창 -->
     <div
       id="detail-modal"
-      class="fixed inset-0 z-50 bg-black/70 flex justify-center items-center hidden"
+      class="fixed inset-0 z-50 bg-black/70 justify-center items-center hidden"
     >
       <!-- 🚀 모달창 모바일 수정 -->
       <div
@@ -239,13 +239,13 @@
         <div class="flex justify-end gap-2 mt-6">
           <button
             id="update-btn"
-            class="bg-itc-blue700 text-white px-4 py-2 rounded-lg"
+            class="bg-itc-blue600 hover:transition-colors ease-in-out hover:bg-itc-blue800 text-white focus:duration-300 focus:bg-itc-blue800 px-4 py-2 rounded-lg cursor-pointer"
           >
             수정
           </button>
           <button
             id="delete-btn"
-            class="bg-itc-gray400 text-white px-4 py-2 rounded-lg"
+            class="bg-itc-gray300 hover:transition-colors ease-in-out hover:bg-itc-gray400 text-white focus:duration-400 focus:bg-itc-gray300 px-4 py-2 rounded-lg cursor-pointer"
           >
             삭제
           </button>
@@ -481,7 +481,7 @@
             </h2>
             <button
               id="editBtn"
-              class="ml-2 font-bold text-18 md:text-22 py-0.5 md:py-1 px-3 md:px-4 rounded-[3.125rem] bg-itc-blue700 transition-all duration-300 ease-in-out hover:bg-itc-blue800 text-white"
+              class="cursor-pointer ml-2 font-bold text-18 md:text-22 py-0.5 md:py-1 px-3 md:px-4 rounded-[3.125rem] bg-itc-blue700 hover:transition-colors ease-in-out hover:bg-itc-blue800 text-white focus:duration-300 focus:bg-itc-blue800"
             >
               edit
             </button>
@@ -492,7 +492,7 @@
       <div class="w-full flex justify-center">
         <div
           id="empty-state"
-          class="flex items-center justify-center min-h-[400px] py-10 hidden"
+          class="items-center justify-center min-h-[400px] py-10 hidden"
         >
           <div
             id="animation-box"
@@ -514,7 +514,7 @@
           class="grid grid-cols-1 flex-col sm:grid-cols-2 lg:grid-cols-3 gap-[3.75rem] max-w-[1140px] min-h-[300px]"
         >
           <div
-            class="min-h-[400px] flex flex-col items-center justify-center gap-6 py-10 col-start-2 hidden"
+            class="min-h-[400px] flex-col items-center justify-center gap-6 py-10 col-start-2 hidden"
           ></div>
         </div>
       </div>
