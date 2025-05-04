@@ -360,14 +360,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (projects.length === 0) {
         // 글 없을 때
         emptyState.classList.remove("hidden");
-        projectGrid.classList.add("hidden");
+        emptyState.classList.add("flex");
         if (!animationIntervalId) {
           animationIntervalId = setInterval(showNextFrame, 200);
         }
       } else {
         // 글 있을 때
         emptyState.classList.add("hidden");
-        projectGrid.classList.remove("hidden");
+        emptyState.classList.remove("flex");
         if (animationIntervalId) {
           clearInterval(animationIntervalId);
           animationIntervalId = null;
