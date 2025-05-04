@@ -18,17 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //==============================================================//
   // 백엔드 연결 이후 auth.js와 연결하여 로그인한 이용자만 접근 가능하게 로직 변경 예정
-  const editBtn = document.getElementById("editBtn");
-  // 캡처 단계에서 딱 막아서 뒤따르는 클릭 리스너 무조건 차단
-  editBtn.addEventListener(
-    "click",
-    (e) => {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      alert("접근 권한이 없습니다.");
-    },
-    { capture: true }
-  );
+  // const editBtn = document.getElementById("editBtn");
+  // // 캡처 단계에서 딱 막아서 뒤따르는 클릭 리스너 무조건 차단
+  // editBtn.addEventListener(
+  //   "click",
+  //   (e) => {
+  //     e.preventDefault();
+  //     e.stopImmediatePropagation();
+  //     alert("접근 권한이 없습니다.");
+  //   },
+  //   { capture: true }
+  // );
 
   let animationIntervalId = null;
   let imgNo = 1;
@@ -76,20 +76,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById(modalId);
     modal.classList.add("hidden");
   }
-  // 👉 에딧 모달창 배경 클릭 감지
-  const editModal = document.getElementById("modal");
-  editModal.addEventListener("click", (e) => {
-    if (e.target === editModal) {
-      closeModal("modal");
-    }
-  });
-  // 👉 상세 모달창 배경 클릭 감지
-  const detailModal = document.getElementById("detail-modal");
-  detailModal.addEventListener("click", (e) => {
-    if (e.target === detailModal) {
-      detailModal.classList.add("hidden");
-    }
-  });
+  // // 👉 에딧 모달창 배경 클릭 감지
+  // const editModal = document.getElementById("modal");
+  // editModal.addEventListener("click", (e) => {
+  //   if (e.target === editModal) {
+  //     closeModal("modal");
+  //   }
+  // });
+  // // 👉 상세 모달창 배경 클릭 감지
+  // const detailModal = document.getElementById("detail-modal");
+  // detailModal.addEventListener("click", (e) => {
+  //   if (e.target === detailModal) {
+  //     detailModal.classList.add("hidden");
+  //   }
+  // });
 
   // ============================================================== //
   // 🦁 에딧 모달창 로직
@@ -97,16 +97,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🚀 에딧 모달 열기
   editButton.addEventListener("click", () => {
     modal.classList.remove("hidden");
+    modal.classList.add("flex"); // ❤️ 추가
   });
 
   // 🚀 에딧 모달 닫기 -> X 버튼 클릭시
   closeBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
+    modal.classList.remove("flex"); // ❤️ 추기
   });
 
   // 🚀 에딧 모달 닫기 -> 취소 버튼 클릭시
   cancelBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
+    modal.classList.remove("flex"); // ❤️ 추가
   });
 
   // 🚀 저장 버튼 클릭 -> json-server로 POST 요청
@@ -185,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 공통 작업
       modal.classList.add("hidden"); // 모달 닫기
+      modal.classList.remove("flex"); // ❤️ 추가
       // cardContainer.innerHTML = ""; // 기존 카드 지우기 -> 근데 왜 초기화 안됨??
       projectGrid.innerHTML = "";
       renderProjects(); // 다시 렌더링
@@ -198,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 👉 상세 모달 구현
   // ============================================================== //
   // 👉 상세 모달 요소 추가
-  // const detailModal = document.getElementById("detail-modal");
+  const detailModal = document.getElementById("detail-modal");
   const detailCloseBtn = document.getElementById("detailCloseBtn");
 
   // 👉 카드 클릭 시 모달 띄우기
@@ -214,12 +218,14 @@ document.addEventListener("DOMContentLoaded", () => {
     detailModal.dataset.id = project.id;
     // ✨ 상세 모달 띄우기
     detailModal.classList.remove("hidden");
+    detailModal.classList.add("flex"); // ❤️ 추가
 
     // Todo : 상세 모달에 이미지 안 보임, 왜?
     const imageElement = document.getElementById("detail-image");
     if (project.image) {
       imageElement.src = project.image;
       imageElement.classList.remove("hidden");
+      imageElement.classList.add("flex"); // ❤️ 추가
     } else {
       // imageElement.src = ""; // 이미지가 없으면 src를 빈 문자열로 설정
       // imageElement.classList.add("hidden"); // 이미지 요소 숨기기
