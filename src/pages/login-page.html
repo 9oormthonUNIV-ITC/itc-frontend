@@ -40,8 +40,9 @@
     <link rel="stylesheet" href="/public/fonts/roboto/roboto.css" />
 
     <!-- JS -->
-    <script type="module" src="/src/js/common-header.js"></script>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/common-header.js"></script>
+    <script type="module" src="/src/js/login-page.js"></script>
   </head>
   <body class="font-sans">
     <h1 class="sr-only">9oormthonUNIV - 경인지부 로그인페이지</h1>
@@ -164,11 +165,14 @@
     <!-- Main -->
     <main
       class="tracking-tighter max-w-[1440px] mx-auto pt-[85px] md:pt-[105px] pb-6 md:pb-10 min-h-[calc(100dvh_-_20.625rem)] bg-itc-white">
+      <!-- title -->
       <section class="px-8 py-10">
         <div class="border-b-1 border-itc-black900 pb-1">
           <h2 class="text-[1.5rem] font-extrabold text-itc-black900">로그인</h2>
         </div>
       </section>
+
+      <!-- content -->
       <section
         class="flex flex-col gap-6 px-8 py-20 md:grid md:grid-cols-2 md:items-center md:justify-center md:gap-14 lg:py-30">
         <div
@@ -185,7 +189,10 @@
             9oormthonUniv에 <br />
             오신걸 환영합니다.
           </h2>
-          <button class="gsi-material-button mt-2">
+          <div
+            data-role="button"
+            id="loginBtn"
+            class="gsi-material-button mt-2">
             <div class="gsi-material-button-state"></div>
             <div class="gsi-material-button-content-wrapper">
               <div class="gsi-material-button-icon">
@@ -214,7 +221,7 @@
                 Google 계정으로 로그인
               </span>
             </div>
-          </button>
+          </div>
         </div>
       </section>
     </main>
