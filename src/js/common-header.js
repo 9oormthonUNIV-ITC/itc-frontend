@@ -1,5 +1,8 @@
 let sidenav_outside = document.querySelector(".sidenav-outside");
 let hamburger = document.querySelector(".hamburger");
+let headerMypageLink1 = document.querySelector("header nav > a:last-child");
+let headerMypageLink2 = document.querySelector("header ul li:nth-child(3) a");
+let mypageLink = [headerMypageLink1, headerMypageLink2];
 let show_mobile_nav_flag = false;
 let be_mobile_viewport_flag = false;
 sidenav_outside.addEventListener("click", mobileNavClose);
@@ -102,3 +105,18 @@ function switchHamburgerIcon() {
     }, 300);
   }
 }
+
+function setMypageLink(linkStr) {
+  if (linkStr === undefined) linkStr = "#void";
+  mypageLink.forEach((e) => {
+    console.log(e);
+    e.href = linkStr;
+    if (linkStr === "#void") {
+      e.addEventListener("click", () => {
+        alert("접근 권한이 없습니다.");
+      });
+    }
+  });
+}
+
+setMypageLink();
