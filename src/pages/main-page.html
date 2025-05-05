@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
@@ -14,34 +14,40 @@
       href="/public/fonts/pretendard/woff2/PretendardVariable.woff2"
       as="font"
       type="font/woff2"
-      crossorigin />
+      crossorigin
+    />
     <link
       rel="preload"
       href="/public/fonts/gmarket/GmarketSansBold.otf"
       as="font"
       type="font/otf"
-      crossorigin />
+      crossorigin
+    />
     <link
       rel="preload"
       href="/public/fonts/gmarket/GmarketSanmdedium.otf"
       as="font"
       type="font/otf"
-      crossorigin />
+      crossorigin
+    />
     <link
       rel="preload"
       href="/public/fonts/gmarket/GmarketSansLight.otf"
       as="font"
       type="font/otf"
-      crossorigin />
+      crossorigin
+    />
     <link
       rel="stylesheet"
-      href="/public/fonts/pretendard/pretendardvariable.css" />
+      href="/public/fonts/pretendard/pretendardvariable.css"
+    />
     <link rel="stylesheet" href="/public/fonts/gmarket/gmarket.css" />
 
     <!-- Swiper -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- JS -->
@@ -57,9 +63,11 @@
 
     <!-- Header -->
     <header
-      class="shadow-[0_1px_1px_0_rgba(0,_0,_0,_0.10)] bg-white z-30 fixed top-0 left-0 w-full px-5 flex justify-center md:mx-auto items-center">
+      class="shadow-[0_1px_1px_0_rgba(0,_0,_0,_0.10)] bg-white z-30 fixed top-0 left-0 w-full px-5 flex justify-between md:justify-center md:mx-auto items-center"
+    >
       <div
-        class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-18">
+        class="w-full md:max-w-[90rem] contents md:flex items-center gap-10 lg:gap-18"
+      >
         <h1 class="h-[65px] content-center">
           <a href="/src/pages/main-page.html">
             <svg
@@ -67,37 +75,48 @@
               height="20"
               viewBox="0 0 186 20"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M175.138 0.587662H136.276C130.822 0.587662 126.4 4.77704 126.4 9.94461C126.4 15.1122 130.822 19.3016 136.276 19.3016H175.138C180.592 19.3016 185.014 15.1122 185.014 9.94461C185.014 4.77704 180.592 0.587662 175.138 0.587662ZM145.448 11.1846C145.448 13.8672 143.393 15.7742 140.39 15.7742C137.387 15.7742 135.332 13.9907 135.332 11.1846V4.30278H137.491V11.0364C137.491 12.6223 138.518 13.8919 140.39 13.8919C142.262 13.8919 143.284 12.6371 143.284 11.0463V4.30278H145.453V11.1846H145.448ZM158.228 15.5272H156.372L149.917 7.67701V15.5272H147.747V4.30278H149.609L156.064 12.1579V4.30278H158.223V15.5272H158.228ZM162.916 15.5272H160.747V4.30278H162.916V15.5272ZM171.446 15.5272H169.47L164.506 4.29784H166.795L170.445 12.8446L170.482 12.8298L174.121 4.29784H176.421L171.446 15.5272Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M22.3606 6.62009C18.6689 6.62009 15.6759 9.45583 15.6759 12.9536C15.6759 16.4513 18.6689 19.287 22.3606 19.287C26.0523 19.287 29.0453 16.4513 29.0453 12.9536C29.0453 9.45583 26.0523 6.62009 22.3606 6.62009ZM22.3606 16.7576C20.1445 16.7576 18.3508 15.0581 18.3508 12.9585C18.3508 10.8589 20.1445 9.1594 22.3606 9.1594C24.5767 9.1594 26.3704 10.8589 26.3704 12.9585C26.3704 15.0581 24.5767 16.7576 22.3606 16.7576Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M37.4055 6.62009C33.7138 6.62009 30.7208 9.45583 30.7208 12.9536C30.7208 16.4513 33.7138 19.287 37.4055 19.287C41.0972 19.287 44.0902 16.4513 44.0902 12.9536C44.0902 9.45583 41.0972 6.62009 37.4055 6.62009ZM37.4055 16.7576C35.1895 16.7576 33.3958 15.0581 33.3958 12.9585C33.3958 10.8589 35.1895 9.1594 37.4055 9.1594C39.6216 9.1594 41.4153 10.8589 41.4153 12.9585C41.4153 15.0581 39.6216 16.7576 37.4055 16.7576Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M104.669 6.62009C100.977 6.62009 97.9845 9.45583 97.9845 12.9536C97.9845 16.4513 100.977 19.287 104.669 19.287C108.361 19.287 111.354 16.4513 111.354 12.9536C111.354 9.45583 108.361 6.62009 104.669 6.62009ZM104.669 16.7576C102.453 16.7576 100.659 15.0581 100.659 12.9585C100.659 10.8589 102.453 9.1594 104.669 9.1594C106.885 9.1594 108.679 10.8589 108.679 12.9585C108.679 15.0581 106.885 16.7576 104.669 16.7576Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M46.0964 12.6376V18.971H48.7714V12.6376C48.7714 10.8887 50.2679 9.47081 52.1137 9.47081H53.4486V6.93643H52.1137C48.7922 6.93643 46.0964 9.49058 46.0964 12.6376Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M68.1571 6.93643C66.5616 6.93643 65.1276 7.60338 64.1474 8.65566C63.1671 7.60338 61.7332 6.93643 60.1376 6.93643C57.1863 6.93643 54.7877 9.20404 54.7877 12.0052V18.971H57.4627V12.0052C57.4627 10.6071 58.6619 9.47081 60.1376 9.47081C61.6132 9.47081 62.8125 10.6071 62.8125 12.0052V18.971H65.4874V12.0052C65.4874 10.6071 66.6867 9.47081 68.1624 9.47081C69.638 9.47081 70.8373 10.6071 70.8373 12.0052V18.971H73.5122V12.0052C73.5122 9.20898 71.1189 6.93643 68.1624 6.93643H68.1571Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M122.115 8.57691C122.037 8.49292 121.953 8.41388 121.87 8.33484C121.823 8.29532 121.776 8.25085 121.729 8.21133C121.646 8.13723 121.557 8.06806 121.463 8.00383C121.411 7.96431 121.359 7.9248 121.302 7.89021C121.213 7.82599 121.119 7.7667 121.02 7.71236C120.963 7.67777 120.905 7.6432 120.843 7.60861C120.749 7.55427 120.65 7.5098 120.545 7.46039C120.483 7.43075 120.42 7.40111 120.353 7.37147C120.248 7.32701 120.144 7.29243 120.04 7.25291C119.972 7.22821 119.909 7.2035 119.842 7.18374C119.732 7.14916 119.623 7.12446 119.508 7.09482C119.44 7.08 119.372 7.06023 119.304 7.04541C119.185 7.02071 119.054 7.00589 118.929 6.98613C118.866 6.97625 118.809 6.96637 118.747 6.96143C118.559 6.94167 118.371 6.93179 118.178 6.93179C117.985 6.93179 117.798 6.94167 117.61 6.96143C117.547 6.96637 117.49 6.98119 117.427 6.98613C117.302 7.00095 117.177 7.02071 117.052 7.04541C116.984 7.06023 116.916 7.08 116.849 7.09482C116.739 7.11952 116.624 7.14916 116.515 7.18374C116.447 7.2035 116.379 7.22821 116.317 7.25291C116.212 7.28749 116.108 7.32701 116.004 7.37147C115.941 7.40111 115.879 7.43075 115.811 7.46039C115.712 7.50486 115.613 7.55427 115.514 7.60861C115.451 7.6432 115.394 7.67777 115.336 7.71236C115.243 7.7667 115.149 7.82599 115.055 7.89021C115.003 7.9248 114.945 7.96431 114.893 8.00383C114.805 8.073 114.716 8.14217 114.627 8.21133C114.58 8.25085 114.533 8.29038 114.486 8.33484C114.403 8.41388 114.32 8.49292 114.241 8.57691C113.36 9.48099 112.823 10.6815 112.823 12.0055V18.9713H115.498V12.0055C115.498 10.6074 116.697 9.4711 118.173 9.4711C119.649 9.4711 120.848 10.6074 120.848 12.0055V18.9713H123.523V12.0055C123.523 10.6815 122.981 9.47605 122.105 8.57691H122.115Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M91.3109 5.68179C90.4297 5.68179 89.5693 5.89421 88.8028 6.29438V0.603149H86.1279V18.9712H88.8028V10.5924C88.8028 9.28326 89.9291 8.21615 91.3109 8.21615C92.6927 8.21615 93.819 9.28326 93.819 10.5924V18.9712H96.4939V10.5924C96.4939 7.88515 94.1684 5.68179 91.3109 5.68179Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M81.0186 0.603149H78.3437V5.98808H75.1682V8.52246H78.3437V18.9712H81.0186V8.52246H84.1941V5.98808H81.0186V0.603149Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
               <path
                 d="M14.0233 7.8899C14.0233 4.39217 11.0304 1.55643 7.33864 1.55643C3.64693 1.55643 0.836433 4.21924 0.664361 7.56877C0.659147 7.67252 0.653931 7.78121 0.653931 7.88496C0.653931 7.98871 0.653933 8.09738 0.664361 8.20113C0.836433 11.4617 3.68343 14.0554 7.17178 14.0554C8.76214 14.0554 10.2169 13.5169 11.3484 12.6227V13.5811C11.3224 13.9764 11.1972 14.999 10.3681 15.8191C9.1845 16.9899 7.34907 16.9702 6.14979 16.575C4.89315 16.1649 4.184 15.3004 3.91286 14.9249L1.42564 15.9031C2.24428 17.3753 3.65736 18.5017 5.36243 19.0007C5.52928 19.0501 6.29057 19.2724 7.33864 19.2823C8.07907 19.2921 10.4568 19.3168 12.2609 17.6124C13.893 16.071 14.0077 14.0949 14.0233 13.5811V7.88496V7.8899ZM7.33864 11.689C5.12257 11.689 3.32886 9.98954 3.32886 7.8899C3.32886 5.79027 5.12257 4.09081 7.33864 4.09081C9.55471 4.09081 11.3484 5.79027 11.3484 7.8899C11.3484 9.98954 9.55471 11.689 7.33864 11.689Z"
-                fill="#363F4B" />
+                fill="#363F4B"
+              />
             </svg>
           </a>
         </h1>
@@ -125,18 +144,24 @@
         >
         <button
           type="button"
-          class="hamburger flex flex-col justify-center gap-1 md:hidden z-60 w-8 h-8">
+          class="hamburger flex flex-col justify-center gap-1 md:hidden z-60 w-8 h-8"
+        >
           <span
-            class="hamburger-top-bar block w-8 h-1 rounded-full bg-black"></span>
+            class="hamburger-top-bar block w-8 h-1 rounded-full bg-black"
+          ></span>
           <span
-            class="hamburger-middle-bar block w-8 h-1 rounded-full bg-black"></span>
+            class="hamburger-middle-bar block w-8 h-1 rounded-full bg-black"
+          ></span>
           <span
-            class="hamburger-bottom-bar block w-8 h-1 rounded-full bg-black"></span>
+            class="hamburger-bottom-bar block w-8 h-1 rounded-full bg-black"
+          ></span>
         </button>
         <div
-          class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"></div>
+          class="sidenav-outside fixed top-0 left-0 w-screen h-screen bg-black opacity-40 z-40 md:hidden hidden"
+        ></div>
         <div
-          class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden md:hidden">
+          class="sidenav fixed top-0 right-0 w-3/5 h-screen bg-white z-50 hidden md:hidden"
+        >
           <ul class="pt-20 flex flex-col gap-4 md:hidden">
             <li class="border-b ml-4">
               <a
@@ -177,13 +202,16 @@
       <section
         id="mainSection01"
         aria-labelledby="goormthon-more"
-        class="h-[300px] md:h-[600px] lg:h-screen lg:min-h-[960px] bg-itc-blue50">
+        class="h-[300px] md:h-[600px] lg:h-screen lg:min-h-[960px] bg-itc-blue50"
+      >
         <div
-          class="w-full h-full flex flex-col justify-center items-start space-y-3 relative max-w-[1440px] mx-auto overflow-hidden max-[400px]:px-4 px-8 2xl:px-0">
+          class="w-full h-full flex flex-col justify-center items-start space-y-3 relative max-w-[1440px] mx-auto overflow-hidden max-[400px]:px-4 px-8 2xl:px-0"
+        >
           <div class="relative">
             <h2
               class="text-itc-blue700 text-40 md:text-70 lg:text-100 xl:text-[120px] font-extrabold tracking-normal font-gmarket max-[400px]:text-34"
-              id="goormthon-more">
+              id="goormthon-more"
+            >
               <span>9oormthonUNIV</span>
               <br />
               <span>경인지부</span>
@@ -193,45 +221,53 @@
               alt=""
               draggable="false"
               aria-hidden="true"
-              class="absolute w-24 left-36 -bottom-1 md:left-[16rem] lg:left-[23rem] lg:bottom-2.5 md:-bottom-1.5 md:w-[11rem] lg:w-[12rem] xl:w-[15rem] max-[400px]:left-30 xl:left-[27.5rem] xl:bottom-2" />
+              class="absolute w-24 left-36 -bottom-1 md:left-[16rem] lg:left-[23rem] lg:bottom-2.5 md:-bottom-1.5 md:w-[11rem] lg:w-[12rem] xl:w-[15rem] max-[400px]:left-30 xl:left-[27.5rem] xl:bottom-2"
+            />
           </div>
           <a
             href="#mainSection02"
-            class="outline-none font-bold text-16 lg:text-24 py-2 px-4 lg:px-6 ml-2 sm:ml-2.5 rounded-[3.125rem] bg-itc-blue700 text-white flex gap-2 items-center hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800">
+            class="outline-none font-bold text-16 lg:text-24 py-2 px-4 lg:px-6 ml-2 sm:ml-2.5 rounded-[3.125rem] bg-itc-blue700 text-white flex gap-2 items-center hover:transition-colors hover:duration-300 hover:bg-itc-blue800 focus:transition-colors focus:duration-300 focus:bg-itc-blue800"
+          >
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 viewBox="0 0 24 30"
-                fill="none">
+                fill="none"
+              >
                 <path
                   d="M13.5 2C13.5 1.17157 12.8284 0.5 12 0.5C11.1716 0.5 10.5 1.17157 10.5 2L13.5 2ZM10.9393 29.0607C11.5251 29.6464 12.4749 29.6464 13.0607 29.0607L22.6066 19.5147C23.1924 18.9289 23.1924 17.9792 22.6066 17.3934C22.0208 16.8076 21.0711 16.8076 20.4853 17.3934L12 25.8787L3.51472 17.3934C2.92893 16.8076 1.97918 16.8076 1.3934 17.3934C0.807611 17.9792 0.807611 18.9289 1.3934 19.5147L10.9393 29.0607ZM10.5 2L10.5 28L13.5 28L13.5 2L10.5 2Z"
-                  fill="white" />
+                  fill="white"
+                />
               </svg>
             </span>
             <span>더 알아보기</span>
           </a>
           <div
-            class="absolute top-0 flex flex-col w-20 h-full gap-2 py-6 -right-4 opacity-70 justify-evenly md:w-38 md:-right-12 xl:right-2 xl:w-56">
+            class="absolute top-0 flex flex-col w-20 h-full gap-2 py-6 -right-4 opacity-70 justify-evenly md:w-38 md:-right-12 xl:right-2 xl:w-56"
+          >
             <img
               src="/public/images/main-flower1.svg"
               alt=""
               draggable="false"
               class="relative opacity-0 sm:opacity-100 -left-8 xl:left-10 2xl:-left-30 animate-item-rotate1 xl:top-5"
-              aria-hidden="true" />
+              aria-hidden="true"
+            />
             <img
               src="/public/images/main-flower2.svg"
               alt=""
               draggable="false"
               class="relative animate-item-rotate2 xl:left-4"
-              aria-hidden="true" />
+              aria-hidden="true"
+            />
             <img
               src="/public/images/main-flower3.svg"
               alt=""
               draggable="false"
               class="relative -left-10 xl:-left-40 animate-item-rotate3 xl:-top-2"
-              aria-hidden="true" />
+              aria-hidden="true"
+            />
           </div>
         </div>
       </section>
@@ -240,14 +276,16 @@
       <section
         id="mainSection02"
         class="px-5 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen lg:min-h-[960px] bg-itc-white max-w-[1440px] mx-auto"
-        aria-labelledby="goormthon-introduce">
+        aria-labelledby="goormthon-introduce"
+      >
         <div class="flex flex-col items-center justify-center w-full h-full">
           <div class="relative flex flex-col items-center w-full gap-3">
             <img
               src="/public/images/logo-pink.svg"
               loading="lazy"
               draggable="false"
-              alt="구름톤유니브로고" />
+              alt="구름톤유니브로고"
+            />
             <div class="flex items-center gap-2 max-[400px]:w-[300px]">
               <img
                 src="/public/images/logo-pink2.svg"
@@ -255,14 +293,16 @@
                 alt=""
                 loading="lazy"
                 draggable="false"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
               <img
                 src="/public/images/logo-pink3.svg"
                 class="w-full"
                 alt=""
                 draggable="false"
                 loading="lazy"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
             </div>
             <img
               class="absolute left-0 w-30 hidden md:block lg:w-[15vw] lg:max-w-[220px]"
@@ -270,55 +310,66 @@
               alt=""
               draggable="false"
               loading="lazy"
-              aria-hidden="true" />
+              aria-hidden="true"
+            />
             <img
               class="absolute right-0 w-30 hidden md:block lg:w-[15vw] lg:max-w-[220px]"
               src="/public/images/flower-pink2.png"
               alt=""
               draggable="false"
               loading="lazy"
-              aria-hidden="true" />
+              aria-hidden="true"
+            />
           </div>
           <h2
             id="goormthon-introduce"
-            class="mt-8 font-extrabold text-center text-28 lg:text-38 text-itc-black100 break-keep">
+            class="mt-8 font-extrabold text-center text-28 lg:text-38 text-itc-black100 break-keep"
+          >
             구름톤 유니브 경인지부를 소개합니다!
           </h2>
           <p
-            class="pt-5 font-normal text-center text-16 lg:text-20 text-itc-black900 break-keep">
+            class="pt-5 font-normal text-center text-16 lg:text-20 text-itc-black900 break-keep"
+          >
             구름톤 유니브는 전국 최대 규모의 대학생 IT 연합 동아리입니다! <br />
             다양한 IT 스터디, 프로젝트, 해커톤 등 활발한 활동을 통해 함께
             성장하고 교류하는 기회를 제공합니다!🚀
           </p>
           <div
-            class="flex flex-col items-center gap-6 lg:flex-row lg:justify-center pt-13">
+            class="flex flex-col items-center gap-6 lg:flex-row lg:justify-center pt-13"
+          >
             <!-- 카드 1 -->
             <div class="flex flex-col items-start">
               <div
-                class="w-[18.75rem] h-[12.5rem] md:w-[25rem] md:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem] overflow-hidden">
+                class="w-[18.75rem] h-[12.5rem] md:w-[25rem] md:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem] overflow-hidden"
+              >
                 <img
                   src="/public/images/mainsection02-1.webp"
                   loading="lazy"
                   draggable="false"
-                  alt="연합스터디" />
+                  alt="연합스터디"
+                />
               </div>
               <h3
-                class="mt-2 font-semibold text-[1.125rem] md:text-[1.5625rem]">
+                class="mt-2 font-semibold text-[1.125rem] md:text-[1.5625rem]"
+              >
                 연합 스터디
               </h3>
             </div>
             <!-- 카드 2 -->
             <div class="flex flex-col items-start">
               <div
-                class="w-[18.75rem] h-[12.5rem] md:w-[25rem] md:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem] overflow-hidden">
+                class="w-[18.75rem] h-[12.5rem] md:w-[25rem] md:h-[18.75rem] lg:w-[25rem] lg:h-[18.75rem] bg-itc-blue500 rounded-[1rem] overflow-hidden"
+              >
                 <img
                   src="/public/images/mainsection02-2.webp"
                   loading="lazy"
                   draggable="false"
-                  alt="연합해커톤" />
+                  alt="연합해커톤"
+                />
               </div>
               <h3
-                class="mt-2 font-semibold text-[1.125rem] md:text-[1.5625rem]">
+                class="mt-2 font-semibold text-[1.125rem] md:text-[1.5625rem]"
+              >
                 연합 해커톤
               </h3>
             </div>
@@ -330,51 +381,60 @@
       <section
         id="mainSection03"
         aria-labelledby="goormthon-univ"
-        class="px-5 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen lg:min-h-[960px] max-w-[1440px] mx-auto">
+        class="px-5 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen lg:min-h-[960px] max-w-[1440px] mx-auto"
+      >
         <div class="flex flex-col items-center justify-center w-full h-full">
           <h2
             id="goormthon-univ"
-            class="mb-12 font-extrabold text-center text-28 lg:text-38 text-itc-black100 break-keep lg:mb-10">
+            class="mb-12 font-extrabold text-center text-28 lg:text-38 text-itc-black100 break-keep lg:mb-10"
+          >
             경인지부에는 6개 대학교가 함께해요
           </h2>
           <div
-            class="grid grid-cols-3 gap-4 lg:gap-12 max-w-[400px] lg:max-w-[500px] mx-auto">
+            class="grid grid-cols-3 gap-4 lg:gap-12 max-w-[400px] lg:max-w-[500px] mx-auto"
+          >
             <img
               class="w-full"
               src="/public/images/hyu.svg"
               draggable="false"
               loading="lazy"
-              alt="한양대" />
+              alt="한양대"
+            />
             <img
               class="w-full"
               src="/public/images/tuk.svg"
               draggable="false"
               loading="lazy"
-              alt="한국공대" />
+              alt="한국공대"
+            />
             <img
               class="w-full"
               src="/public/images/itc.svg"
               draggable="false"
               loading="lazy"
-              alt="인하공전" />
+              alt="인하공전"
+            />
             <img
               class="w-full"
               src="/public/images/inu.svg"
               draggable="false"
               loading="lazy"
-              alt="인천대" />
+              alt="인천대"
+            />
             <img
               class="w-full"
               src="/public/images/jnu.svg"
               draggable="false"
               loading="lazy"
-              alt="제주대" />
+              alt="제주대"
+            />
             <img
               class="w-full"
               src="/public/images/ayu.svg"
               draggable="false"
               loading="lazy"
-              alt="안양대" />
+              alt="안양대"
+            />
           </div>
         </div>
       </section>
@@ -383,47 +443,58 @@
       <section
         id="mainSection04"
         aria-labelledby="goormthon-plan"
-        class="pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen lg:min-h-[960px] max-w-[1440px] mx-auto px-10">
+        class="pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen lg:min-h-[960px] max-w-[1440px] mx-auto px-10"
+      >
         <div class="flex flex-col items-center justify-center w-full h-full">
           <h2
             id="goormthon-plan"
-            class="mb-12 font-extrabold text-center text-28 lg:text-38 text-itc-black100 break-keep lg:mb-10">
+            class="mb-12 font-extrabold text-center text-28 lg:text-38 text-itc-black100 break-keep lg:mb-10"
+          >
             경인지부 일정
           </h2>
 
           <div
-            class="flex items-center gap-8 max-[450px]:gap-4 card-slider-wrapper">
+            class="flex items-center gap-8 max-[450px]:gap-4 card-slider-wrapper"
+          >
             <button
               aria-label="이전슬라이드보기"
-              class="slider-btn left w-8 max-[400px]:w-4 flex flex-row-reverse">
+              class="slider-btn left w-8 max-[400px]:w-4 flex flex-row-reverse"
+            >
               <img
                 src="/public/images/left-chevoron.png"
                 alt=""
                 loading="lazy"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
             </button>
             <ul class="card-slider-list">
               <li>
                 <figure
-                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]">
+                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]"
+                >
                   <picture
-                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden">
+                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden"
+                  >
                     <img
                       src="/public/images/section04-1.png"
                       class="w-[150px] mx-auto"
                       loading="lazy"
                       alt=""
-                      aria-hidden="true" />
+                      aria-hidden="true"
+                    />
                   </picture>
                   <figcaption
-                    class="break-keep md:w-[calc(100% - 300px) space-y-2">
+                    class="break-keep md:w-[calc(100% - 300px) space-y-2"
+                  >
                     <h2
-                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start">
+                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start"
+                    >
                       <span>3월</span> <br />
                       <span class="font-semibold text-17">오리엔테이션</span>
                     </h2>
                     <p
-                      class="font-medium text-16 text-itc-gray400 text-center md:text-start">
+                      class="font-medium text-16 text-itc-gray400 text-center md:text-start"
+                    >
                       경인지부 오리엔테이션을 통해 지부 활동과 앞으로의 일정을
                       알아보는 시간을 가집니다.
                     </p>
@@ -432,25 +503,31 @@
               </li>
               <li>
                 <figure
-                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]">
+                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]"
+                >
                   <picture
-                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden">
+                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden"
+                  >
                     <img
                       src="/public/images/section04-2.png"
                       class="w-[150px] mx-auto"
                       alt=""
                       loading="lazy"
-                      aria-hidden="true" />
+                      aria-hidden="true"
+                    />
                   </picture>
                   <figcaption
-                    class="break-keep md:w-[calc(100% - 300px)] space-y-2">
+                    class="break-keep md:w-[calc(100% - 300px)] space-y-2"
+                  >
                     <h2
-                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start">
+                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start"
+                    >
                       <span>4월 ~ 5월</span> <br />
                       <span class="font-semibold text-17">연합 활동 기간</span>
                     </h2>
                     <p
-                      class="font-medium text-16 text-itc-gray400 text-center md:text-start">
+                      class="font-medium text-16 text-itc-gray400 text-center md:text-start"
+                    >
                       경인지부 연합 스터디를 통해 함께 성장하고, 실력을
                       쌓아갑니다.
                     </p>
@@ -459,27 +536,33 @@
               </li>
               <li>
                 <figure
-                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]">
+                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]"
+                >
                   <picture
-                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden">
+                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden"
+                  >
                     <img
                       src="/public/images/section04-4.png"
                       class="w-[150px] mx-auto"
                       alt=""
                       loading="lazy"
-                      aria-hidden="true" />
+                      aria-hidden="true"
+                    />
                   </picture>
                   <figcaption
-                    class="break-keep md:w-[calc(100% - 300px)] space-y-2">
+                    class="break-keep md:w-[calc(100% - 300px)] space-y-2"
+                  >
                     <h2
-                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start">
+                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start"
+                    >
                       <span>6월 ~ 7월</span> <br />
                       <span class="font-semibold text-17">
                         연합 해커톤 기간
                       </span>
                     </h2>
                     <p
-                      class="font-medium text-16 text-itc-gray400 text-center md:text-start">
+                      class="font-medium text-16 text-itc-gray400 text-center md:text-start"
+                    >
                       시즌톤에 대비하여 미니 해커톤을 진행하며 팀 프로젝트를
                       경험합니다.
                     </p>
@@ -488,25 +571,31 @@
               </li>
               <li>
                 <figure
-                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]">
+                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]"
+                >
                   <picture
-                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden">
+                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden"
+                  >
                     <img
                       src="/public/images/section04-3.png"
                       class="w-[150px] mx-auto"
                       alt=""
                       loading="lazy"
-                      aria-hidden="true" />
+                      aria-hidden="true"
+                    />
                   </picture>
                   <figcaption
-                    class="break-keep md:w-[calc(100% - 300px)] space-y-2">
+                    class="break-keep md:w-[calc(100% - 300px)] space-y-2"
+                  >
                     <h2
-                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start">
+                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start"
+                    >
                       <span>7월 ~ 9월</span> <br />
                       <span class="font-semibold text-17">시즌톤</span>
                     </h2>
                     <p
-                      class="font-medium text-16 text-itc-gray400 text-center md:text-start">
+                      class="font-medium text-16 text-itc-gray400 text-center md:text-start"
+                    >
                       구름톤 유니브의 대표 행사인 시즌톤에서, 여러분의
                       아이디어와 열정을 마음껏 펼쳐보세요.
                     </p>
@@ -515,25 +604,31 @@
               </li>
               <li>
                 <figure
-                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]">
+                  class="rounded-[30px] bg-itc-gray50 px-6 py-12 md:py-6 flex flex-col justify-center gap-0 md:gap-6 md:grid md:grid-cols-[200px_1fr] md:items-center max-[400px]:w-[250px] w-[300px] md:w-[600px] mx-auto h-[380px] md:h-[250px]"
+                >
                   <picture
-                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden">
+                    class="content-center max-[400px]:w-[200px] w-[250px] md:w-[200px] self-center overflow-hidden"
+                  >
                     <img
                       src="/public/images/section04-5.png"
                       class="w-[150px] mx-auto"
                       alt=""
                       loading="lazy"
-                      aria-hidden="true" />
+                      aria-hidden="true"
+                    />
                   </picture>
                   <figcaption
-                    class="break-keep md:w-[calc(100% - 300px)] space-y-2">
+                    class="break-keep md:w-[calc(100% - 300px)] space-y-2"
+                  >
                     <h2
-                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start">
+                      class="font-extrabold text-itc-black100 text-25 text-center md:text-start"
+                    >
                       <span>11월</span> <br />
                       <span class="font-semibold text-17">데모데이</span>
                     </h2>
                     <p
-                      class="font-medium text-16 text-itc-gray400 text-center md:text-start">
+                      class="font-medium text-16 text-itc-gray400 text-center md:text-start"
+                    >
                       해커톤에서 탄생한 아이디어를 고도화하고, 완성도 높은
                       결과물을 발표하는 시간을 가집니다.
                     </p>
@@ -543,12 +638,14 @@
             </ul>
             <button
               aria-label="다음슬라이드보기"
-              class="slider-btn right w-8 max-[400px]:w-4">
+              class="slider-btn right w-8 max-[400px]:w-4"
+            >
               <img
                 src="/public/images/right-chevoron.png"
                 alt=""
                 loading="lazy"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
             </button>
           </div>
         </div>
@@ -558,15 +655,18 @@
       <section
         id="mainSection05"
         aria-labelledby="goormthon-track"
-        class="px-5 md:px-20 lg:px-40 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen lg:min-h-[960px] overflow-hidden max-w-[1440px] mx-auto">
+        class="px-5 md:px-20 lg:px-40 pt-30 pb-30 lg:pb-0 lg:pt-20 lg:h-screen lg:min-h-[960px] overflow-hidden max-w-[1440px] mx-auto"
+      >
         <div
-          class="flex flex-col items-center justify-center w-full h-full md:items-start">
+          class="flex flex-col items-center justify-center w-full h-full md:items-start"
+        >
           <div class="relative flex flex-col items-center gap-3">
             <img
               src="/public/images/logo-purple.svg"
               draggable="false"
               loading="lazy"
-              alt="구름톤유니브로고" />
+              alt="구름톤유니브로고"
+            />
             <div class="flex items-center gap-2 max-[400px]:w-[300px] relative">
               <img
                 src="/public/images/logo-purple2.svg"
@@ -574,31 +674,37 @@
                 alt=""
                 loading="lazy"
                 draggable="false"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
               <img
                 src="/public/images/logo-purple3.svg"
                 class="w-full"
                 alt=""
                 loading="lazy"
                 draggable="false"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
               <img
                 class="w-30 absolute -top-14 left-[320px] hidden md:block"
                 src="/public/images/flower-group2.png"
                 alt=""
                 draggable="false"
-                aria-hidden="true" />
+                aria-hidden="true"
+              />
             </div>
           </div>
           <div
-            class="mt-8 flex flex-col gap-4 md:flex-row items-center font-gmarket">
+            class="mt-8 flex flex-col gap-4 md:flex-row items-center font-gmarket"
+          >
             <h2
               id="goormthon-track"
-              class="font-extrabold text-28 lg:text-38 text-itc-black100">
+              class="font-extrabold text-28 lg:text-38 text-itc-black100"
+            >
               구유 4기 트랙 소개
             </h2>
             <p
-              class="font-normal text-16 lg:text-18 text-itc-black900 break-keep text-center md:text-start">
+              class="font-normal text-16 lg:text-18 text-itc-black900 break-keep text-center md:text-start"
+            >
               구름톤 유니브 4기 경인지부의 다양한 파트별 <br />
               스터디에 대해서 소개해 드릴게요.
             </p>
@@ -621,11 +727,13 @@
             </button>
           </div>
           <ul
-            class="relative flex gap-4 card-linear -left-20 lg:-left-40 animate-card-mobile-left lg:animate-card-left">
+            class="relative flex gap-4 card-linear -left-20 lg:-left-40 animate-card-mobile-left lg:animate-card-left"
+          >
             <!-- PM -->
             <li data-type="PM">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   애자일 스크럼과 칸반을 이해해 스프린트 계획 및 진행을
                   효율화해요.
@@ -634,18 +742,22 @@
             </li>
             <li data-type="PM">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   사용자 경험(UX) 기본 원칙을 학습해 PM 의사결정에 반영해요.
                 </p>
               </div>
             </li>
             <li data-type="PM">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   웹 접근성(WCAG) 가이드라인을 숙지해 모두를 위한 제품을
                   설계해요.
                 </p>
@@ -653,7 +765,8 @@
             </li>
             <li data-type="PM">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   Git 기반 버전 관리 흐름을 알아 개발팀과 원활히 협업해요.
                 </p>
@@ -661,9 +774,11 @@
             </li>
             <li data-type="PM">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   CI/CD 파이프라인 개념을 이해해 배포 자동화 및 리스크를 줄여요.
                 </p>
               </div>
@@ -671,7 +786,8 @@
             <!-- DE -->
             <li data-type="DE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   디자인 씽킹 프로세스를 익혀 문제 정의부터 솔루션 도출까지
                   구조화해요.
@@ -680,9 +796,11 @@
             </li>
             <li data-type="DE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   사용자 조사(페르소나 · 여정 지도) 기법을 학습해 인사이트 기반
                   디자인을 만들어요.
                 </p>
@@ -690,9 +808,11 @@
             </li>
             <li data-type="DE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   와이어프레이밍 · 프로토타이핑 툴(Figma·Sketch) 사용법을 숙지해
                   빠르게 시안 검증해요.
                 </p>
@@ -700,7 +820,8 @@
             </li>
             <li data-type="DE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   반응형 그리드 시스템과 타이포그래피 원칙을 이해해 다양한
                   디바이스에 최적화해요.
@@ -709,9 +830,11 @@
             </li>
             <li data-type="DE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   접근성(색 대비 · 키보드 내비게이션) 가이드라인을 적용해 모두가
                   사용할 수 있는 인터페이스를 설계해요.
                 </p>
@@ -720,7 +843,8 @@
             <!-- FE -->
             <li data-type="FE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   리액트로 CSS 라이브러리 적용 · 이벤트 핸들링 · 조건부 렌더링을
                   실습해요.
@@ -729,9 +853,11 @@
             </li>
             <li data-type="FE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   Styled-Components · 반응형 웹 · ESLint·Prettier 설정을 통해
                   코드 품질을 높여요.
                 </p>
@@ -739,9 +865,11 @@
             </li>
             <li data-type="FE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   JS 기초 · 비동기 처리 · JSX 컴포넌트로 카운터 · 모달 구현과
                   React 환경 설정을 해요.
                 </p>
@@ -749,7 +877,8 @@
             </li>
             <li data-type="FE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   HTML/CSS 마크업 · 웹접근성 · 시맨틱 태그 · Flex/Grid 반응형
                   레이아웃을 학습해요.
@@ -758,9 +887,11 @@
             </li>
             <li data-type="FE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   React Native로 스타일링 · 네비게이션 · 디바이스 API 연동을
                   실습해요.
                 </p>
@@ -768,18 +899,22 @@
             </li>
             <li data-type="FE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   SwiftUI로 뷰 레이아웃 · 상태 관리 · 데이터 바인딩을 배워요.
                 </p>
               </div>
             </li>
             <li data-type="FE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   크로스플랫폼 성능 최적화·디버깅·테스트를 적용해요.
                 </p>
               </div>
@@ -787,7 +922,8 @@
             <!-- BE -->
             <li data-type="BE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   Spring Boot 구조와 DI(의존성 주입) 개념을 익혀요.
                 </p>
@@ -795,25 +931,30 @@
             </li>
             <li data-type="BE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   REST API 설계 및 컨트롤러 작성법을 학습해요.
                 </p>
               </div>
             </li>
             <li data-type="BE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   JPA/Hibernate로 데이터베이스 연동과 엔티티 매핑을 해요.
                 </p>
               </div>
             </li>
             <li data-type="BE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) text-white p-10"
+              >
                 <p class="font-bold text-24">
                   Spring Security로 인증 · 인가 기능을 구현해요.
                 </p>
@@ -821,9 +962,11 @@
             </li>
             <li data-type="BE">
               <div
-                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10">
+                class="break-keep w-[300px] min-h-[300px] rounded-[20px] bg-itc-gray50 p-10"
+              >
                 <p
-                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent">
+                  class="font-bold text-24 bg-linear-65 from-(--color-itc-blue500) to-(--color-itc-purple500) bg-clip-text text-transparent"
+                >
                   단위 · 통합 테스트와 CI/CD 파이프라인을 적용해요.
                 </p>
               </div>
@@ -835,15 +978,18 @@
 
     <!-- Progress bar -->
     <div
-      class="fixed bottom-0 left-0 w-full h-2 bg-gray-300 opacity-60 overflow-hidden">
+      class="fixed bottom-0 left-0 w-full h-2 bg-gray-300 opacity-60 overflow-hidden"
+    >
       <div
         class="progress-bar h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-500"
-        style="width: 20%"></div>
+        style="width: 20%"
+      ></div>
     </div>
 
     <!-- Footer -->
     <footer
-      class="w-full flex-shrink-0 h-[12.5rem] mt-40 bg-itc-gray100 flex flex-col justify-center space-y-4 px-8">
+      class="w-full flex-shrink-0 h-[12.5rem] mt-40 bg-itc-gray100 flex flex-col justify-center space-y-4 px-8"
+    >
       <!-- 상단 텍스트 -->
       <p class="font-bold text-25 text-itc-black900 max-[48rem]:text-16">
         Being All Seasons with 9oormthonUNIV
@@ -858,33 +1004,45 @@
           href="https://9oormthon.university/"
           target="_blank"
           rel="noopener noreferrer"
-          class="group">
+          class="group"
+        >
           <svg
             width="186"
             height="20"
             viewBox="0 0 186 20"
             xmlns="http://www.w3.org/2000/svg"
-            class="fill-[#363F4D] transition-all duration-300 ease-in-out group-hover:fill-itc-blue800">
+            class="fill-[#363F4D] transition-all duration-300 ease-in-out group-hover:fill-itc-blue800"
+          >
             <path
-              d="M175.138 0.587662H136.276C130.822 0.587662 126.4 4.77704 126.4 9.94461C126.4 15.1122 130.822 19.3016 136.276 19.3016H175.138C180.592 19.3016 185.014 15.1122 185.014 9.94461C185.014 4.77704 180.592 0.587662 175.138 0.587662ZM145.448 11.1846C145.448 13.8672 143.393 15.7742 140.39 15.7742C137.387 15.7742 135.332 13.9907 135.332 11.1846V4.30278H137.491V11.0364C137.491 12.6223 138.518 13.8919 140.39 13.8919C142.262 13.8919 143.284 12.6371 143.284 11.0463V4.30278H145.453V11.1846H145.448ZM158.228 15.5272H156.372L149.917 7.67701V15.5272H147.747V4.30278H149.609L156.064 12.1579V4.30278H158.223V15.5272H158.228ZM162.916 15.5272H160.747V4.30278H162.916V15.5272ZM171.446 15.5272H169.47L164.506 4.29784H166.795L170.445 12.8446L170.482 12.8298L174.121 4.29784H176.421L171.446 15.5272Z" />
+              d="M175.138 0.587662H136.276C130.822 0.587662 126.4 4.77704 126.4 9.94461C126.4 15.1122 130.822 19.3016 136.276 19.3016H175.138C180.592 19.3016 185.014 15.1122 185.014 9.94461C185.014 4.77704 180.592 0.587662 175.138 0.587662ZM145.448 11.1846C145.448 13.8672 143.393 15.7742 140.39 15.7742C137.387 15.7742 135.332 13.9907 135.332 11.1846V4.30278H137.491V11.0364C137.491 12.6223 138.518 13.8919 140.39 13.8919C142.262 13.8919 143.284 12.6371 143.284 11.0463V4.30278H145.453V11.1846H145.448ZM158.228 15.5272H156.372L149.917 7.67701V15.5272H147.747V4.30278H149.609L156.064 12.1579V4.30278H158.223V15.5272H158.228ZM162.916 15.5272H160.747V4.30278H162.916V15.5272ZM171.446 15.5272H169.47L164.506 4.29784H166.795L170.445 12.8446L170.482 12.8298L174.121 4.29784H176.421L171.446 15.5272Z"
+            />
             <path
-              d="M22.3606 6.62009C18.6689 6.62009 15.6759 9.45583 15.6759 12.9536C15.6759 16.4513 18.6689 19.287 22.3606 19.287C26.0523 19.287 29.0453 16.4513 29.0453 12.9536C29.0453 9.45583 26.0523 6.62009 22.3606 6.62009ZM22.3606 16.7576C20.1445 16.7576 18.3508 15.0581 18.3508 12.9585C18.3508 10.8589 20.1445 9.1594 22.3606 9.1594C24.5767 9.1594 26.3704 10.8589 26.3704 12.9585C26.3704 15.0581 24.5767 16.7576 22.3606 16.7576Z" />
+              d="M22.3606 6.62009C18.6689 6.62009 15.6759 9.45583 15.6759 12.9536C15.6759 16.4513 18.6689 19.287 22.3606 19.287C26.0523 19.287 29.0453 16.4513 29.0453 12.9536C29.0453 9.45583 26.0523 6.62009 22.3606 6.62009ZM22.3606 16.7576C20.1445 16.7576 18.3508 15.0581 18.3508 12.9585C18.3508 10.8589 20.1445 9.1594 22.3606 9.1594C24.5767 9.1594 26.3704 10.8589 26.3704 12.9585C26.3704 15.0581 24.5767 16.7576 22.3606 16.7576Z"
+            />
             <path
-              d="M37.4055 6.62009C33.7138 6.62009 30.7208 9.45583 30.7208 12.9536C30.7208 16.4513 33.7138 19.287 37.4055 19.287C41.0972 19.287 44.0902 16.4513 44.0902 12.9536C44.0902 9.45583 41.0972 6.62009 37.4055 6.62009ZM37.4055 16.7576C35.1895 16.7576 33.3958 15.0581 33.3958 12.9585C33.3958 10.8589 35.1895 9.1594 37.4055 9.1594C39.6216 9.1594 41.4153 10.8589 41.4153 12.9585C41.4153 15.0581 39.6216 16.7576 37.4055 16.7576Z" />
+              d="M37.4055 6.62009C33.7138 6.62009 30.7208 9.45583 30.7208 12.9536C30.7208 16.4513 33.7138 19.287 37.4055 19.287C41.0972 19.287 44.0902 16.4513 44.0902 12.9536C44.0902 9.45583 41.0972 6.62009 37.4055 6.62009ZM37.4055 16.7576C35.1895 16.7576 33.3958 15.0581 33.3958 12.9585C33.3958 10.8589 35.1895 9.1594 37.4055 9.1594C39.6216 9.1594 41.4153 10.8589 41.4153 12.9585C41.4153 15.0581 39.6216 16.7576 37.4055 16.7576Z"
+            />
             <path
-              d="M104.669 6.62009C100.977 6.62009 97.9845 9.45583 97.9845 12.9536C97.9845 16.4513 100.977 19.287 104.669 19.287C108.361 19.287 111.354 16.4513 111.354 12.9536C111.354 9.45583 108.361 6.62009 104.669 6.62009ZM104.669 16.7576C102.453 16.7576 100.659 15.0581 100.659 12.9585C100.659 10.8589 102.453 9.1594 104.669 9.1594C106.885 9.1594 108.679 10.8589 108.679 12.9585C108.679 15.0581 106.885 16.7576 104.669 16.7576Z" />
+              d="M104.669 6.62009C100.977 6.62009 97.9845 9.45583 97.9845 12.9536C97.9845 16.4513 100.977 19.287 104.669 19.287C108.361 19.287 111.354 16.4513 111.354 12.9536C111.354 9.45583 108.361 6.62009 104.669 6.62009ZM104.669 16.7576C102.453 16.7576 100.659 15.0581 100.659 12.9585C100.659 10.8589 102.453 9.1594 104.669 9.1594C106.885 9.1594 108.679 10.8589 108.679 12.9585C108.679 15.0581 106.885 16.7576 104.669 16.7576Z"
+            />
             <path
-              d="M46.0964 12.6376V18.971H48.7714V12.6376C48.7714 10.8887 50.2679 9.47081 52.1137 9.47081H53.4486V6.93643H52.1137C48.7922 6.93643 46.0964 9.49058 46.0964 12.6376Z" />
+              d="M46.0964 12.6376V18.971H48.7714V12.6376C48.7714 10.8887 50.2679 9.47081 52.1137 9.47081H53.4486V6.93643H52.1137C48.7922 6.93643 46.0964 9.49058 46.0964 12.6376Z"
+            />
             <path
-              d="M68.1571 6.93643C66.5616 6.93643 65.1276 7.60338 64.1474 8.65566C63.1671 7.60338 61.7332 6.93643 60.1376 6.93643C57.1863 6.93643 54.7877 9.20404 54.7877 12.0052V18.971H57.4627V12.0052C57.4627 10.6071 58.6619 9.47081 60.1376 9.47081C61.6132 9.47081 62.8125 10.6071 62.8125 12.0052V18.971H65.4874V12.0052C65.4874 10.6071 66.6867 9.47081 68.1624 9.47081C69.638 9.47081 70.8373 10.6071 70.8373 12.0052V18.971H73.5122V12.0052C73.5122 9.20898 71.1189 6.93643 68.1624 6.93643H68.1571Z" />
+              d="M68.1571 6.93643C66.5616 6.93643 65.1276 7.60338 64.1474 8.65566C63.1671 7.60338 61.7332 6.93643 60.1376 6.93643C57.1863 6.93643 54.7877 9.20404 54.7877 12.0052V18.971H57.4627V12.0052C57.4627 10.6071 58.6619 9.47081 60.1376 9.47081C61.6132 9.47081 62.8125 10.6071 62.8125 12.0052V18.971H65.4874V12.0052C65.4874 10.6071 66.6867 9.47081 68.1624 9.47081C69.638 9.47081 70.8373 10.6071 70.8373 12.0052V18.971H73.5122V12.0052C73.5122 9.20898 71.1189 6.93643 68.1624 6.93643H68.1571Z"
+            />
             <path
-              d="M122.115 8.57691C122.037 8.49292 121.953 8.41388 121.87 8.33484C121.823 8.29532 121.776 8.25085 121.729 8.21133C121.646 8.13723 121.557 8.06806 121.463 8.00383C121.411 7.96431 121.359 7.9248 121.302 7.89021C121.213 7.82599 121.119 7.7667 121.02 7.71236C120.963 7.67777 120.905 7.6432 120.843 7.60861C120.749 7.55427 120.65 7.5098 120.545 7.46039C120.483 7.43075 120.42 7.40111 120.353 7.37147C120.248 7.32701 120.144 7.29243 120.04 7.25291C119.972 7.22821 119.909 7.2035 119.842 7.18374C119.732 7.14916 119.623 7.12446 119.508 7.09482C119.44 7.08 119.372 7.06023 119.304 7.04541C119.185 7.02071 119.054 7.00589 118.929 6.98613C118.866 6.97625 118.809 6.96637 118.747 6.96143C118.559 6.94167 118.371 6.93179 118.178 6.93179C117.985 6.93179 117.798 6.94167 117.61 6.96143C117.547 6.96637 117.49 6.98119 117.427 6.98613C117.302 7.00095 117.177 7.02071 117.052 7.04541C116.984 7.06023 116.916 7.08 116.849 7.09482C116.739 7.11952 116.624 7.14916 116.515 7.18374C116.447 7.2035 116.379 7.22821 116.317 7.25291C116.212 7.28749 116.108 7.32701 116.004 7.37147C115.941 7.40111 115.879 7.43075 115.811 7.46039C115.712 7.50486 115.613 7.55427 115.514 7.60861C115.451 7.6432 115.394 7.67777 115.336 7.71236C115.243 7.7667 115.149 7.82599 115.055 7.89021C115.003 7.9248 114.945 7.96431 114.893 8.00383C114.805 8.073 114.716 8.14217 114.627 8.21133C114.58 8.25085 114.533 8.29038 114.486 8.33484C114.403 8.41388 114.32 8.49292 114.241 8.57691C113.36 9.48099 112.823 10.6815 112.823 12.0055V18.9713H115.498V12.0055C115.498 10.6074 116.697 9.4711 118.173 9.4711C119.649 9.4711 120.848 10.6074 120.848 12.0055V18.9713H123.523V12.0055C123.523 10.6815 122.981 9.47605 122.105 8.57691H122.115Z" />
+              d="M122.115 8.57691C122.037 8.49292 121.953 8.41388 121.87 8.33484C121.823 8.29532 121.776 8.25085 121.729 8.21133C121.646 8.13723 121.557 8.06806 121.463 8.00383C121.411 7.96431 121.359 7.9248 121.302 7.89021C121.213 7.82599 121.119 7.7667 121.02 7.71236C120.963 7.67777 120.905 7.6432 120.843 7.60861C120.749 7.55427 120.65 7.5098 120.545 7.46039C120.483 7.43075 120.42 7.40111 120.353 7.37147C120.248 7.32701 120.144 7.29243 120.04 7.25291C119.972 7.22821 119.909 7.2035 119.842 7.18374C119.732 7.14916 119.623 7.12446 119.508 7.09482C119.44 7.08 119.372 7.06023 119.304 7.04541C119.185 7.02071 119.054 7.00589 118.929 6.98613C118.866 6.97625 118.809 6.96637 118.747 6.96143C118.559 6.94167 118.371 6.93179 118.178 6.93179C117.985 6.93179 117.798 6.94167 117.61 6.96143C117.547 6.96637 117.49 6.98119 117.427 6.98613C117.302 7.00095 117.177 7.02071 117.052 7.04541C116.984 7.06023 116.916 7.08 116.849 7.09482C116.739 7.11952 116.624 7.14916 116.515 7.18374C116.447 7.2035 116.379 7.22821 116.317 7.25291C116.212 7.28749 116.108 7.32701 116.004 7.37147C115.941 7.40111 115.879 7.43075 115.811 7.46039C115.712 7.50486 115.613 7.55427 115.514 7.60861C115.451 7.6432 115.394 7.67777 115.336 7.71236C115.243 7.7667 115.149 7.82599 115.055 7.89021C115.003 7.9248 114.945 7.96431 114.893 8.00383C114.805 8.073 114.716 8.14217 114.627 8.21133C114.58 8.25085 114.533 8.29038 114.486 8.33484C114.403 8.41388 114.32 8.49292 114.241 8.57691C113.36 9.48099 112.823 10.6815 112.823 12.0055V18.9713H115.498V12.0055C115.498 10.6074 116.697 9.4711 118.173 9.4711C119.649 9.4711 120.848 10.6074 120.848 12.0055V18.9713H123.523V12.0055C123.523 10.6815 122.981 9.47605 122.105 8.57691H122.115Z"
+            />
             <path
-              d="M91.3109 5.68179C90.4297 5.68179 89.5693 5.89421 88.8028 6.29438V0.603149H86.1279V18.9712H88.8028V10.5924C88.8028 9.28326 89.9291 8.21615 91.3109 8.21615C92.6927 8.21615 93.819 9.28326 93.819 10.5924V18.9712H96.4939V10.5924C96.4939 7.88515 94.1684 5.68179 91.3109 5.68179Z" />
+              d="M91.3109 5.68179C90.4297 5.68179 89.5693 5.89421 88.8028 6.29438V0.603149H86.1279V18.9712H88.8028V10.5924C88.8028 9.28326 89.9291 8.21615 91.3109 8.21615C92.6927 8.21615 93.819 9.28326 93.819 10.5924V18.9712H96.4939V10.5924C96.4939 7.88515 94.1684 5.68179 91.3109 5.68179Z"
+            />
             <path
-              d="M81.0186 0.603149H78.3437V5.98808H75.1682V8.52246H78.3437V18.9712H81.0186V8.52246H84.1941V5.98808H81.0186V0.603149Z" />
+              d="M81.0186 0.603149H78.3437V5.98808H75.1682V8.52246H78.3437V18.9712H81.0186V8.52246H84.1941V5.98808H81.0186V0.603149Z"
+            />
             <path
-              d="M14.0233 7.8899C14.0233 4.39217 11.0304 1.55643 7.33864 1.55643C3.64693 1.55643 0.836433 4.21924 0.664361 7.56877C0.659147 7.67252 0.653931 7.78121 0.653931 7.88496C0.653931 7.98871 0.653933 8.09738 0.664361 8.20113C0.836433 11.4617 3.68343 14.0554 7.17178 14.0554C8.76214 14.0554 10.2169 13.5169 11.3484 12.6227V13.5811C11.3224 13.9764 11.1972 14.999 10.3681 15.8191C9.1845 16.9899 7.34907 16.9702 6.14979 16.575C4.89315 16.1649 4.184 15.3004 3.91286 14.9249L1.42564 15.9031C2.24428 17.3753 3.65736 18.5017 5.36243 19.0007C5.52928 19.0501 6.29057 19.2724 7.33864 19.2823C8.07907 19.2921 10.4568 19.3168 12.2609 17.6124C13.893 16.071 14.0077 14.0949 14.0233 13.5811V7.88496V7.8899ZM7.33864 11.689C5.12257 11.689 3.32886 9.98954 3.32886 7.8899C3.32886 5.79027 5.12257 4.09081 7.33864 4.09081C9.55471 4.09081 11.3484 5.79027 11.3484 7.8899C11.3484 9.98954 9.55471 11.689 7.33864 11.689Z" />
+              d="M14.0233 7.8899C14.0233 4.39217 11.0304 1.55643 7.33864 1.55643C3.64693 1.55643 0.836433 4.21924 0.664361 7.56877C0.659147 7.67252 0.653931 7.78121 0.653931 7.88496C0.653931 7.98871 0.653933 8.09738 0.664361 8.20113C0.836433 11.4617 3.68343 14.0554 7.17178 14.0554C8.76214 14.0554 10.2169 13.5169 11.3484 12.6227V13.5811C11.3224 13.9764 11.1972 14.999 10.3681 15.8191C9.1845 16.9899 7.34907 16.9702 6.14979 16.575C4.89315 16.1649 4.184 15.3004 3.91286 14.9249L1.42564 15.9031C2.24428 17.3753 3.65736 18.5017 5.36243 19.0007C5.52928 19.0501 6.29057 19.2724 7.33864 19.2823C8.07907 19.2921 10.4568 19.3168 12.2609 17.6124C13.893 16.071 14.0077 14.0949 14.0233 13.5811V7.88496V7.8899ZM7.33864 11.689C5.12257 11.689 3.32886 9.98954 3.32886 7.8899C3.32886 5.79027 5.12257 4.09081 7.33864 4.09081C9.55471 4.09081 11.3484 5.79027 11.3484 7.8899C11.3484 9.98954 9.55471 11.689 7.33864 11.689Z"
+            />
           </svg>
         </a>
       </div>
@@ -896,15 +1054,18 @@
             href="https://github.com/9oormthonUNIV-ITC"
             target="_blank"
             rel="noopener noreferrer"
-            class="group">
+            class="group"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               width="35px"
               height="35px"
-              class="fill-black transition-all duration-300 ease-in-out group-hover:fill-itc-blue800 group-hover:-translate-y-1">
+              class="fill-black transition-all duration-300 ease-in-out group-hover:fill-itc-blue800 group-hover:-translate-y-1"
+            >
               <path
-                d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6 c0,0,1.4,0,2.8,1.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4 c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3 C22,6.1,16.9,1.4,10.9,2.1z" />
+                d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6 c0,0,1.4,0,2.8,1.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4 c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3 C22,6.1,16.9,1.4,10.9,2.1z"
+              />
             </svg>
           </a>
         </div>
@@ -913,15 +1074,18 @@
             href="https://www.instagram.com/9oormthonuniv.inhatc/"
             target="_blank"
             rel="noopener noreferrer"
-            class="group">
+            class="group"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 48 48"
               width="35"
               height="35"
-              class="fill-black transition-all duration-300 ease-in-out group-hover:fill-itc-blue800 group-hover:-translate-y-1">
+              class="fill-black transition-all duration-300 ease-in-out group-hover:fill-itc-blue800 group-hover:-translate-y-1"
+            >
               <path
-                d="M 16.5 5 C 10.16639 5 5 10.16639 5 16.5 L 5 31.5 C 5 37.832757 10.166209 43 16.5 43 L 31.5 43 C 37.832938 43 43 37.832938 43 31.5 L 43 16.5 C 43 10.166209 37.832757 5 31.5 5 L 16.5 5 z M 16.5 8 L 31.5 8 C 36.211243 8 40 11.787791 40 16.5 L 40 31.5 C 40 36.211062 36.211062 40 31.5 40 L 16.5 40 C 11.787791 40 8 36.211243 8 31.5 L 8 16.5 C 8 11.78761 11.78761 8 16.5 8 z M 34 12 C 32.895 12 32 12.895 32 14 C 32 15.105 32.895 16 34 16 C 35.105 16 36 15.105 36 14 C 36 12.895 35.105 12 34 12 z M 24 14 C 18.495178 14 14 18.495178 14 24 C 14 29.504822 18.495178 34 24 34 C 29.504822 34 34 29.504822 34 24 C 34 18.495178 29.504822 14 24 14 z M 24 17 C 27.883178 17 31 20.116822 31 24 C 31 27.883178 27.883178 31 24 31 C 20.116822 31 17 27.883178 17 24 C 17 20.116822 20.116822 17 24 17 z" />
+                d="M 16.5 5 C 10.16639 5 5 10.16639 5 16.5 L 5 31.5 C 5 37.832757 10.166209 43 16.5 43 L 31.5 43 C 37.832938 43 43 37.832938 43 31.5 L 43 16.5 C 43 10.166209 37.832757 5 31.5 5 L 16.5 5 z M 16.5 8 L 31.5 8 C 36.211243 8 40 11.787791 40 16.5 L 40 31.5 C 40 36.211062 36.211062 40 31.5 40 L 16.5 40 C 11.787791 40 8 36.211243 8 31.5 L 8 16.5 C 8 11.78761 11.78761 8 16.5 8 z M 34 12 C 32.895 12 32 12.895 32 14 C 32 15.105 32.895 16 34 16 C 35.105 16 36 15.105 36 14 C 36 12.895 35.105 12 34 12 z M 24 14 C 18.495178 14 14 18.495178 14 24 C 14 29.504822 18.495178 34 24 34 C 29.504822 34 34 29.504822 34 24 C 34 18.495178 29.504822 14 24 14 z M 24 17 C 27.883178 17 31 20.116822 31 24 C 31 27.883178 27.883178 31 24 31 C 20.116822 31 17 27.883178 17 24 C 17 20.116822 20.116822 17 24 17 z"
+              />
             </svg>
           </a>
         </div>
