@@ -20,6 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 마우스 클릭
   loginBtn.addEventListener("click", () => {
-    window.location.href = "/oauth2/authorization/google";
+    window.location.href = "http://localhost:8080/oauth2/authorization/google";
   });
 });
