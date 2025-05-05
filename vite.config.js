@@ -51,25 +51,46 @@ import path from "path";
 import fs from "fs";
 
 // findAllHtmlFiles 함수 정의
-function findAllHtmlFiles(directory) {
+// function findAllHtmlFiles(directory) {
+//   const htmlFiles = {};
+
+//   function scanDirectory(dir) {
+//     const files = fs.readdirSync(dir);
+//     for (const file of files) {
+//       const filePath = path.join(dir, file);
+//       const stat = fs.statSync(filePath);
+
+//       if (stat.isDirectory()) {
+//         scanDirectory(filePath);
+//       } else if (file.endsWith(".html")) {
+//         const key = path.relative(__dirname, filePath).replace(".html", "");
+//         htmlFiles[key] = filePath;
+//       }
+//     }
+//   }
+
+//   scanDirectory(directory);
+//   return htmlFiles;
+// }
+// src/pages 폴더 안의 .html 파일만 찾아서 input으로 등록
+function findPageHtmlFiles(directory) {
   const htmlFiles = {};
 
-  function scanDirectory(dir) {
-    const files = fs.readdirSync(dir);
-    for (const file of files) {
-      const filePath = path.join(dir, file);
-      const stat = fs.statSync(filePath);
-
+  function scan(dir) {
+    for (const name of fs.readdirSync(dir)) {
+      const full = path.join(dir, name);
+      const stat = fs.statSync(full);
       if (stat.isDirectory()) {
-        scanDirectory(filePath);
-      } else if (file.endsWith(".html")) {
-        const key = path.relative(__dirname, filePath).replace(".html", "");
-        htmlFiles[key] = filePath;
+        scan(full);
+      } else if (name.endsWith(".html")) {
+        // key는 파일명(확장자 제외). 예: src/pages/feed-page.html → feed-page
+        const key = path.basename(full, ".html");
+        htmlFiles[key] = full;
       }
     }
   }
 
-  scanDirectory(directory);
+  scan(directory);
   return htmlFiles;
 }
 
@@ -79,7 +100,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, "index.html"),
-        ...findAllHtmlFiles(path.resolve(__dirname, "src")),
+        ...findPageHtmlFiles(path.resolve(__dirname, "src")), // ✅ 수정
       },
     },
   },
