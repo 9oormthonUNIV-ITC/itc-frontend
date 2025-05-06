@@ -13,6 +13,18 @@ editBtn.addEventListener("click", openModal);
 submitBtn.addEventListener("click", submitLink);
 innerModal.addEventListener("click", preventBubbling());
 showFeeds();
+
+// 캡처 단계에서 딱 막아서 뒤따르는 클릭 리스너 무조건 차단
+editBtn.addEventListener(
+  "click",
+  (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    alert("운영진만 접근이 가능합니다.");
+  },
+  { capture: true }
+);
+
 function closeModal() {
   modal.classList.add("hidden");
   feedInput.value = "";
@@ -34,14 +46,18 @@ async function submitLink() {
   try {
     const apiKey = import.meta.env.VITE_API_KEY;
     const urlToPreview = encodeURIComponent(newLink.url);
-    const checkRes = await fetch(`http://localhost:3001/links?url=${newLink.url}`);
+    const checkRes = await fetch(
+      `http://localhost:3001/links?url=${newLink.url}`
+    );
     const existingLinks = await checkRes.json();
 
     if (existingLinks.length > 0) {
       closeModal();
       return;
     }
-    const res = await fetch(`https://api.linkpreview.net/?key=${apiKey}&q=${urlToPreview}`);
+    const res = await fetch(
+      `https://api.linkpreview.net/?key=${apiKey}&q=${urlToPreview}`
+    );
     if (!res.ok) {
       console.log(res.status);
       throw new Error("LinkPreview API 요청 실패");

@@ -18,17 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //==============================================================//
   // 백엔드 연결 이후 auth.js와 연결하여 로그인한 이용자만 접근 가능하게 로직 변경 예정
-  // const editBtn = document.getElementById("editBtn");
-  // // 캡처 단계에서 딱 막아서 뒤따르는 클릭 리스너 무조건 차단
-  // editBtn.addEventListener(
-  //   "click",
-  //   (e) => {
-  //     e.preventDefault();
-  //     e.stopImmediatePropagation();
-  //     alert("접근 권한이 없습니다.");
-  //   },
-  //   { capture: true }
-  // );
+  const editBtn = document.getElementById("editBtn");
+  // 캡처 단계에서 딱 막아서 뒤따르는 클릭 리스너 무조건 차단
+  editBtn.addEventListener(
+    "click",
+    (e) => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      alert("운영진만 접근이 가능합니다.");
+    },
+    { capture: true }
+  );
 
   let animationIntervalId = null;
   let imgNo = 1;
