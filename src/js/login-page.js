@@ -15,11 +15,19 @@
 //   { capture: true }
 // );
 
-document.addEventListener("DOMContentLoaded", () => {
-  const loginBtn = document.getElementById("loginBtn");
+document.addEventListener('DOMContentLoaded', () => {
+  const loginBtn = document.getElementById('loginBtn');
 
   // 마우스 클릭
-  loginBtn.addEventListener("click", () => {
-    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+  loginBtn.addEventListener('click', () => {
+    window.location.href = 'http://localhost:8080/oauth2/authorization/google';
+  });
+
+  // Button 동작
+  loginBtn.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      location.href = 'http://localhost:8080/oauth2/authorization/google';
+    }
   });
 });
